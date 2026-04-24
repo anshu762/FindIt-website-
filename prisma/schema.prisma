@@ -1,0 +1,85 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum CarType {
+  SUV
+  Sedan
+  Hatchback
+  MUV
+  Crossover
+}
+
+enum FuelType {
+  Petrol
+  Diesel
+  CNG
+  Electric
+  Hybrid
+}
+
+enum Transmission {
+  Manual
+  Automatic
+}
+
+model Car {
+  id               String       @id @default(cuid())
+  slug             String       @unique
+  name             String
+  brand            String
+  model            String
+  year             Int
+  type             CarType
+  fuelType         FuelType
+  transmission     Transmission
+  engineCC         Int?
+  powerBhp         Float
+  torqueNm         Float
+  mileageCity      Float
+  mileageHighway   Float
+  seatingCapacity  Int
+  bootLitres       Int?
+  groundClearance  Int
+  priceMin         Float
+  priceMax         Float
+  monthlyService   Float
+  insuranceYear1   Float
+  safetyRating     Float?
+  depRate1Yr       Float
+  depRate3Yr       Float
+  depRate5Yr       Float
+  imageUrl         String
+  pros             String[]
+  cons             String[]
+  tags             String[]
+  createdAt        DateTime     @default(now())
+  savedBy          SavedCar[]
+}
+
+model User {
+  id          String     @id @default(cuid())
+  email       String     @unique
+  name        String?
+  password    String
+  savedCars   SavedCar[]
+  preferences Json?
+  createdAt   DateTime   @default(now())
+}
+
+model SavedCar {
+  id        String   @id @default(cuid())
+  userId    String
+  carId     String
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  car  Car  @relation(fields: [carId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, carId])
+}
