@@ -1,1 +1,109 @@
-/* placeholder */
+import prisma from "@/lib/db/prisma";
+import { scoreCarForLifestyle } from "@/lib/utils/recommend";
+import type { Car, CarWithScore, QuizAnswers } from "@/types";
+import { Prisma } from "@prisma/client";
+
+export interface CarFilters {
+  type?: string;
+  fuelType?: string;
+  brand?: string;
+  budgetMax?: number;
+}
+
+const carSelect = Prisma.validator<Prisma.CarSelect>()({
+  id: true,
+  slug: true,
+  name: true,
+  brand: true,
+  model: true,
+  year: true,
+  type: true,
+  fuelType: true,
+  transmission: true,
+  engineCC: true,
+  powerBhp: true,
+  torqueNm: true,
+  mileageCity: true,
+  mileageHighway: true,
+  seatingCapacity: true,
+  bootLitres: true,
+  groundClearance: true,
+  priceMin: true,
+  priceMax: true,
+  monthlyService: true,
+  insuranceYear1: true,
+  safetyRating: true,
+  depRate1Yr: true,
+  depRate3Yr: true,
+  depRate5Yr: true,
+  imageUrl: true,
+  pros: true,
+  cons: true,
+  tags: true,
+  createdAt: true,
+  savedBy: {
+    select: {
+      id: true,
+      userId: true,
+      carId: true,
+      createdAt: true
+    }
+  }
+});
+
+function buildWhere(filters: CarFilters): Prisma.CarWhereInput {
+  return {
+    ...(filters.type ? { type: filters.type as Car["type"] } : {}),
+    ...(filters.fuelType ? { fuelType: filters.fuelType as Car["fuelType"] } : {}),
+    ...(filters.brand ? { brand: { equals: filters.brand, mode: "insensitive" } } : {}),
+    ...(filters.budgetMax ? { priceMin: { lte: filters.budgetMax } } : {})
+  };
+}
+
+export async function getAllCars(filters: CarFilters = {}): Promise<Car[]> {
+  const cars = await prisma.car.findMany({
+    where: buildWhere(filters),
+    select: carSelect,
+    orderBy: [{ priceMin: "asc" }, { name: "asc" }]
+  });
+
+  return cars as Car[];
+}
+
+export async function getCarBySlug(slug: string): Promise<Car | null> {
+  const car = await prisma.car.findUnique({
+    where: { slug },
+    select: carSelect
+  });
+
+  return (car as Car | null) ?? null;
+}
+
+export async function getCarById(id: string): Promise<Car | null> {
+  const car = await prisma.car.findUnique({
+    where: { id },
+    select: carSelect
+  });
+
+  return (car as Car | null) ?? null;
+}
+
+export async function getRecommendations(quiz: QuizAnswers): Promise<CarWithScore[]> {
+  const cars = await prisma.car.findMany({
+    where: {
+      priceMin: { lte: quiz.budget * 1.1 }
+    },
+    select: carSelect
+  });
+
+  const scored = (cars as Car[]).map((car) => {
+    const score = scoreCarForLifestyle(car, quiz);
+    return {
+      ...car,
+      matchScore: score.score,
+      matchReasons: score.reasons
+    };
+  });
+
+  return scored.sort((a, b) => b.matchScore - a.matchScore);
+}
