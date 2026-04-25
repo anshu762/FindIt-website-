@@ -1,24 +1,25 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Search, X, Plus } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { getAllCars } from "@/lib/api/cars";
 import { Car } from "@/types";
 import Image from "next/image";
 
-export default function CompareSelector() {
+interface CompareSelectorProps {
+  allCars: Car[];
+}
+
+export default function CompareSelector({ allCars }: CompareSelectorProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<Car[]>([]);
-  const [allCars, setAllCars] = useState<Car[]>([]);
 
-  const selectedIds = searchParams.get("ids")?.split(",").filter(Boolean) || [];
-
-  useEffect(() => {
-    getAllCars().then(setAllCars);
-  }, []);
+  const selectedIds = useMemo(() => 
+    searchParams.get("ids")?.split(",").filter(Boolean) || [],
+    [searchParams]
+  );
 
   useEffect(() => {
     if (query.trim() === "") {
