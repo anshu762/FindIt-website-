@@ -1,52 +1,43 @@
 "use client";
 
 import CarCard from "@/components/cars/CarCard";
-import type { CarWithScore } from "@/types";
-import { motion } from "framer-motion";
+import type { Car, CarWithScore } from "@/types";
+import Link from "next/link";
 
 interface CarGridProps {
-  cars: CarWithScore[];
-  animate?: boolean;
+  cars: Array<Car | CarWithScore>;
+  withScores?: boolean;
 }
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.08
-    }
-  }
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 14 },
-  visible: { opacity: 1, y: 0 }
-};
-
-export default function CarGrid({ cars, animate = false }: CarGridProps) {
-  if (!animate) {
+export default function CarGrid({ cars, withScores = false }: CarGridProps) {
+  if (cars.length === 0) {
     return (
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-        {cars.map((car) => (
-          <CarCard key={car.id} car={car} />
-        ))}
+      <div className="rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-8 text-center">
+        <p className="text-5xl">🚗</p>
+        <h3 className="mt-3 text-lg font-semibold text-slate-900">No cars found</h3>
+        <p className="mt-2 text-sm text-slate-600">
+          Try adjusting your filters or retake the lifestyle quiz for better matches.
+        </p>
+        <Link
+          href="/quiz"
+          className="mt-4 inline-flex rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800"
+        >
+          Retake Quiz
+        </Link>
       </div>
     );
   }
 
   return (
-    <motion.div
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-      className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3"
-    >
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
       {cars.map((car) => (
-        <motion.div key={car.id} variants={itemVariants}>
-          <CarCard car={car} />
-        </motion.div>
+        <CarCard
+          key={car.id}
+          car={car}
+          matchScore={withScores && "matchScore" in car ? car.matchScore : undefined}
+          matchReasons={withScores && "matchReasons" in car ? car.matchReasons : undefined}
+        />
       ))}
-    </motion.div>
+    </div>
   );
 }

@@ -4,9 +4,9 @@ import type { Car, CarWithScore, QuizAnswers } from "@/types";
 import { Prisma } from "@prisma/client";
 
 export interface CarFilters {
-  type?: string;
-  fuelType?: string;
-  brand?: string;
+  type?: string | string[];
+  fuelType?: string | string[];
+  brand?: string | string[];
   budgetMax?: number;
 }
 
@@ -52,10 +52,18 @@ const carSelect = Prisma.validator<Prisma.CarSelect>()({
 });
 
 function buildWhere(filters: CarFilters): Prisma.CarWhereInput {
+  const types = Array.isArray(filters.type) ? filters.type : filters.type ? [filters.type] : [];
+  const fuelTypes = Array.isArray(filters.fuelType)
+    ? filters.fuelType
+    : filters.fuelType
+      ? [filters.fuelType]
+      : [];
+  const brands = Array.isArray(filters.brand) ? filters.brand : filters.brand ? [filters.brand] : [];
+
   return {
-    ...(filters.type ? { type: filters.type as Car["type"] } : {}),
-    ...(filters.fuelType ? { fuelType: filters.fuelType as Car["fuelType"] } : {}),
-    ...(filters.brand ? { brand: { equals: filters.brand, mode: "insensitive" } } : {}),
+    ...(types.length > 0 ? { type: { in: types as Car["type"][] } } : {}),
+    ...(fuelTypes.length > 0 ? { fuelType: { in: fuelTypes as Car["fuelType"][] } } : {}),
+    ...(brands.length > 0 ? { brand: { in: brands, mode: "insensitive" } } : {}),
     ...(filters.budgetMax ? { priceMin: { lte: filters.budgetMax } } : {})
   };
 }
