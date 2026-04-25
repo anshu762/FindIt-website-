@@ -5,7 +5,6 @@ import { Card } from "@/components/ui/card";
 import { formatPrice } from "@/lib/utils/formatters";
 import type { Car } from "@/types";
 import { Gauge, Users } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
 interface CarCardProps {
@@ -21,12 +20,10 @@ export default function CarCard({ car, matchScore, matchReasons }: CarCardProps)
     <Link href={`/cars/${car.slug}`} className="block">
       <Card className="overflow-hidden transition duration-200 hover:-translate-y-1 hover:scale-[1.01] hover:shadow-md">
         <div className="relative h-44 w-full">
-          <Image
+          <img
             src={car.imageUrl}
             alt={`${car.brand} ${car.model}`}
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, 33vw"
+            className="h-full w-full object-cover"
           />
           {typeof matchScore === "number" ? (
             <div className="absolute top-3 right-3">

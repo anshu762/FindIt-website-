@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const CAR_TYPES = ["SUV", "Sedan", "Hatchback", "MUV", "Crossover"] as const;
@@ -35,8 +36,20 @@ export default function FilterSidebar() {
   const selectedTypes = parseList(searchParams.get("type"));
   const selectedFuel = parseList(searchParams.get("fuelType"));
   const selectedBrand = parseList(searchParams.get("brand"));
-  const budgetMin = searchParams.get("budgetMin") ?? "";
-  const budgetMax = searchParams.get("budgetMax") ?? "";
+  
+  const urlBudgetMin = searchParams.get("budgetMin") ?? "";
+  const urlBudgetMax = searchParams.get("budgetMax") ?? "";
+
+  const [localMin, setLocalMin] = useState(urlBudgetMin);
+  const [localMax, setLocalMax] = useState(urlBudgetMax);
+
+  useEffect(() => {
+    setLocalMin(urlBudgetMin);
+  }, [urlBudgetMin]);
+
+  useEffect(() => {
+    setLocalMax(urlBudgetMax);
+  }, [urlBudgetMax]);
 
   const updateParam = (key: string, value: string | null) => {
     const params = new URLSearchParams(searchParams.toString());
@@ -47,6 +60,26 @@ export default function FilterSidebar() {
     }
     router.replace(`${pathname}?${params.toString()}`);
   };
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      if (localMin !== urlBudgetMin) {
+        updateParam("budgetMin", localMin || null);
+      }
+    }, 500);
+    return () => clearTimeout(handler);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [localMin]);
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      if (localMax !== urlBudgetMax) {
+        updateParam("budgetMax", localMax || null);
+      }
+    }, 500);
+    return () => clearTimeout(handler);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [localMax]);
 
   const toggleSelection = (key: string, currentValues: string[], value: string) => {
     const updated = currentValues.includes(value)
@@ -111,15 +144,15 @@ export default function FilterSidebar() {
           <input
             type="number"
             placeholder="Min"
-            value={budgetMin}
-            onChange={(event) => updateParam("budgetMin", event.target.value || null)}
+            value={localMin}
+            onChange={(event) => setLocalMin(event.target.value)}
             className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm"
           />
           <input
             type="number"
             placeholder="Max"
-            value={budgetMax}
-            onChange={(event) => updateParam("budgetMax", event.target.value || null)}
+            value={localMax}
+            onChange={(event) => setLocalMax(event.target.value)}
             className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm"
           />
         </div>

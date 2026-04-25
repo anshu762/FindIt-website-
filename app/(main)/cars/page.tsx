@@ -4,14 +4,16 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { getAllCars } from "@/lib/api/cars";
 import { Suspense } from "react";
 
+type SearchParamsType = {
+  type?: string;
+  fuelType?: string;
+  brand?: string;
+  budgetMin?: string;
+  budgetMax?: string;
+};
+
 interface CarsPageProps {
-  searchParams?: {
-    type?: string;
-    fuelType?: string;
-    brand?: string;
-    budgetMin?: string;
-    budgetMax?: string;
-  };
+  searchParams: Promise<SearchParamsType>;
 }
 
 function parseCsv(value?: string): string[] | undefined {
@@ -20,7 +22,7 @@ function parseCsv(value?: string): string[] | undefined {
   return parsed.length > 0 ? parsed : undefined;
 }
 
-async function CarsGridSection({ searchParams }: CarsPageProps) {
+async function CarsGridSection({ searchParams }: { searchParams: SearchParamsType }) {
   const budgetMax = searchParams?.budgetMax ? Number(searchParams.budgetMax) : undefined;
 
   const cars = await getAllCars({
@@ -54,14 +56,15 @@ function GridFallback() {
   );
 }
 
-export default function CarsPage({ searchParams }: CarsPageProps) {
+export default async function CarsPage({ searchParams }: CarsPageProps) {
+  const params = await searchParams;
   return (
     <main className="mx-auto min-h-screen w-full max-w-7xl px-4 py-8">
       <h1 className="mb-6 text-2xl font-bold text-slate-900">Browse Cars</h1>
       <div className="grid gap-6 lg:grid-cols-[280px_minmax(0,1fr)]">
         <FilterSidebar />
         <Suspense fallback={<GridFallback />}>
-          <CarsGridSection searchParams={searchParams} />
+          <CarsGridSection searchParams={params} />
         </Suspense>
       </div>
     </main>
