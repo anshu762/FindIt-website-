@@ -17,6 +17,7 @@
     "@hookform/resolvers": "latest",
     "@prisma/client": "^5.22.0",
     "@radix-ui/react-slot": "latest",
+    "@tailwindcss/postcss": "^4.2.4",
     "bcryptjs": "latest",
     "clsx": "latest",
     "framer-motion": "latest",
