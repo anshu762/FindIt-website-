@@ -24,21 +24,17 @@ function parseCsv(value?: string): string[] | undefined {
 
 async function CarsGridSection({ searchParams }: { searchParams: SearchParamsType }) {
   const budgetMax = searchParams?.budgetMax ? Number(searchParams.budgetMax) : undefined;
+  const budgetMin = searchParams?.budgetMin ? Number(searchParams.budgetMin) : undefined;
 
   const cars = await getAllCars({
     type: parseCsv(searchParams?.type),
     fuelType: parseCsv(searchParams?.fuelType),
     brand: parseCsv(searchParams?.brand),
+    budgetMin: Number.isNaN(budgetMin) ? undefined : budgetMin,
     budgetMax: Number.isNaN(budgetMax) ? undefined : budgetMax
   });
 
-  const budgetMin = searchParams?.budgetMin ? Number(searchParams.budgetMin) : undefined;
-  const filteredCars =
-    typeof budgetMin === "number" && !Number.isNaN(budgetMin)
-      ? cars.filter((car) => car.priceMax >= budgetMin)
-      : cars;
-
-  return <CarGrid cars={filteredCars} />;
+  return <CarGrid cars={cars} />;
 }
 
 function GridFallback() {

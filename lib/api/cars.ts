@@ -7,6 +7,7 @@ export interface CarFilters {
   type?: string | string[];
   fuelType?: string | string[];
   brand?: string | string[];
+  budgetMin?: number;
   budgetMax?: number;
 }
 
@@ -64,7 +65,14 @@ function buildWhere(filters: CarFilters): Prisma.CarWhereInput {
     ...(types.length > 0 ? { type: { in: types as Car["type"][] } } : {}),
     ...(fuelTypes.length > 0 ? { fuelType: { in: fuelTypes as Car["fuelType"][] } } : {}),
     ...(brands.length > 0 ? { brand: { in: brands, mode: "insensitive" } } : {}),
-    ...(filters.budgetMax ? { priceMin: { lte: filters.budgetMax } } : {})
+    ...(filters.budgetMin || filters.budgetMax
+      ? {
+          priceMin: {
+            ...(filters.budgetMin ? { gte: filters.budgetMin } : {}),
+            ...(filters.budgetMax ? { lte: filters.budgetMax } : {})
+          }
+        }
+      : {})
   };
 }
 
