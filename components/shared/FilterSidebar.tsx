@@ -41,6 +41,14 @@ const BUDGET_OPTIONS = [
   { label: "2 Crore", value: "20000000" }
 ];
 
+const SEATING_CAPACITIES = [5, 6, 7, 8];
+const MILEAGE_OPTIONS = [
+  { label: "10+ kmpl", value: "10" },
+  { label: "15+ kmpl", value: "15" },
+  { label: "20+ kmpl", value: "20" },
+  { label: "25+ kmpl", value: "25" }
+];
+
 export default function FilterSidebar() {
   const router = useRouter();
   const pathname = usePathname();
@@ -49,9 +57,11 @@ export default function FilterSidebar() {
   const selectedTypes = parseList(searchParams.get("type"));
   const selectedFuel = parseList(searchParams.get("fuelType"));
   const selectedBrand = parseList(searchParams.get("brand"));
+  const selectedSeating = parseList(searchParams.get("seating"));
   
   const budgetMin = searchParams.get("budgetMin") ?? "";
   const budgetMax = searchParams.get("budgetMax") ?? "";
+  const minMileage = searchParams.get("minMileage") ?? "";
 
   const updateParam = (key: string, value: string | null) => {
     const params = new URLSearchParams(searchParams.toString());
@@ -120,6 +130,42 @@ export default function FilterSidebar() {
             </select>
           </div>
         </div>
+      </section>
+
+      <section>
+        <h3 className="mb-2 text-sm font-medium text-slate-700">Seating Capacity</h3>
+        <div className="flex flex-wrap gap-2">
+          {SEATING_CAPACITIES.map((seats) => (
+            <button
+              key={seats}
+              type="button"
+              onClick={() => toggleSelection("seating", selectedSeating, seats.toString())}
+              className={`rounded-md border px-3 py-1.5 text-xs font-medium transition-colors ${
+                selectedSeating.includes(seats.toString())
+                  ? "border-blue-600 bg-blue-50 text-blue-600"
+                  : "border-slate-200 bg-white text-slate-600 hover:border-slate-300"
+              }`}
+            >
+              {seats} Seater
+            </button>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h3 className="mb-2 text-sm font-medium text-slate-700">Minimum Mileage</h3>
+        <select
+          value={minMileage}
+          onChange={(e) => updateParam("minMileage", e.target.value)}
+          className="w-full rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
+        >
+          <option value="">Any Mileage</option>
+          {MILEAGE_OPTIONS.map((opt) => (
+            <option key={opt.value} value={opt.value}>
+              {opt.label}
+            </option>
+          ))}
+        </select>
       </section>
 
       <section>

@@ -10,6 +10,8 @@ type SearchParamsType = {
   brand?: string;
   budgetMin?: string;
   budgetMax?: string;
+  seating?: string;
+  minMileage?: string;
 };
 
 interface CarsPageProps {
@@ -25,11 +27,14 @@ function parseCsv(value?: string): string[] | undefined {
 async function CarsGridSection({ searchParams }: { searchParams: SearchParamsType }) {
   const budgetMax = searchParams?.budgetMax ? Number(searchParams.budgetMax) : undefined;
   const budgetMin = searchParams?.budgetMin ? Number(searchParams.budgetMin) : undefined;
+  const minMileage = searchParams?.minMileage ? Number(searchParams.minMileage) : undefined;
 
   const cars = await getAllCars({
     type: parseCsv(searchParams?.type),
     fuelType: parseCsv(searchParams?.fuelType),
     brand: parseCsv(searchParams?.brand),
+    seatingCapacity: parseCsv(searchParams?.seating)?.map(Number),
+    minMileage: Number.isNaN(minMileage) ? undefined : minMileage,
     budgetMin: Number.isNaN(budgetMin) ? undefined : budgetMin,
     budgetMax: Number.isNaN(budgetMax) ? undefined : budgetMax
   });
