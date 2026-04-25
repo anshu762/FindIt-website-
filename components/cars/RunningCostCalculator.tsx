@@ -1,17 +1,23 @@
-"use client";
-
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { formatPrice } from "@/lib/utils/formatters";
 import { Car } from "@/types";
 import { Calculator, Info } from "lucide-react";
+import { useQuizData } from "@/hooks/use-quiz-data";
 
 interface RunningCostCalculatorProps {
   car: Car;
 }
 
 export default function RunningCostCalculator({ car }: RunningCostCalculatorProps) {
+  const { quizData } = useQuizData();
   const [dailyKm, setDailyKm] = useState(40);
   const [fuelPrice, setFuelPrice] = useState(96); // Average Petrol price in INR
+
+  useEffect(() => {
+    if (quizData?.dailyKm) {
+      setDailyKm(quizData.dailyKm);
+    }
+  }, [quizData]);
 
   const costs = useMemo(() => {
     const monthlyKm = dailyKm * 30;
