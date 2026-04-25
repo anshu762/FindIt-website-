@@ -19,6 +19,7 @@
     "@radix-ui/react-slot": "latest",
     "@tailwindcss/postcss": "^4.2.4",
     "bcryptjs": "latest",
+    "class-variance-authority": "^0.7.1",
     "clsx": "latest",
     "framer-motion": "latest",
     "lucide-react": "latest",
