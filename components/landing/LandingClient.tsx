@@ -22,7 +22,7 @@ interface LandingClientProps {
 }
 
 export default function LandingClient({ featuredCars }: LandingClientProps) {
-  const fadeInUp = {
+  const fadeInUp: any = {
     initial: { opacity: 0, y: 30 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true },

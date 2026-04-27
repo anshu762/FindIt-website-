@@ -2,12 +2,13 @@ import { getCarBySlug } from "@/lib/api/cars";
 import { NextResponse } from "next/server";
 
 interface RouteParams {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
 export async function GET(_: Request, { params }: RouteParams): Promise<NextResponse> {
   try {
-    const car = await getCarBySlug(params.id);
+    const { id } = await params;
+    const car = await getCarBySlug(id);
 
     if (!car) {
       return NextResponse.json({ error: "Car not found." }, { status: 404 });

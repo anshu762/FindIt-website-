@@ -1,4 +1,5 @@
 import { getRecommendations } from "@/lib/api/cars";
+import type { QuizAnswers } from "@/types";
 import { quizSchema } from "@/lib/validations/quiz";
 import { ZodError } from "zod";
 import { NextResponse } from "next/server";
@@ -6,7 +7,7 @@ import { NextResponse } from "next/server";
 export async function POST(request: Request): Promise<NextResponse> {
   try {
     const body: unknown = await request.json();
-    const quiz = quizSchema.parse(body);
+    const quiz = quizSchema.parse(body) as QuizAnswers;
     const recommendations = await getRecommendations(quiz);
 
     return NextResponse.json({ data: recommendations.slice(0, 12) }, { status: 200 });

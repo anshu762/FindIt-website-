@@ -5,7 +5,7 @@ export const quizSchema = z.object({
   dailyKm: z.number().min(1).max(500),
   roadType: z.enum(["city", "highway", "rough", "mixed"]),
   budget: z.number().min(300000).max(10000000),
-  fuelType: z.string().nullable().optional(),
+  fuelType: z.string().nullable(),
   hasDriver: z.boolean()
 });
 

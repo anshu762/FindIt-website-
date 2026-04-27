@@ -69,7 +69,7 @@ export default function DepreciationChart({ car }: DepreciationChartProps) {
                 border: "none",
                 boxShadow: "0 10px 15px -3px rgb(0 0 0 / 0.1)"
               }}
-              formatter={(value: number) => [formatPrice(value), "Estimated Value"]}
+              formatter={(value: any) => [formatPrice(Number(value)), "Estimated Value"]}
             />
             <Area
               type="monotone"
