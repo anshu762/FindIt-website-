@@ -328,7 +328,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     depRate1Yr: 0.82,
     depRate3Yr: 0.65,
     depRate5Yr: 0.49,
-    imageUrl: "https://imgd-ct.aeplcdn.com/664x415/n/cw/ec/149311/nexon-ev-right-front-three-quarter-5.jpeg?isig=0&q=80",
+    imageUrl: "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/141867/nexon-exterior-right-front-three-quarter-79.png?isig=0&q=80&q=80",
     pros: ["5-star safety", "high ground clearance", "feature-rich trims", "strong road presence"],
     cons: ["cabin ergonomics need improvement", "after-sales inconsistency"],
     tags: ["family", "city", "budget"]

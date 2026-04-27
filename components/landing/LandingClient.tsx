@@ -190,17 +190,17 @@ export default function LandingClient({ featuredCars }: LandingClientProps) {
               { 
                 title: "Lifestyle Fit", 
                 desc: "Matches based on your family size, parking space, and road conditions.", 
-                icon: <User className="h-7 w-7 text-blue-600" />
+                icon: <User className="h-7 w-7" />
               },
               { 
                 title: "Real Budgeting", 
                 desc: "Get personalized monthly costs including fuel, service, and insurance.", 
-                icon: <Calculator className="h-7 w-7 text-indigo-600" />
+                icon: <Calculator className="h-7 w-7" />
               },
               { 
                 title: "Future Proofed", 
                 desc: "See exactly how much your car will be worth in 1, 3, and 5 years.", 
-                icon: <TrendingDown className="h-7 w-7 text-emerald-600" />
+                icon: <TrendingDown className="h-7 w-7" />
               }
             ].map((benefit, i) => (
               <motion.div 
@@ -209,7 +209,11 @@ export default function LandingClient({ featuredCars }: LandingClientProps) {
                 transition={{ delay: i * 0.1 }}
                 className="bg-white p-12 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all group"
               >
-                <div className="h-14 w-14 rounded-2xl bg-slate-50 flex items-center justify-center mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                <div className={`h-14 w-14 rounded-2xl flex items-center justify-center mb-8 transition-all duration-500 ${
+                  i === 0 ? "bg-blue-50 text-blue-600" : 
+                  i === 1 ? "bg-indigo-50 text-indigo-600" : 
+                  "bg-emerald-50 text-emerald-600"
+                } group-hover:bg-blue-600 group-hover:text-white`}>
                   {benefit.icon}
                 </div>
                 <h4 className="text-2xl font-bold text-slate-900 mb-4">{benefit.title}</h4>
