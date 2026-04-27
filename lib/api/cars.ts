@@ -104,6 +104,15 @@ export async function getCarBySlug(slug: string): Promise<Car | null> {
   return (car as Car | null) ?? null;
 }
 
+export async function getCarByName(name: string): Promise<Car | null> {
+  const car = await prisma.car.findFirst({
+    where: { name },
+    select: carSelect
+  });
+
+  return (car as Car | null) ?? null;
+}
+
 export async function getCarById(id: string): Promise<Car | null> {
   const car = await prisma.car.findUnique({
     where: { id },

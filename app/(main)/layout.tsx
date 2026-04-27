@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 import { CompareProvider } from "@/context/compare-context";
-import CompareStatusBar from "@/components/cars/CompareStatusBar";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import AuthSessionProvider from "@/components/providers/session-provider";
 
 interface MainLayoutProps {
   children: ReactNode;
@@ -8,9 +10,14 @@ interface MainLayoutProps {
 
 export default function MainLayout({ children }: MainLayoutProps) {
   return (
-    <CompareProvider>
-      {children}
-      <CompareStatusBar />
-    </CompareProvider>
+    <AuthSessionProvider>
+      <CompareProvider>
+        <div className="min-h-screen flex flex-col">
+          <Header />
+          <main className="flex-1 pt-16">{children}</main>
+          <Footer />
+        </div>
+      </CompareProvider>
+    </AuthSessionProvider>
   );
 }

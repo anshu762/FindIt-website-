@@ -1,3 +1,5 @@
+"use client"
+
 import MatchBadge from "@/components/shared/MatchBadge";
 import { Card } from "@/components/ui/card";
 import { formatPrice } from "@/lib/utils/formatters";
@@ -10,9 +12,10 @@ interface CarCardProps {
   car: Car;
   matchScore?: number;
   matchReasons?: string[];
+  hideCompare?: boolean;
 }
 
-export default function CarCard({ car, matchScore, matchReasons }: CarCardProps) {
+export default function CarCard({ car, matchScore, matchReasons, hideCompare }: CarCardProps) {
   const { selectedCars, addToCompare, removeFromCompare, isCompareFull } = useCompare();
   const isSelected = !!selectedCars.find((c) => c.id === car.id);
   const avgMileage = (car.mileageCity + car.mileageHighway) / 2;
@@ -40,19 +43,21 @@ export default function CarCard({ car, matchScore, matchReasons }: CarCardProps)
           />
           <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity" />
           
-          <div className="absolute top-3 left-3">
-            <button
-              onClick={handleCompareClick}
-              disabled={!isSelected && isCompareFull}
-              className={`flex h-8 w-8 items-center justify-center rounded-lg shadow-lg transition-all ${
-                isSelected 
-                  ? "bg-blue-600 text-white scale-110" 
-                  : "bg-white/90 text-slate-900 hover:bg-white hover:scale-105"
-              } disabled:opacity-50 disabled:cursor-not-allowed`}
-            >
-              {isSelected ? <Check className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
-            </button>
-          </div>
+          {!hideCompare && (
+            <div className="absolute top-3 left-3">
+              <button
+                onClick={handleCompareClick}
+                disabled={!isSelected && isCompareFull}
+                className={`flex h-8 w-8 items-center justify-center rounded-lg shadow-lg transition-all ${
+                  isSelected 
+                    ? "bg-blue-600 text-white scale-110" 
+                    : "bg-white/90 text-slate-900 hover:bg-white hover:scale-105"
+                } disabled:opacity-50 disabled:cursor-not-allowed`}
+              >
+                {isSelected ? <Check className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
+              </button>
+            </div>
+          )}
 
           {typeof matchScore === "number" ? (
             <div className="absolute top-3 right-3 shadow-lg">

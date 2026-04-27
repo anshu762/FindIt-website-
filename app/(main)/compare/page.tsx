@@ -3,8 +3,7 @@ import CompareSelector from "@/components/cars/CompareSelector";
 import CompareMatrix from "@/components/cars/CompareMatrix";
 import { getAllCars } from "@/lib/api/cars";
 import { Skeleton } from "@/components/ui/skeleton";
-import Link from "next/link";
-import { ChevronLeft } from "lucide-react";
+import BackButton from "@/components/shared/BackButton";
 
 interface ComparePageProps {
   searchParams: Promise<{ ids?: string }>;
@@ -33,13 +32,7 @@ export default async function ComparePage({ searchParams }: ComparePageProps) {
 
   return (
     <main className="mx-auto min-h-screen w-full max-w-7xl px-4 py-8 space-y-8">
-      <Link
-        href="/cars"
-        className="inline-flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-blue-600 transition-colors"
-      >
-        <ChevronLeft className="h-4 w-4" />
-        Back to Browse
-      </Link>
+      <BackButton label="Back to Browse" />
 
       <div className="text-center max-w-2xl mx-auto">
         <h1 className="text-4xl font-extrabold text-slate-900 tracking-tight">Compare Cars</h1>
