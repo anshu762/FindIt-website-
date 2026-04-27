@@ -57,7 +57,7 @@ export default function ResultsPage() {
       <p className="text-sm text-slate-600">
         We found {payload.results.length} cars matching your lifestyle.
       </p>
-      <CarGrid cars={payload.results} withScores />
+      <CarGrid cars={payload.results} withScores hideCompare />
     </main>
   );
 }

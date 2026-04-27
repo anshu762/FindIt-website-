@@ -7,9 +7,10 @@ import Link from "next/link";
 interface CarGridProps {
   cars: Array<Car | CarWithScore>;
   withScores?: boolean;
+  hideCompare?: boolean;
 }
 
-export default function CarGrid({ cars, withScores = false }: CarGridProps) {
+export default function CarGrid({ cars, withScores = false, hideCompare = false }: CarGridProps) {
   if (cars.length === 0) {
     return (
       <div className="rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-8 text-center">
@@ -36,6 +37,7 @@ export default function CarGrid({ cars, withScores = false }: CarGridProps) {
           car={car}
           matchScore={withScores && "matchScore" in car ? car.matchScore : undefined}
           matchReasons={withScores && "matchReasons" in car ? car.matchReasons : undefined}
+          hideCompare={hideCompare}
         />
       ))}
     </div>

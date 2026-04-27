@@ -88,9 +88,11 @@ export default function Header() {
                   <p className="text-sm font-bold text-slate-900">{session.user?.name}</p>
                   <p className="text-xs text-slate-500 truncate">{session.user?.email}</p>
                 </div>
-                <DropdownMenuItem className="rounded-xl focus:bg-slate-50 cursor-pointer py-2.5">
-                  <UserIcon className="mr-2 h-4 w-4" /> Profile
-                </DropdownMenuItem>
+                <Link href="/dashboard">
+                  <DropdownMenuItem className="rounded-xl focus:bg-slate-50 cursor-pointer py-2.5">
+                    <BarChart3 className="mr-2 h-4 w-4" /> Dashboard
+                  </DropdownMenuItem>
+                </Link>
                 <DropdownMenuItem 
                   onClick={() => signOut()}
                   className="rounded-xl focus:bg-red-50 focus:text-red-600 text-red-600 cursor-pointer py-2.5"
@@ -129,6 +131,15 @@ export default function Header() {
                 <SheetTitle className="text-left text-2xl font-black">FindIt<span className="text-blue-600">.</span></SheetTitle>
               </SheetHeader>
               <div className="flex flex-col p-4 gap-2">
+                {session && (
+                  <Link
+                    href="/dashboard"
+                    className="flex items-center gap-4 px-4 py-4 text-lg font-bold text-blue-600 bg-blue-50/50 rounded-2xl transition-all mb-2"
+                  >
+                    <div className="p-2 rounded-xl bg-blue-100/50"><BarChart3 className="h-4 w-4" /></div>
+                    Your Dashboard
+                  </Link>
+                )}
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}

@@ -3,6 +3,8 @@ import FilterSidebar from "@/components/shared/FilterSidebar";
 import { Skeleton } from "@/components/ui/skeleton";
 import { getAllCars } from "@/lib/api/cars";
 import { Suspense } from "react";
+import CompareStatusBar from "@/components/cars/CompareStatusBar";
+import BackButton from "@/components/shared/BackButton";
 
 type SearchParamsType = {
   type?: string;
@@ -60,14 +62,16 @@ function GridFallback() {
 export default async function CarsPage({ searchParams }: CarsPageProps) {
   const params = await searchParams;
   return (
-    <main className="mx-auto min-h-screen w-full max-w-7xl px-4 py-8">
-      <h1 className="mb-6 text-2xl font-bold text-slate-900">Browse Cars</h1>
+    <main className="mx-auto min-h-screen w-full max-w-7xl px-4 py-8 space-y-4">
+      <BackButton />
+      <h1 className="text-2xl font-bold text-slate-900">Browse Cars</h1>
       <div className="grid gap-6 lg:grid-cols-[280px_minmax(0,1fr)]">
         <FilterSidebar />
         <Suspense fallback={<GridFallback />}>
           <CarsGridSection searchParams={params} />
         </Suspense>
       </div>
+      <CompareStatusBar />
     </main>
   );
 }

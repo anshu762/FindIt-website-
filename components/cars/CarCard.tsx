@@ -4,20 +4,29 @@ import MatchBadge from "@/components/shared/MatchBadge";
 import { Card } from "@/components/ui/card";
 import { formatPrice } from "@/lib/utils/formatters";
 import type { Car } from "@/types";
-import { Gauge, Users, Plus, Check } from "lucide-react";
+import { Gauge, Users, Plus, Check, Bookmark, BookmarkCheck, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { useCompare } from "@/context/compare-context";
+import { useSession } from "next-auth/react";
+import { toggleSaveCar } from "@/lib/actions/user";
+import { useState } from "react";
 
 interface CarCardProps {
   car: Car;
   matchScore?: number;
   matchReasons?: string[];
   hideCompare?: boolean;
+  isInitialSaved?: boolean;
 }
 
-export default function CarCard({ car, matchScore, matchReasons, hideCompare }: CarCardProps) {
+export default function CarCard({ car, matchScore, matchReasons, hideCompare, isInitialSaved }: CarCardProps) {
+  const { data: session } = useSession();
   const { selectedCars, addToCompare, removeFromCompare, isCompareFull } = useCompare();
+  const [isSaved, setIsSaved] = useState(isInitialSaved);
+  const [saving, setSaving] = useState(false);
+
   const isSelected = !!selectedCars.find((c) => c.id === car.id);
+  const showSelection = !hideCompare && isSelected;
   const avgMileage = (car.mileageCity + car.mileageHighway) / 2;
 
   const handleCompareClick = (e: React.MouseEvent) => {
@@ -30,10 +39,23 @@ export default function CarCard({ car, matchScore, matchReasons, hideCompare }: 
     }
   };
 
+  const handleSaveClick = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!session) return;
+    
+    setSaving(true);
+    const result = await toggleSaveCar(car.id);
+    if (result.success) {
+      setIsSaved(result.isSaved);
+    }
+    setSaving(false);
+  };
+
   return (
     <Link href={`/cars/${car.slug}`} className="block group">
       <Card className={`overflow-hidden transition-all duration-300 border-2 ${
-        isSelected ? "border-blue-500 shadow-lg ring-1 ring-blue-500" : "border-transparent hover:-translate-y-1 hover:shadow-md"
+        showSelection ? "border-blue-500 shadow-lg ring-1 ring-blue-500" : "border-transparent hover:-translate-y-1 hover:shadow-md"
       }`}>
         <div className="relative h-44 w-full overflow-hidden">
           <img
@@ -43,8 +65,8 @@ export default function CarCard({ car, matchScore, matchReasons, hideCompare }: 
           />
           <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity" />
           
-          {!hideCompare && (
-            <div className="absolute top-3 left-3">
+          <div className="absolute top-3 left-3 flex flex-col gap-2">
+            {!hideCompare && (
               <button
                 onClick={handleCompareClick}
                 disabled={!isSelected && isCompareFull}
@@ -56,8 +78,28 @@ export default function CarCard({ car, matchScore, matchReasons, hideCompare }: 
               >
                 {isSelected ? <Check className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
               </button>
-            </div>
-          )}
+            )}
+
+            {session && (
+              <button
+                onClick={handleSaveClick}
+                disabled={saving}
+                className={`flex h-8 w-8 items-center justify-center rounded-lg shadow-lg transition-all ${
+                  isSaved 
+                    ? "bg-indigo-600 text-white" 
+                    : "bg-white/90 text-slate-900 hover:bg-white hover:scale-105"
+                } disabled:opacity-50`}
+              >
+                {saving ? (
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                ) : isSaved ? (
+                  <BookmarkCheck className="h-4 w-4" />
+                ) : (
+                  <Bookmark className="h-4 w-4" />
+                )}
+              </button>
+            )}
+          </div>
 
           {typeof matchScore === "number" ? (
             <div className="absolute top-3 right-3 shadow-lg">

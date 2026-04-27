@@ -16,23 +16,6 @@ const CompareContext = createContext<CompareContextType | undefined>(undefined);
 export function CompareProvider({ children }: { children: React.ReactNode }) {
   const [selectedCars, setSelectedCars] = useState<Car[]>([]);
 
-  // Load from locale storage on mount
-  useEffect(() => {
-    const saved = localStorage.getItem("findit_compare");
-    if (saved) {
-      try {
-        setSelectedCars(JSON.parse(saved));
-      } catch (e) {
-        console.error("Failed to parse saved comparison", e);
-      }
-    }
-  }, []);
-
-  // Save to locale storage on change
-  useEffect(() => {
-    localStorage.setItem("findit_compare", JSON.stringify(selectedCars));
-  }, [selectedCars]);
-
   const addToCompare = (car: Car) => {
     setSelectedCars((prev) => {
       if (prev.find((c) => c.id === car.id)) return prev;

@@ -3,7 +3,18 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ArrowRight, Calculator, Car, User, CheckCircle2, Shield, TrendingDown, Star } from "lucide-react";
+import { 
+  ArrowRight, 
+  Calculator, 
+  Car, 
+  User, 
+  CheckCircle2, 
+  TrendingDown, 
+  Zap,
+  ChevronDown,
+  ShieldCheck,
+  Star
+} from "lucide-react";
 import CarCard from "@/components/cars/CarCard";
 
 interface LandingClientProps {
@@ -15,222 +26,258 @@ export default function LandingClient({ featuredCars }: LandingClientProps) {
     initial: { opacity: 0, y: 30 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true },
-    transition: { duration: 0.6, ease: "easeOut" }
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
   };
 
   return (
-    <>
-      {/* 1. HERO SECTION */}
-      <section className="relative min-h-[90vh] flex items-center justify-center pt-20 pb-20 px-4">
-        {/* Subtle Grid Background */}
-        <div className="absolute inset-0 -z-10 bg-white">
-          <div className="absolute h-full w-full bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
+    <div className="bg-white">
+      {/* 1. REFINED LIGHT HERO SECTION */}
+      <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-slate-50/50">
+        <div className="absolute inset-0 -z-0">
+           <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-600/5 blur-[120px] rounded-full" />
+           <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-indigo-600/5 blur-[100px] rounded-full" />
         </div>
 
-        <div className="max-w-5xl mx-auto text-center space-y-8">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-sm font-bold mb-4"
-          >
-            <Star className="h-4 w-4 fill-current" />
-            <span>India&apos;s #1 Lifestyle-First Car Finder</span>
-          </motion.div>
+        <div className="max-w-7xl mx-auto px-4 w-full relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+            {/* Left Content */}
+            <div className="flex-1 space-y-8 text-center lg:text-left">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-bold uppercase tracking-widest shadow-sm"
+              >
+                <div className="flex h-2 w-2 rounded-full bg-blue-500" />
+                The Future of Car Buying
+              </motion.div>
 
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-5xl md:text-7xl font-black text-slate-900 leading-[1.1] tracking-tight"
-          >
-            Find the car that <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">fits your life.</span>
-          </motion.h1>
+              <motion.h1 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-5xl md:text-7xl font-black text-slate-900 leading-[1.05] tracking-tighter"
+              >
+                Find the car that <br />
+                <span className="text-blue-600">fits your lifestyle.</span>
+              </motion.h1>
 
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed"
-          >
-            Answer 6 simple questions. Get personalized recommendations with real running costs, safety insights, and resale value predictions.
-          </motion.p>
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                className="text-lg md:text-xl text-slate-600 max-w-2xl leading-relaxed"
+              >
+                Calculated for you, not the brochure. Get personalized recommendations with real running costs, safety ratings, and resale value predictions.
+              </motion.p>
 
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
-          >
-            <Link href="/quiz">
-              <Button size="lg" className="h-14 px-10 rounded-2xl text-lg font-bold bg-slate-900 shadow-2xl shadow-slate-200 hover:-translate-y-1 transition-transform group">
-                Start Quiz
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
-            <Link href="/cars">
-              <Button size="lg" variant="ghost" className="h-14 px-10 rounded-2xl text-lg font-bold text-slate-600 hover:bg-slate-50 transition-all">
-                Browse All Cars
-              </Button>
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.8 }}
+                className="flex flex-col sm:flex-row items-center gap-4 pt-4 lg:justify-start justify-center"
+              >
+                <Link href="/quiz">
+                  <Button size="lg" className="h-16 px-10 rounded-2xl text-lg font-bold bg-slate-900 shadow-xl shadow-slate-200 hover:-translate-y-1 transition-all group">
+                    Start Lifestyle Quiz
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+                <Link href="/cars">
+                  <Button size="lg" variant="ghost" className="h-16 px-10 rounded-2xl text-lg font-bold text-slate-600 hover:bg-white hover:shadow-sm border border-transparent hover:border-slate-100 transition-all">
+                    Browse All Cars
+                  </Button>
+                </Link>
+              </motion.div>
 
-      {/* 2. HOW IT WORKS */}
-      <section id="how-it-works" className="py-24 px-4 bg-slate-50/50">
-        <div className="max-w-7xl mx-auto">
-          <motion.div {...fadeInUp} className="text-center mb-20 space-y-4">
-            <h2 className="text-4xl font-bold text-slate-900">How FindIt Works</h2>
-            <p className="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
-              We move beyond generic specs to tell you how a car actually impacts your wallet and life.
-            </p>
-          </motion.div>
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.6 }}
+                className="flex items-center gap-6 pt-8 lg:justify-start justify-center"
+              >
+                <div className="flex -space-x-3">
+                  {[1,2,3,4].map(i => (
+                    <div key={i} className="h-10 w-10 rounded-full border-2 border-white bg-slate-100 overflow-hidden">
+                      <img src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${i + 10}`} alt="User" />
+                    </div>
+                  ))}
+                  <div className="h-10 w-10 rounded-full border-2 border-white bg-blue-600 flex items-center justify-center text-[10px] font-bold text-white">
+                    50k+
+                  </div>
+                </div>
+                <div className="text-sm">
+                  <p className="font-bold text-slate-900">Trusted by Indian Buyers</p>
+                  <p className="text-slate-500 font-medium whitespace-nowrap">Join our community of smart owners</p>
+                </div>
+              </motion.div>
+            </div>
 
-          <div className="relative grid md:grid-cols-3 gap-12">
-            {/* Step 1 */}
-            <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="relative bg-white p-8 rounded-3xl shadow-sm border border-slate-100 group hover:shadow-xl transition-shadow">
-               <div className="h-16 w-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6 ring-8 ring-blue-50/50">
-                <User className="h-8 w-8" />
+            {/* Right Image */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="flex-1 relative"
+            >
+              <div className="relative z-10 w-full max-w-[600px] lg:ml-auto">
+                 {/* Visual Polish */}
+                 <div className="absolute -top-10 -left-10 w-40 h-40 bg-blue-100 rounded-full blur-[60px] opacity-60" />
+                 <div className="absolute -bottom-10 -right-10 w-60 h-60 bg-indigo-100 rounded-full blur-[80px] opacity-40" />
+                 
+                 <div className="rounded-[40px] overflow-hidden shadow-2xl relative border-8 border-white group">
+                    <img 
+                      src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=1200" 
+                      alt="Modern SUV"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute bottom-6 left-6 right-6 p-6 rounded-3xl bg-white/90 backdrop-blur-md border border-white shadow-lg space-y-2">
+                       <div className="flex justify-between items-center">
+                          <span className="text-xs font-bold text-blue-600 uppercase tracking-widest">Recommended SUV</span>
+                          <div className="flex gap-1 text-amber-400"><Star className="h-3 w-3 fill-current" /><Star className="h-3 w-3 fill-current" /><Star className="h-3 w-3 fill-current" /></div>
+                       </div>
+                       <p className="text-lg font-black text-slate-900">Fits your Family & Budget</p>
+                    </div>
+                 </div>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">1. Tell us your life</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Family size, daily driving distance, and road conditions. Simple lifestyle inputs.
-              </p>
-              <div className="hidden md:block absolute top-1/2 -right-6 h-px w-12 bg-slate-200" />
-            </motion.div>
-
-            {/* Step 2 */}
-            <motion.div {...fadeInUp} transition={{ delay: 0.3 }} className="relative bg-white p-8 rounded-3xl shadow-sm border border-slate-100 group hover:shadow-xl transition-shadow">
-               <div className="h-16 w-16 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center mb-6 ring-8 ring-indigo-50/50">
-                <Car className="h-8 w-8" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">2. We match your cars</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Our algorithm scores 100+ cars based on your unique needs to find the perfect fits.
-              </p>
-              <div className="hidden md:block absolute top-1/2 -right-6 h-px w-12 bg-slate-200" />
-            </motion.div>
-
-            {/* Step 3 */}
-            <motion.div {...fadeInUp} transition={{ delay: 0.5 }} className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 group hover:shadow-xl transition-shadow">
-               <div className="h-16 w-16 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 ring-8 ring-emerald-50/50">
-                <Calculator className="h-8 w-8" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">3. See the real cost</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Get dynamic monthly expenses and 5-year resale predictions before you step into a showroom.
-              </p>
             </motion.div>
           </div>
         </div>
+
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:block">
+           <motion.div animate={{ y: [0, 5, 0] }} transition={{ repeat: Infinity, duration: 2 }} className="text-slate-300">
+             <ChevronDown className="h-6 w-6" />
+           </motion.div>
+        </div>
       </section>
 
-      {/* 3. FEATURE HIGHLIGHTS */}
-      <section className="py-24 px-4">
-        <div className="max-w-7xl mx-auto space-y-20">
-          <motion.div {...fadeInUp} className="text-center space-y-4">
-            <h2 className="text-4xl font-bold text-slate-900">Why choose FindIt?</h2>
-            <p className="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
-              We&apos;re solving the confusion of car buying with data-driven transparency.
+      {/* 2. STATS BAR (Modern) */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+           <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+              {[
+                { label: "Cars Analyzed", value: "100+", icon: <Car className="h-5 w-5" /> },
+                { label: "Recommendation Match", value: "97%", icon: <CheckCircle2 className="h-5 w-5" /> },
+                { label: "Happy Buyers", value: "50k+", icon: <User className="h-5 w-5" /> },
+                { label: "Resale Insight", value: "5 Years", icon: <TrendingDown className="h-5 w-5" /> },
+              ].map((stat, i) => (
+                <div key={i} className="flex flex-col items-center lg:items-start space-y-3 p-6 rounded-3xl hover:bg-slate-50 transition-colors">
+                  <div className="h-10 w-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                    {stat.icon}
+                  </div>
+                  <p className="text-4xl font-black text-slate-900">{stat.value}</p>
+                  <p className="text-sm font-bold text-slate-400 uppercase tracking-widest leading-none">{stat.label}</p>
+                </div>
+              ))}
+           </div>
+        </div>
+      </section>
+
+      {/* 3. CORE BENEFITS (Relatable How It Works) */}
+      <section className="py-32 px-4 bg-slate-50/50">
+        <div className="max-w-7xl mx-auto space-y-24">
+          <motion.div {...fadeInUp} className="max-w-3xl space-y-4">
+            <h2 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tight leading-none">
+              Car buying, <br /><span className="text-blue-600">reimagined.</span>
+            </h2>
+            <p className="text-lg md:text-xl text-slate-600 font-medium">
+              We focus on how you live, not just what the sales brochure tells you.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-3 gap-12">
             {[
               { 
-                title: "Lifestyle Matching", 
-                desc: "Matches based on family & parking, not just price.", 
-                icon: <User className="h-6 w-6" />,
-                color: "blue"
+                title: "Lifestyle Fit", 
+                desc: "Matches based on your family size, parking space, and road conditions.", 
+                icon: <User className="h-7 w-7 text-blue-600" />
               },
               { 
-                title: "Real Running Costs", 
-                desc: "Live calculations including fuel, insurance & service.", 
-                icon: <Calculator className="h-6 w-6" />,
-                color: "emerald"
+                title: "Real Budgeting", 
+                desc: "Get personalized monthly costs including fuel, service, and insurance.", 
+                icon: <Calculator className="h-7 w-7 text-indigo-600" />
               },
               { 
-                title: "Depreciation Tracker", 
-                desc: "Accurate resale value predictions over 5 years.", 
-                icon: <TrendingDown className="h-6 w-6" />,
-                color: "amber"
-              },
-              { 
-                title: "Side-by-Side Compare", 
-                desc: "Elite matrix comparing costs, not just engine specs.", 
-                icon: <CheckCircle2 className="h-6 w-6" />,
-                color: "indigo"
+                title: "Future Proofed", 
+                desc: "See exactly how much your car will be worth in 1, 3, and 5 years.", 
+                icon: <TrendingDown className="h-7 w-7 text-emerald-600" />
               }
-            ].map((f, i) => (
+            ].map((benefit, i) => (
               <motion.div 
-                key={f.title}
+                key={i}
                 {...fadeInUp}
                 transition={{ delay: i * 0.1 }}
-                className="p-8 rounded-3xl bg-slate-50 hover:bg-white border border-transparent hover:border-slate-100 transition-all group"
+                className="bg-white p-12 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all group"
               >
-                <div className={`h-12 w-12 rounded-xl bg-white shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                  {f.icon}
+                <div className="h-14 w-14 rounded-2xl bg-slate-50 flex items-center justify-center mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                  {benefit.icon}
                 </div>
-                <h4 className="font-bold text-slate-900 mb-2">{f.title}</h4>
-                <p className="text-sm text-slate-500 leading-relaxed">{f.desc}</p>
+                <h4 className="text-2xl font-bold text-slate-900 mb-4">{benefit.title}</h4>
+                <p className="text-slate-500 leading-relaxed font-medium">
+                  {benefit.desc}
+                </p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 4. SAMPLE CAR CARDS */}
-      <section className="py-24 px-4 bg-slate-900 text-white rounded-[3rem] mx-4 my-8 overflow-hidden">
+      {/* 4. FEATURED COLLECTION */}
+      <section className="py-32 px-4">
         <div className="max-w-7xl mx-auto space-y-16">
-          <motion.div {...fadeInUp} className="flex flex-col md:flex-row items-end justify-between gap-6">
+          <div className="flex flex-col md:flex-row justify-between items-end gap-8">
             <div className="space-y-4">
-              <h2 className="text-4xl font-black tracking-tight">Most Searched Cars</h2>
-              <p className="text-slate-400 text-lg max-w-xl">
-                Ready to explore? Here are some of India&apos;s favorites that users are currently comparing.
+              <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">Top Recommended.</h2>
+              <p className="text-slate-500 text-lg md:text-xl max-w-xl font-medium">
+                The current leaders in family comfort, city efficiency, and resale value.
               </p>
             </div>
             <Link href="/cars">
-              <Button variant="default" className="rounded-2xl bg-white text-slate-900 hover:bg-slate-100 px-6 font-bold">
-                View All 100+ Cars
+              <Button variant="outline" className="h-14 px-10 rounded-2xl border-2 border-slate-100 font-bold hover:bg-slate-900 hover:text-white transition-all">
+                Browse Full List
               </Button>
             </Link>
-          </motion.div>
+          </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-10">
             {featuredCars.map((car, i) => (
               <motion.div 
                 key={car.id}
                 {...fadeInUp}
                 transition={{ delay: i * 0.15 }}
-                className="text-slate-900"
               >
-                <CarCard car={car} hideCompare />
+                 <CarCard car={car} hideCompare />
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 5. FINAL CTA BANNER */}
-      <section className="py-32 px-4 text-center">
-        <div className="max-w-3xl mx-auto space-y-10">
-          <motion.h2 {...fadeInUp} className="text-4xl md:text-5xl font-black text-slate-900">
-            Ready to find your perfect car match?
-          </motion.h2>
-          <motion.p {...fadeInUp} className="text-lg text-slate-600">
-            It takes less than 2 minutes and could save you from years of regret. Join 50,000+ users finding better cars.
-          </motion.p>
-          <motion.div {...fadeInUp} className="flex justify-center">
+      {/* 5. FINAL CTA (Premium Dark) */}
+      <section className="py-24 px-4">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          className="bg-slate-900 rounded-[3rem] p-12 md:p-24 text-center space-y-10 relative overflow-hidden"
+        >
+          <div className="absolute top-0 right-0 w-80 h-80 bg-blue-600/20 blur-[100px] -z-10" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-indigo-600/20 blur-[120px] -z-10" />
+          
+          <h2 className="text-5xl md:text-8xl font-black text-white tracking-tighter leading-none">
+            Find yours <br />today.
+          </h2>
+          <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto font-medium">
+            Join 50k+ Indian buyers who found the right car without the stress.
+          </p>
+          <div className="flex justify-center pt-8">
              <Link href="/quiz">
-              <Button size="lg" className="h-16 px-12 rounded-2xl text-xl font-bold bg-blue-600 hover:bg-blue-700 shadow-2xl shadow-blue-200">
-                Start My Quiz Now
+              <Button size="lg" className="h-20 px-16 rounded-full text-2xl font-black bg-blue-600 hover:bg-blue-500 transition-all shadow-[0_0_40px_rgba(37,99,235,0.4)]">
+                START QUIZ
               </Button>
             </Link>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </section>
-    </>
+    </div>
   );
 }
