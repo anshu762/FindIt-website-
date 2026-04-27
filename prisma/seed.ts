@@ -28,7 +28,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     depRate1Yr: 0.84,
     depRate3Yr: 0.68,
     depRate5Yr: 0.53,
-    imageUrl: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=600&h=400&fit=crop",
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj_JYNnZNYoLinkR8t5_8beeuImeDboKQ-sQ&s",
     pros: ["great fuel economy", "easy city driving", "low maintenance cost", "wide service network"],
     cons: ["rear seat comfort is average", "basic cabin quality", "highway stability could improve"],
     tags: ["city", "budget", "family"]
@@ -58,7 +58,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     depRate1Yr: 0.82,
     depRate3Yr: 0.66,
     depRate5Yr: 0.5,
-    imageUrl: "https://images.unsplash.com/photo-1542224566-6e85f2e6772f?w=600&h=400&fit=crop",
+    imageUrl: "https://imgd.aeplcdn.com/664x374/n/cw/ec/158139/i20-n-line-exterior-right-front-three-quarter-16.png?isig=0&q=80",
     pros: ["premium interiors", "feature loaded variants", "refined petrol engine", "good boot space"],
     cons: ["not the most fuel efficient", "rear headroom is tight"],
     tags: ["city", "sporty", "family"]
@@ -88,7 +88,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     depRate1Yr: 0.81,
     depRate3Yr: 0.64,
     depRate5Yr: 0.48,
-    imageUrl: "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=600&h=400&fit=crop",
+    imageUrl: "https://stimg.cardekho.com/images/carexteriorimages/930x620/Tata/Altroz/12614/1770888054138/front-left-side-47.jpg",
     pros: ["5-star safety rating", "solid build quality", "large boot for hatchback", "comfortable ride"],
     cons: ["engine feels less punchy", "service quality varies by city"],
     tags: ["family", "city", "budget"]
@@ -118,7 +118,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     depRate1Yr: 0.84,
     depRate3Yr: 0.69,
     depRate5Yr: 0.54,
-    imageUrl: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=600&h=400&fit=crop",
+    imageUrl: "https://imgd.aeplcdn.com/642x336/n/cw/ec/102663/baleno-exterior-right-front-three-quarter-69.png?isig=0&q=80",
     pros: ["excellent mileage", "spacious rear seat", "smooth automatic option", "low running costs"],
     cons: ["safety rating could be better", "steering feedback is light"],
     tags: ["city", "family", "budget"]
@@ -148,7 +148,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     depRate1Yr: 0.79,
     depRate3Yr: 0.61,
     depRate5Yr: 0.45,
-    imageUrl: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=600&h=400&fit=crop",
+    imageUrl: "https://stimg.cardekho.com/images/carexteriorimages/930x620/Honda/Jazz/6489/1677825341880/front-left-side-47.jpg",
     pros: ["very practical cabin", "magic seats flexibility", "reliable ivtec engine"],
     cons: ["older design", "limited variant choices", "discontinued in many markets"],
     tags: ["family", "city", "spacious"]
@@ -178,7 +178,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     depRate1Yr: 0.8,
     depRate3Yr: 0.64,
     depRate5Yr: 0.49,
-    imageUrl: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=600&h=400&fit=crop",
+    imageUrl: "https://stimg.cardekho.com/images/carexteriorimages/930x620/Honda/City/12093/1755764990493/front-left-side-47.jpg",
     pros: ["premium cabin feel", "class-leading rear space", "refined engine", "big boot"],
     cons: ["lower variants miss features", "ground clearance is moderate"],
     tags: ["family", "highway", "spacious"]
@@ -208,7 +208,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     depRate1Yr: 0.83,
     depRate3Yr: 0.67,
     depRate5Yr: 0.52,
-    imageUrl: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&h=400&fit=crop",
+    imageUrl: "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/48542/ciaz-exterior-right-side-view.jpeg?q=80&q=80",
     pros: ["great mileage for sedan", "comfortable rear seat", "low upkeep cost"],
     cons: ["interior design feels dated", "limited engine options"],
     tags: ["family", "highway", "budget"]
@@ -238,7 +238,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     depRate1Yr: 0.8,
     depRate3Yr: 0.63,
     depRate5Yr: 0.47,
-    imageUrl: "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=600&h=400&fit=crop",
+    imageUrl: "https://imgd.aeplcdn.com/642x336/n/cw/ec/41197/hyundai-verna-right-front-three-quarter7.jpeg?q=80",
     pros: ["powerful turbo engine", "segment-best features", "large boot space", "good safety package"],
     cons: ["design may not suit everyone", "rear headroom is average"],
     tags: ["sporty", "highway", "family"]
@@ -268,7 +268,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     depRate1Yr: 0.78,
     depRate3Yr: 0.6,
     depRate5Yr: 0.44,
-    imageUrl: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&h=400&fit=crop",
+    imageUrl: "https://stimg.cardekho.com/images/carexteriorimages/930x620/Skoda/Slavia/11810/1762938173534/front-left-side-47.jpg",
     pros: ["strong performance", "european driving dynamics", "huge boot capacity"],
     cons: ["maintenance cost is higher", "rear seat width is average"],
     tags: ["sporty", "highway", "luxury"]
@@ -298,7 +298,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     depRate1Yr: 0.78,
     depRate3Yr: 0.6,
     depRate5Yr: 0.44,
-    imageUrl: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=600&h=400&fit=crop",
+    imageUrl: "https://imgd.aeplcdn.com/642x361/n/cw/ec/184551/volkswagen-virtus-right-front-three-quarter0.jpeg?isig=0&q=75",
     pros: ["great high-speed stability", "solid build quality", "powerful gt variant", "large boot"],
     cons: ["service network is smaller", "top variants are expensive"],
     tags: ["sporty", "highway", "luxury"]
@@ -328,7 +328,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     depRate1Yr: 0.82,
     depRate3Yr: 0.65,
     depRate5Yr: 0.49,
-    imageUrl: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=600&h=400&fit=crop",
+    imageUrl: "https://imgd-ct.aeplcdn.com/664x415/n/cw/ec/149311/nexon-ev-right-front-three-quarter-5.jpeg?isig=0&q=80",
     pros: ["5-star safety", "high ground clearance", "feature-rich trims", "strong road presence"],
     cons: ["cabin ergonomics need improvement", "after-sales inconsistency"],
     tags: ["family", "city", "budget"]
@@ -358,7 +358,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     depRate1Yr: 0.84,
     depRate3Yr: 0.68,
     depRate5Yr: 0.54,
-    imageUrl: "https://images.unsplash.com/photo-1563720360172-67b8f3dce741?w=600&h=400&fit=crop",
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-zHg3VfFFCOh0fwENPRGUKwXhIi8nt4pSWw&s",
     pros: ["reliable ownership", "good mileage", "wide service reach"],
     cons: ["boot space is average", "interior quality is decent not premium"],
     tags: ["family", "city", "budget"]
@@ -388,7 +388,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     depRate1Yr: 0.82,
     depRate3Yr: 0.65,
     depRate5Yr: 0.5,
-    imageUrl: "https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?w=600&h=400&fit=crop",
+    imageUrl: "https://www.carandbike.com/_next/image?url=https%3A%2F%2Fimages.carandbike.com%2Fcar-images%2Fgallery%2Fhyundai%2Fvenue%2Fexterior%2Fhyundai_venue_sideview.jpg%3Fv%3D1763533769&w=640&q=90",
     pros: ["compact and easy to park", "feature-packed cabin", "refined turbo engine"],
     cons: ["rear space is tight for three", "ride can feel firm"],
     tags: ["city", "sporty", "budget"]
@@ -418,7 +418,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     depRate1Yr: 0.81,
     depRate3Yr: 0.64,
     depRate5Yr: 0.48,
-    imageUrl: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=600&h=400&fit=crop",
+    imageUrl: "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/174423/sonet-exterior-left-front-three-quarter.jpeg?isig=0&q=80&q=80",
     pros: ["premium cabin design", "many transmission options", "good feature list", "strong urban appeal"],
     cons: ["rear seat is not the widest", "suspension is on firmer side"],
     tags: ["city", "sporty", "family"]
@@ -448,7 +448,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     depRate1Yr: 0.8,
     depRate3Yr: 0.62,
     depRate5Yr: 0.46,
-    imageUrl: "https://images.unsplash.com/photo-1542362567-b07e54358753?w=600&h=400&fit=crop",
+    imageUrl: "https://stimg.cardekho.com/images/carexteriorimages/930x620/Mahindra/XUV300/6794/1701855582193/front-left-side-47.jpg",
     pros: ["excellent safety score", "strong turbo torque", "stable ride quality"],
     cons: ["small boot space", "cabin feels dated"],
     tags: ["family", "city", "budget"]
@@ -478,7 +478,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     depRate1Yr: 0.82,
     depRate3Yr: 0.66,
     depRate5Yr: 0.51,
-    imageUrl: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=600&h=400&fit=crop",
+    imageUrl: "https://media.zigcdn.com/media/model/2026/Feb/front-1-4-left-1724564915_600x400.jpg",
     pros: ["segment benchmark features", "comfortable ride", "strong resale value", "good cabin quality"],
     cons: ["base variants miss features", "safety rating could be better"],
     tags: ["family", "city", "highway"]
@@ -508,7 +508,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     depRate1Yr: 0.81,
     depRate3Yr: 0.64,
     depRate5Yr: 0.49,
-    imageUrl: "https://images.unsplash.com/photo-1547744152-14d985cb937f?w=600&h=400&fit=crop",
+    imageUrl: "https://stimg.cardekho.com/images/carexteriorimages/930x620/Kia/Seltos/7111/1678424780936/front-left-side-47.jpg",
     pros: ["powerful turbo option", "premium interiors", "advanced adas features", "great infotainment"],
     cons: ["ride quality is a bit stiff", "higher variants are pricey"],
     tags: ["sporty", "family", "highway"]
@@ -538,7 +538,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     depRate1Yr: 0.79,
     depRate3Yr: 0.61,
     depRate5Yr: 0.45,
-    imageUrl: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&h=400&fit=crop",
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsDXM_oJlzTY63PV8K5ED88I0Liczr0Pvthg&s",
     pros: ["solid road presence", "5-star safety", "strong diesel performance", "comfortable highway manners"],
     cons: ["city drivability can feel bulky", "higher maintenance than compact suvs"],
     tags: ["highway", "family", "spacious"]
@@ -568,7 +568,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     depRate1Yr: 0.77,
     depRate3Yr: 0.59,
     depRate5Yr: 0.43,
-    imageUrl: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&h=400&fit=crop",
+    imageUrl: "https://imgd.aeplcdn.com/664x374/n/cw/ec/130583/hector-exterior-right-front-three-quarter-73.jpeg?isig=0&q=80",
     pros: ["massive cabin space", "huge touchscreen", "comfortable seats", "good highway cruiser"],
     cons: ["fuel efficiency is low", "soft handling around corners"],
     tags: ["spacious", "family", "highway"]
@@ -598,7 +598,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     depRate1Yr: 0.8,
     depRate3Yr: 0.63,
     depRate5Yr: 0.47,
-    imageUrl: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&h=400&fit=crop",
+    imageUrl: "https://stimg.cardekho.com/images/carexteriorimages/630x420/Mahindra/XUV700/10794/1762509966753/front-left-side-47.jpg?tr=w-664",
     pros: ["strong performance options", "adas and tech loaded", "5-star safety", "available 7-seater"],
     cons: ["long waiting periods in some cities", "third row is best for kids"],
     tags: ["family", "highway", "spacious"]
@@ -628,7 +628,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     depRate1Yr: 0.82,
     depRate3Yr: 0.69,
     depRate5Yr: 0.56,
-    imageUrl: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=600&h=400&fit=crop",
+    imageUrl: "https://mda.spinny.com/sp-file-system/public/2025-04-03/b895649aac3e40a0b692627684c0163a/raw/file.JPG",
     pros: ["legendary reliability", "very comfortable second row", "excellent resale value", "great long-distance comfort"],
     cons: ["pricey for features offered", "diesel only now"],
     tags: ["family", "spacious", "highway"]
@@ -658,7 +658,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     depRate1Yr: 0.8,
     depRate3Yr: 0.63,
     depRate5Yr: 0.48,
-    imageUrl: "https://images.unsplash.com/photo-1550355291-bbee04a92027?w=600&h=400&fit=crop",
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuZ7bSPNjOan8_OeTbElOjK_1YD5m9ZpBrgQ&s",
     pros: ["great family practicality", "comfortable three rows", "feature rich cabin", "multiple powertrains"],
     cons: ["third-row boot space is limited", "not as rugged as suvs"],
     tags: ["family", "spacious", "city"]
@@ -688,7 +688,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     depRate1Yr: 0.83,
     depRate3Yr: 0.67,
     depRate5Yr: 0.53,
-    imageUrl: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&h=400&fit=crop",
+    imageUrl: "https://5.imimg.com/data5/HX/OP/GLADMIN-13487668/maruti-ertiga-cat.png",
     pros: ["excellent value for large families", "very low running costs", "good comfort for segment"],
     cons: ["safety package is basic", "performance is modest when fully loaded"],
     tags: ["family", "budget", "spacious"]
@@ -718,7 +718,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     depRate1Yr: 0.8,
     depRate3Yr: 0.62,
     depRate5Yr: 0.46,
-    imageUrl: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600&h=400&fit=crop",
+    imageUrl: "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/40432/scorpio-n-exterior-right-front-three-quarter-4.png?isig=0&q=80&q=80",
     pros: ["strong road presence", "powerful engines", "good offroad capability", "robust build"],
     cons: ["body roll at speed", "fit and finish can vary"],
     tags: ["offroad", "family", "highway"]
@@ -748,7 +748,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     depRate1Yr: 0.76,
     depRate3Yr: 0.57,
     depRate5Yr: 0.42,
-    imageUrl: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=600&h=400&fit=crop",
+    imageUrl: "https://images.timesdrive.in/photo/msid-151013918,thumbsize-434500/151013918.jpg",
     pros: ["premium cabin finish", "proper suv stance", "stable highway behavior", "good safety kit"],
     cons: ["expensive to own", "third row best for children"],
     tags: ["luxury", "highway", "family"]
@@ -778,7 +778,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     depRate1Yr: 0.79,
     depRate3Yr: 0.61,
     depRate5Yr: 0.45,
-    imageUrl: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&h=400&fit=crop",
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdARTKGho4ToEgLpEkaP7hjttGu88vxLP4_A&s",
     pros: ["captain-seat option", "5-star safety", "feature rich top trims", "strong highway comfort"],
     cons: ["third row space is average", "diesel-only lineup"],
     tags: ["family", "spacious", "highway"]
@@ -808,7 +808,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     depRate1Yr: 0.78,
     depRate3Yr: 0.6,
     depRate5Yr: 0.44,
-    imageUrl: "https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=600&h=400&fit=crop",
+    imageUrl: "https://cdn.skoda-auto.com/images/external/a720b3257fb9f34c9f582f866b15d4b7/DerivativeIntroductionModule/517a7c8aa96236dc9d8954f4916e42718d6bf87515b75d7ab74272b3bc3277bf/Default_bp1920_1.webp",
     pros: ["excellent driving dynamics", "strong safety package", "punchy turbo engines", "good highway confidence"],
     cons: ["rear seat is not the widest", "service cost is above average"],
     tags: ["sporty", "highway", "luxury"]
@@ -838,7 +838,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     depRate1Yr: 0.77,
     depRate3Yr: 0.58,
     depRate5Yr: 0.43,
-    imageUrl: "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=600&h=400&fit=crop",
+    imageUrl: "https://hips.hearstapps.com/hmg-prod/images/2026-hyundai-tucson-hybrid-pr-101-68a38aa37ded6.jpg?crop=0.682xw:0.576xh;0.129xw,0.338xh&resize=1200:*",
     pros: ["premium global design", "very comfortable cabin", "good adas package", "large boot space"],
     cons: ["high initial price", "fuel efficiency is average"],
     tags: ["luxury", "family", "highway"]
@@ -868,7 +868,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     depRate1Yr: 0.78,
     depRate3Yr: 0.58,
     depRate5Yr: 0.41,
-    imageUrl: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=600&h=400&fit=crop",
+    imageUrl: "https://imgd-ct.aeplcdn.com/664x415/n/cw/ec/149311/nexon-ev-right-front-three-quarter-5.jpeg?isig=0&q=80",
     pros: ["low running cost", "instant torque performance", "good city range", "5-star safety"],
     cons: ["charging network still growing", "highway range drops noticeably"],
     tags: ["ev", "city", "family"]
@@ -898,7 +898,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     depRate1Yr: 0.76,
     depRate3Yr: 0.56,
     depRate5Yr: 0.4,
-    imageUrl: "https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=600&h=400&fit=crop",
+    imageUrl: "https://stimg.cardekho.com/images/carexteriorimages/930x620/MG/ZS-EV/6873/1612778753498/front-left-side-47.jpg",
     pros: ["strong real-world range", "premium feature list", "quick acceleration", "comfortable family suv"],
     cons: ["higher upfront cost", "service footprint smaller than mass brands"],
     tags: ["ev", "luxury", "family"]
