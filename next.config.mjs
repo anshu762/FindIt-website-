@@ -14,7 +14,8 @@ const nextConfig = {
       { protocol: 'https', hostname: 'cdn.skoda-auto.com' },
       { protocol: 'https', hostname: 'hips.hearstapps.com' },
       { protocol: 'https', hostname: 'images.timesdrive.in' },
-      { protocol: 'https', hostname: 'stimg.cardekho.com' }
+      { protocol: 'https', hostname: 'stimg.cardekho.com' },
+      { protocol: 'https', hostname: 'www.carandbike.com' }
     ],
   },
 };
