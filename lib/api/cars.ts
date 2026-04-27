@@ -125,7 +125,9 @@ export async function getCarById(id: string): Promise<Car | null> {
 export async function getRecommendations(quiz: QuizAnswers): Promise<CarWithScore[]> {
   const cars = await prisma.car.findMany({
     where: {
-      priceMin: { lte: quiz.budget * 1.1 }
+      priceMin: { lte: quiz.budget * 1.05 },
+      seatingCapacity: { gte: quiz.familySize },
+      ...(quiz.fuelType ? { fuelType: { equals: quiz.fuelType as any } } : {})
     },
     select: carSelect
   });
