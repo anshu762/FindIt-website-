@@ -7,6 +7,7 @@ import prisma from "@/lib/db/prisma"
 export const { handlers, auth, signIn, signOut } = NextAuth({
   adapter: PrismaAdapter(prisma),
   debug: process.env.NODE_ENV === "development",
+  trustHost: true,
   providers: [
     Credentials({
       name: "credentials",
