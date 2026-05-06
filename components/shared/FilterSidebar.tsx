@@ -4,6 +4,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const CAR_TYPES = ["SUV", "Sedan", "Hatchback", "MUV", "Crossover"] as const;
 const FUEL_TYPES = ["Petrol", "Diesel", "CNG", "Electric", "Hybrid"] as const;
+const TRANSMISSIONS = ["Manual", "Automatic"] as const;
 const BRANDS = [
   "Maruti",
   "Hyundai",
@@ -58,6 +59,7 @@ export default function FilterSidebar() {
   const selectedFuel = parseList(searchParams.get("fuelType"));
   const selectedBrand = parseList(searchParams.get("brand"));
   const selectedSeating = parseList(searchParams.get("seating"));
+  const selectedTransmission = parseList(searchParams.get("transmission"));
   
   const budgetMin = searchParams.get("budgetMin") ?? "";
   const budgetMax = searchParams.get("budgetMax") ?? "";
@@ -195,6 +197,24 @@ export default function FilterSidebar() {
                 onChange={() => toggleSelection("fuelType", selectedFuel, fuelType)}
               />
               {fuelType}
+            </label>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h3 className="mb-2 text-sm font-medium text-slate-700">Transmission</h3>
+        <div className="space-y-2">
+          {TRANSMISSIONS.map((transmission) => (
+            <label key={transmission} className="flex items-center gap-2 text-sm text-slate-700">
+              <input
+                type="checkbox"
+                checked={selectedTransmission.includes(transmission)}
+                onChange={() =>
+                  toggleSelection("transmission", selectedTransmission, transmission)
+                }
+              />
+              {transmission}
             </label>
           ))}
         </div>

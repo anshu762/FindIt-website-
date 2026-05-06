@@ -11,6 +11,7 @@ export interface CarFilters {
   budgetMax?: number;
   seatingCapacity?: number | number[];
   minMileage?: number;
+  transmission?: string | string[];
 }
 
 const carSelect = Prisma.validator<Prisma.CarSelect>()({
@@ -67,12 +68,20 @@ function buildWhere(filters: CarFilters): Prisma.CarWhereInput {
     : filters.seatingCapacity
       ? [filters.seatingCapacity]
       : [];
+  const transmissions = Array.isArray(filters.transmission)
+    ? filters.transmission
+    : filters.transmission
+      ? [filters.transmission]
+      : [];
 
   return {
     ...(types.length > 0 ? { type: { in: types as Car["type"][] } } : {}),
     ...(fuelTypes.length > 0 ? { fuelType: { in: fuelTypes as Car["fuelType"][] } } : {}),
     ...(brands.length > 0 ? { brand: { in: brands, mode: "insensitive" } } : {}),
     ...(seats.length > 0 ? { seatingCapacity: { in: seats } } : {}),
+    ...(transmissions.length > 0
+      ? { transmission: { in: transmissions as Car["transmission"][] } }
+      : {}),
     ...(filters.minMileage ? { mileageHighway: { gte: filters.minMileage } } : {}),
     ...(filters.budgetMin || filters.budgetMax
       ? {

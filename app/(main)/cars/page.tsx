@@ -14,6 +14,7 @@ type SearchParamsType = {
   budgetMax?: string;
   seating?: string;
   minMileage?: string;
+  transmission?: string;
 };
 
 interface CarsPageProps {
@@ -38,7 +39,8 @@ async function CarsGridSection({ searchParams }: { searchParams: SearchParamsTyp
     seatingCapacity: parseCsv(searchParams?.seating)?.map(Number),
     minMileage: Number.isNaN(minMileage) ? undefined : minMileage,
     budgetMin: Number.isNaN(budgetMin) ? undefined : budgetMin,
-    budgetMax: Number.isNaN(budgetMax) ? undefined : budgetMax
+    budgetMax: Number.isNaN(budgetMax) ? undefined : budgetMax,
+    transmission: parseCsv(searchParams?.transmission)
   });
 
   return <CarGrid cars={cars} />;
