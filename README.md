@@ -1,8 +1,8 @@
-# FindIt. - Car Buying, Reimagined. 🚗✨
+# DiscoverMyCar. - Car Buying, Reimagined. 🚗✨
 
-FindIt is a premium, AI-driven car recommendation platform designed specifically for the unique needs of the Indian market. Unlike traditional search engines, FindIt focuses on your **lifestyle, family needs, and real ownership costs** to help you find the car that truly fits.
+DiscoverMyCar is a premium, AI-driven car recommendation platform designed specifically for the unique needs of the Indian market. Unlike traditional search engines, DiscoverMyCar focuses on your **lifestyle, family needs, and real ownership costs** to help you find the car that truly fits.
 
-![FindIt Banner](app/icon.png)
+![DiscoverMyCar Banner](app/icon.png)
 
 ## 🌟 Key Features
 
@@ -44,8 +44,8 @@ Side-by-side comparison of up to 3 vehicles with a focus on metrics that matter�
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/anshu762/FindIt-website-
-cd FindIt-website-
+git clone https://github.com/anshu762/DiscoverMyCar-website-
+cd DiscoverMyCar-website-
 ```
 
 ### 2. Install dependencies
@@ -77,7 +77,7 @@ npm run dev
 
 ## 🧠 The Recommendation Engine
 
-FindIt uses a specialized algorithm called **WMCS (Weighted Multi-Constraint Scoring)**.
+DiscoverMyCar uses a specialized algorithm called **WMCS (Weighted Multi-Constraint Scoring)**.
 
 1.  **Hard Filters**: Eliminates cars that don't meet minimum requirements (Seating, Budget, Fuel preference).
 2.  **Weighted Dimension Scoring**:

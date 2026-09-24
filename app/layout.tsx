@@ -7,7 +7,7 @@ interface RootLayoutProps {
 }
 
 export const metadata: Metadata = {
-  title: "FindIt",
+  title: "DiscoverMyCar",
   description: "Premium car recommendation app for the Indian market."
 };
 

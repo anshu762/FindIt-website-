@@ -78,7 +78,7 @@ export default function QuizContainer() {
 
       const result: RecommendationApiResponse = await response.json();
       sessionStorage.setItem(
-        "findit_results",
+        "DiscoverMyCar_results",
         JSON.stringify({
           quiz: payload,
           results: result.data

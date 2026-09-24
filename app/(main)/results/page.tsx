@@ -17,7 +17,7 @@ export default function ResultsPage() {
   const [payload, setPayload] = useState<StoredResults | null>(null);
 
   useEffect(() => {
-    const raw = sessionStorage.getItem("findit_results");
+    const raw = sessionStorage.getItem("DiscoverMyCar_results");
     if (!raw) return;
 
     try {

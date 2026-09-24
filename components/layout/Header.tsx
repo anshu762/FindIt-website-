@@ -52,7 +52,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="group flex items-center gap-1">
           <span className="text-2xl font-black tracking-tighter text-slate-900">
-            FindIt<span className="text-blue-600">.</span>
+            DiscoverMyCar<span className="text-blue-600">.</span>
           </span>
         </Link>
 
@@ -128,7 +128,7 @@ export default function Header() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px] border-l-0 p-0">
               <SheetHeader className="p-6 border-b border-slate-50">
-                <SheetTitle className="text-left text-2xl font-black">FindIt<span className="text-blue-600">.</span></SheetTitle>
+                <SheetTitle className="text-left text-2xl font-black">DiscoverMyCar<span className="text-blue-600">.</span></SheetTitle>
               </SheetHeader>
               <div className="flex flex-col p-4 gap-2">
                 {session && (

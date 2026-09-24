@@ -69,7 +69,7 @@ export default function LoginPage() {
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 transition-transform duration-300 group-hover:scale-110">
               <span className="text-xl font-bold text-white italic">F.</span>
             </div>
-            <span className="text-2xl font-bold tracking-tight text-slate-900">FindIt.</span>
+            <span className="text-2xl font-bold tracking-tight text-slate-900">DiscoverMyCar.</span>
           </Link>
           <h1 className="text-[1.75rem] font-bold tracking-tight text-slate-900">Log in to your account</h1>
           <p className="mt-2 text-sm font-medium text-slate-500">Welcome back! Please enter your details.</p>

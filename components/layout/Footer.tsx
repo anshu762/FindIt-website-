@@ -17,7 +17,7 @@ export default function Footer() {
       links: [
         { label: "How it Works", href: "/#how-it-works" },
         { label: "Maintenance Tips", href: "#" },
-        { label: "About FindIt", href: "#" },
+        { label: "About DiscoverMyCar", href: "#" },
       ],
     },
     {
@@ -36,7 +36,7 @@ export default function Footer() {
           <div className="space-y-6">
             <Link href="/" className="inline-block">
               <span className="text-3xl font-black tracking-tighter text-white">
-                FindIt<span className="text-blue-500">.</span>
+                DiscoverMyCar<span className="text-blue-500">.</span>
               </span>
             </Link>
             <p className="max-w-xs text-sm leading-relaxed text-slate-400">
@@ -67,7 +67,7 @@ export default function Footer() {
 
         <div className="mt-20 border-t border-slate-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-slate-500 font-medium">
-            © {currentYear} FindIt Technologies. Built with precision for the Indian market.
+            © {currentYear} DiscoverMyCar Technologies. Built with precision for the Indian market.
           </p>
           <div className="flex items-center gap-6">
             <Link href="#" className="text-slate-500 hover:text-white transition-colors">

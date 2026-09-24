@@ -8,7 +8,7 @@ export function useQuizData() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const saved = sessionStorage.getItem("findit_results");
+    const saved = sessionStorage.getItem("DiscoverMyCar_results");
     if (saved) {
       try {
         const { quiz } = JSON.parse(saved);
