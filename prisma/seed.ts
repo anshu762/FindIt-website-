@@ -1452,7 +1452,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     depRate1Yr: 0.82,
     depRate3Yr: 0.65,
     depRate5Yr: 0.50,
-    imageUrl: "https://www.autovista.in/assets/img/new_cars_colour_variants/Alto_K10-brown.png",
+    imageUrl: "https://stimg.cardekho.com/images/carexteriorimages/930x620/Maruti/Alto-K10/10331/1775800207841/front-left-side-47.jpg",
     pros: [
       "Most affordable and reliable entry-level car",
       "Perfect dimensions for tight city traffic",
