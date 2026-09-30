@@ -67,7 +67,7 @@ export default function LoginPage() {
         <div className="mb-12 flex flex-col items-center">
           <Link href="/" className="mb-4 flex items-center gap-2 group">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 transition-transform duration-300 group-hover:scale-110">
-              <span className="text-xl font-bold text-white italic">F.</span>
+              <span className="text-xl font-bold text-white italic">D.</span>
             </div>
             <span className="text-2xl font-bold tracking-tight text-slate-900">DiscoverMyCar.</span>
           </Link>

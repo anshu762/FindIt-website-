@@ -24,7 +24,7 @@ export default function QuizPage() {
         </div>
 
         <div className="mb-8 text-center">
-          <h1 className="text-4xl font-black tracking-tight text-slate-900 sm:text-5xl">Find your perfect car</h1>
+          <h1 className="text-4xl font-black tracking-tight text-slate-900 sm:text-5xl">Discover your perfect car</h1>
           <p className="mt-3 text-lg font-medium text-slate-500 italic">
             Complete this quick lifestyle quiz to get curated recommendations.
           </p>

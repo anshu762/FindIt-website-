@@ -16,15 +16,15 @@ export default function Footer() {
       title: "Information",
       links: [
         { label: "How it Works", href: "/#how-it-works" },
-        { label: "Maintenance Tips", href: "#" },
-        { label: "About DiscoverMyCar", href: "#" },
+        { label: "Maintenance Tips", href: "/maintenance-tips" },
+        { label: "About DiscoverMyCar", href: "/about" },
       ],
     },
     {
       title: "Legal",
       links: [
-        { label: "Privacy Policy", href: "#" },
-        { label: "Terms of Service", href: "#" },
+        { label: "Privacy Policy", href: "/privacy-policy" },
+        { label: "Terms of Service", href: "/terms-of-service" },
       ],
     },
   ];
@@ -39,8 +39,10 @@ export default function Footer() {
                 DiscoverMyCar<span className="text-blue-500">.</span>
               </span>
             </Link>
+
             <p className="max-w-xs text-sm leading-relaxed text-slate-400">
-              India&apos;s smartest car recommendation platform. Helping you find the right car based on your lifestyle, not just specs.
+              India&apos;s smartest car recommendation platform. Helping you
+              discover the right car based on your lifestyle, not just specs.
             </p>
           </div>
 
@@ -49,6 +51,7 @@ export default function Footer() {
               <h4 className="text-sm font-bold uppercase tracking-widest text-white">
                 {section.title}
               </h4>
+
               <ul className="space-y-3">
                 {section.links.map((link) => (
                   <li key={link.label}>
@@ -65,17 +68,30 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-20 border-t border-slate-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-slate-500 font-medium">
-            © {currentYear} DiscoverMyCar Technologies. Built with precision for the Indian market.
+        <div className="mt-20 flex flex-col items-center justify-between gap-4 border-t border-slate-800 pt-8 md:flex-row">
+          <p className="text-xs font-medium text-slate-500">
+            © {currentYear} DiscoverMyCar Technologies. Built with precision
+            for the Indian market.
           </p>
+
           <div className="flex items-center gap-6">
-            <Link href="#" className="text-slate-500 hover:text-white transition-colors">
+            <a
+              href="https://twitter.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-slate-500 transition-colors hover:text-white"
+            >
               Twitter
-            </Link>
-            <Link href="#" className="text-slate-500 hover:text-white transition-colors">
+            </a>
+
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-slate-500 transition-colors hover:text-white"
+            >
               Instagram
-            </Link>
+            </a>
           </div>
         </div>
       </div>

@@ -58,7 +58,7 @@ export default function LandingClient({ featuredCars }: LandingClientProps) {
                 transition={{ duration: 0.8 }}
                 className="text-5xl md:text-7xl font-black text-slate-900 leading-[1.05] tracking-tighter"
               >
-                Find the car that <br />
+                Discover the car that <br />
                 <span className="text-blue-600">fits your lifestyle.</span>
               </motion.h1>
 
@@ -268,10 +268,10 @@ export default function LandingClient({ featuredCars }: LandingClientProps) {
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-indigo-600/20 blur-[120px] -z-10" />
           
           <h2 className="text-5xl md:text-8xl font-black text-white tracking-tighter leading-none">
-            Find yours <br />today.
+            Discover yours <br />today.
           </h2>
           <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto font-medium">
-            Join 50k+ Indian buyers who found the right car without the stress.
+            Join 50k+ Indian buyers who discovered the right car without the stress.
           </p>
           <div className="flex justify-center pt-8">
              <Link href="/quiz">
