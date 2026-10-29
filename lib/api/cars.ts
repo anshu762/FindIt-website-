@@ -79,24 +79,52 @@ function buildWhere(filters: CarFilters): Prisma.CarWhereInput {
       ? [filters.transmission]
       : [];
 
-  return {
-    ...(types.length > 0 ? { type: { in: types as Car["type"][] } } : {}),
-    ...(fuelTypes.length > 0 ? { fuelType: { in: fuelTypes as Car["fuelType"][] } } : {}),
-    ...(expandedBrands.length > 0 ? { brand: { in: expandedBrands, mode: "insensitive" } } : {}),
-    ...(seats.length > 0 ? { seatingCapacity: { in: seats } } : {}),
-    ...(transmissions.length > 0
-      ? { transmission: { in: transmissions as Car["transmission"][] } }
-      : {}),
-    ...(filters.minMileage ? { mileageHighway: { gte: filters.minMileage } } : {}),
-    ...(filters.budgetMin || filters.budgetMax
-      ? {
-          priceMin: {
-            ...(filters.budgetMin ? { gte: filters.budgetMin } : {}),
-            ...(filters.budgetMax ? { lte: filters.budgetMax } : {})
-          }
-        }
-      : {})
-  };
+  const andClauses: Prisma.CarWhereInput[] = [];
+
+  if (types.length > 0) {
+    andClauses.push({ type: { in: types as Car["type"][] } });
+  }
+
+  if (fuelTypes.length > 0) {
+    andClauses.push({
+      OR: [
+        { fuelType: { in: fuelTypes as Car["fuelType"][] } },
+        { tags: { hasSome: fuelTypes as string[] } }
+      ]
+    });
+  }
+
+  if (expandedBrands.length > 0) {
+    andClauses.push({ brand: { in: expandedBrands, mode: "insensitive" } });
+  }
+
+  if (seats.length > 0) {
+    andClauses.push({ seatingCapacity: { in: seats } });
+  }
+
+  if (transmissions.length > 0) {
+    andClauses.push({
+      OR: [
+        { transmission: { in: transmissions as Car["transmission"][] } },
+        { tags: { hasSome: transmissions as string[] } }
+      ]
+    });
+  }
+
+  if (filters.minMileage) {
+    andClauses.push({ mileageHighway: { gte: filters.minMileage } });
+  }
+
+  if (filters.budgetMin || filters.budgetMax) {
+    andClauses.push({
+      priceMin: {
+        ...(filters.budgetMin ? { gte: filters.budgetMin } : {}),
+        ...(filters.budgetMax ? { lte: filters.budgetMax } : {})
+      }
+    });
+  }
+
+  return andClauses.length > 0 ? { AND: andClauses } : {};
 }
 
 export async function getAllCars(filters: CarFilters = {}): Promise<Car[]> {

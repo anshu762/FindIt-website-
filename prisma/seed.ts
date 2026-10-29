@@ -31,7 +31,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     imageUrl: "https://stimg.cardekho.com/images/carexteriorimages/930x620/Maruti/Alto-K10/10331/1775800207841/front-left-side-47.jpg",
     pros: ["Most affordable entry hatchback","Ultra-low maintenance cost","Effortless city maneuverability","Great fuel economy"],
     cons: ["Basic cabin plastics","Tight rear legroom","Moderate highway stability"],
-    tags: ["Hatchback","Entry Level","Budget","City Car","Fuel Efficient"]
+    tags: ["Hatchback","Petrol","CNG","Manual","Automatic","Entry Level","Budget","City Car","Fuel Efficient"]
   },
   {
     slug: "maruti-s-presso",
@@ -61,7 +61,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     imageUrl: "https://stimg.cardekho.com/images/carexteriorimages/930x620/Maruti/S-Presso/10347/1762859376235/front-left-side-47.jpg",
     pros: ["High SUV-like ground clearance (180mm)","Very easy ingress and egress","Peppy K10C engine","High seating position"],
     cons: ["Center-mounted instrument cluster","Squarish upright proportions","Light steering at highway speeds"],
-    tags: ["Hatchback","Mini SUV","City Car","Budget","High Clearance"]
+    tags: ["Hatchback","Petrol","CNG","Manual","Automatic","Mini SUV","City Car","Budget","High Clearance"]
   },
   {
     slug: "maruti-celerio",
@@ -91,7 +91,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     imageUrl: "https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/Celerio/10355/1762857367030/front-left-side-47.jpg",
     pros: ["Segment-leading ARAI fuel efficiency","Smooth AMT automatic transmission","Decent boot space for compact size","Light control setup"],
     cons: ["Missing premium interior soft-touches","NVH levels higher at high revs"],
-    tags: ["Hatchback","Fuel Efficient","City Car","Automatic","Practical"]
+    tags: ["Hatchback","Petrol","CNG","Manual","Automatic","Fuel Efficient","City Car","Practical"]
   },
   {
     slug: "maruti-wagon-r",
@@ -121,7 +121,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     imageUrl: "https://imgd.aeplcdn.com/1056x594/n/7lto5ua_1560265.jpg?q=80",
     pros: ["Iconic tall-boy headroom and cabin roominess","Exceptionally low running cost with factory CNG","Large 341L boot space","Proven durability"],
     cons: ["Body roll at highway speeds","Cabin insulation could be better"],
-    tags: ["Hatchback","CNG","Spacious","Tall Boy","Family Car","Budget"]
+    tags: ["Hatchback","Petrol","CNG","Manual","Automatic","Spacious","Tall Boy","Family Car","Budget"]
   },
   {
     slug: "maruti-swift",
@@ -151,7 +151,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     imageUrl: "https://stimg.cardekho.com/images/carexteriorimages/930x620/Maruti/Swift/9226/1755777061785/front-left-side-47.jpg",
     pros: ["New 2024 generation design and sharp LED styling","Superb real-world fuel economy","Agile handling and peppy drive","6 airbags standard"],
     cons: ["Moderate rear legroom","Boot space smaller than Baleno"],
-    tags: ["Hatchback","Sporty","Popular","City Car","Youth"]
+    tags: ["Hatchback","Petrol","CNG","Manual","Automatic","Sporty","Popular","City Car","Youth"]
   },
   {
     slug: "maruti-baleno",
@@ -181,7 +181,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     imageUrl: "https://imgd.aeplcdn.com/642x336/n/cw/ec/102663/baleno-exterior-right-front-three-quarter-69.png?isig=0&q=80",
     pros: ["Spacious premium interior with Heads-Up Display","360-degree camera on top trims","Smooth automatic drive","Plush ride comfort"],
     cons: ["Steering returns slowly to center","CVT replaced by AMT"],
-    tags: ["Hatchback","Premium","Feature Rich","Family Car","Automatic"]
+    tags: ["Hatchback","Petrol","CNG","Manual","Automatic","Premium","Feature Rich","Family Car"]
   },
   {
     slug: "maruti-ignis",
@@ -211,7 +211,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     imageUrl: "https://stimg.cardekho.com/images/carexteriorimages/930x620/Maruti/Ignis/10318/1762858603393/front-left-side-47.jpg",
     pros: ["Distinctive funky styling and urban stance","Punchy 1.2L 4-cylinder engine","Generous 180mm ground clearance","Compact footprint for easy parking"],
     cons: ["Polarizing rear-end styling","Suspension feels firm over potholes"],
-    tags: ["Hatchback","Urban Compact","Sporty","City Car","Nexa"]
+    tags: ["Hatchback","Petrol","Manual","Automatic","Urban Compact","Sporty","City Car","Nexa"]
   },
   {
     slug: "maruti-fronx",
@@ -241,7 +241,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     imageUrl: "https://stimg.cardekho.com/images/carexteriorimages/930x620/Maruti/FRONX/9916/1771931850505/front-left-side-47.jpg",
     pros: ["Striking coupe-SUV silhouette with Grand Vitara front fascia","Punchy 1.0L BoosterJet Turbo engine option","High 190mm ground clearance","Modern dual-tone cabin with 9-inch infotainment"],
     cons: ["Rear headroom slightly constrained by sloping roof","No rear armrest"],
-    tags: ["Crossover","Turbo","Coupe SUV","Stylish","Automatic","Nexa"]
+    tags: ["Crossover","Petrol","CNG","Manual","Automatic","Turbo","Coupe SUV","Stylish","Nexa"]
   },
   {
     slug: "maruti-dzire",
@@ -271,7 +271,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     imageUrl: "https://imgd.aeplcdn.com/1056x594/n/cw/ec/45691/dzire-exterior-right-front-three-quarter-3.jpeg?q=80",
     pros: ["Historic 5-star Bharat/Global NCAP safety rating","Class-leading comfort and electric sunroof on top trim","Remarkable 25+ kmpl highway fuel efficiency","Huge 382L boot"],
     cons: ["3-cylinder engine sound at high RPMs","Modest rear center passenger room"],
-    tags: ["Sedan","Safe","Fuel Efficient","Family Sedan","Sunroof","Automatic"]
+    tags: ["Sedan","Petrol","CNG","Manual","Automatic","Safe","Fuel Efficient","Family Sedan","Sunroof"]
   },
   {
     slug: "maruti-brezza",
@@ -301,7 +301,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     imageUrl: "https://stimg.cardekho.com/images/carexteriorimages/930x620/Maruti/Brezza/13709/1785846873395/front-left-side-47.jpg",
     pros: ["Imposing SUV stance and high seating","Refined 1.5L 4-cylinder engine with Smart Hybrid","Sunroof, 360-camera and wireless charging","Exceptional resale value"],
     cons: ["Interior plastics are functional rather than luxurious","Boot space is average"],
-    tags: ["SUV","Family SUV","Reliable","High Clearance","Sunroof","Automatic"]
+    tags: ["SUV","Petrol","CNG","Hybrid","Manual","Automatic","Family SUV","Reliable","High Clearance","Sunroof"]
   },
   {
     slug: "maruti-grand-vitara",
@@ -331,7 +331,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     imageUrl: "https://stimg.cardekho.com/images/carexteriorimages/930x620/Maruti/Grand-Vitara/10508/1779258364618/front-left-side-47.jpg",
     pros: ["Exceptional 27.97 kmpl Intelligent Electric Hybrid efficiency","Massive panoramic sunroof and ventilated front seats","Rugged 210mm ground clearance with ALLGRIP AWD option","Toyota-partnered hybrid reliability"],
     cons: ["Strong Hybrid battery takes up some boot space","Cabin width is moderate for 3 adults in the back"],
-    tags: ["SUV","Hybrid","Panoramic Sunroof","Premium","AWD","Automatic"]
+    tags: ["SUV","Hybrid","Petrol","CNG","Manual","Automatic","Panoramic Sunroof","Premium","AWD"]
   },
   {
     slug: "maruti-jimny",
@@ -361,7 +361,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     imageUrl: "https://stimg.cardekho.com/images/carexteriorimages/930x620/Maruti/Jimny/6182/1784178896232/front-left-side-47.jpg",
     pros: ["Authentic ladder-frame chassis with ALLGRIP PRO 4x4 low range","Practical 5-door convenience with go-anywhere dimensions","Rigid axles front and rear for incredible off-road capability","Heritage boxy retro offroader styling"],
     cons: ["Strict 4-seater only","Sedate acceleration on open highways"],
-    tags: ["SUV","4x4","Off-Road","Adventure","Ladder Frame","Tough"]
+    tags: ["SUV","Petrol","Manual","Automatic","4x4","Off-Road","Adventure","Ladder Frame","Tough"]
   },
   {
     slug: "maruti-ertiga",
@@ -391,7 +391,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     imageUrl: "https://stimg.cardekho.com/images/carexteriorimages/930x620/Maruti/Ertiga/10288/1755776579514/front-left-side-47.jpg",
     pros: ["Undisputed leader in practical 7-seater family MPV segment","Very low running costs with factory S-CNG technology","Flexible seating with reclining middle and third rows","Highest resale value in MPV category"],
     cons: ["Boot space limited with all 3 rows up","High waiting period in metropolitan cities"],
-    tags: ["MUV","7 Seater","CNG","Family Car","Spacious","Commercial"]
+    tags: ["MUV","CNG","Petrol","Manual","Automatic","7 Seater","Family Car","Spacious","Commercial"]
   },
   {
     slug: "maruti-xl6",
@@ -421,7 +421,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     imageUrl: "https://stimg.cardekho.com/images/carexteriorimages/930x620/Maruti/XL6/10378/1762863855359/front-left-side-47.jpg",
     pros: ["Luxurious second-row Captain Seats with armrests","Ventilated front seats and tire pressure monitor","Smooth 6-speed torque converter AT with paddle shifters","Rugged body cladding and smoked LED tail lamps"],
     cons: ["Engine feels relaxed rather than enthusiastic when fully loaded","6 seats maximum (no 7-seater option)"],
-    tags: ["MUV","6 Seater","Captain Seats","Premium MPV","Automatic","Nexa"]
+    tags: ["MUV","Petrol","Manual","Automatic","6 Seater","Captain Seats","Premium MPV","Nexa"]
   },
   {
     slug: "maruti-invicto",
@@ -451,7 +451,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     imageUrl: "https://stimg.cardekho.com/images/carexteriorimages/930x620/Maruti/Invicto/9483/1762858847096/front-left-side-47.jpg",
     pros: ["Flagship Nexa MPV built on TNGA monocoque platform","Superb 2.0L Strong Hybrid performance with 23+ kmpl efficiency","Panoramic sunroof, powered Ottoman captain seats and dual-zone climate","Top-tier ride quality and whisper quiet EV mode"],
     cons: ["Highest price point in Maruti Suzuki lineup","No ADAS in Invicto compared to Hycross"],
-    tags: ["MUV","Luxury MPV","Hybrid","Flagship","Captain Seats","Automatic","Nexa"]
+    tags: ["MUV","Hybrid","Automatic","Luxury MPV","Flagship","Captain Seats","Nexa"]
   },
   {
     slug: "maruti-e-vitara",
@@ -481,7 +481,7 @@ const cars: Prisma.CarCreateManyInput[] = [
     imageUrl: "https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/e-Vitara/13326/1771560398854/front-left-side-47.jpg",
     pros: ["First all-electric SUV from Maruti Suzuki with global skateboard platform","Up to 60 kWh LFP blade battery offering 500 km range","Dual integrated infotainment and digital cockpit screens with ADAS","Instant EV torque response and whisper-quiet cabin"],
     cons: ["Requires home fast charger installation for overnight charging","New charging ecosystem for first-time EV owners"],
-    tags: ["SUV","Electric","EV","500km Range","ADAS","Futuristic","Automatic"]
+    tags: ["SUV","Electric","Automatic","EV","500km Range","ADAS","Futuristic"]
   },
   {
     slug: "hyundai-i20",

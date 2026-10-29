@@ -10,6 +10,7 @@ import { useCompare } from "@/context/compare-context";
 import { useSession } from "next-auth/react";
 import { toggleSaveCar } from "@/lib/actions/user";
 import { useState } from "react";
+import { getVariantsBySlug } from "@/lib/data/car-variants";
 
 interface CarCardProps {
   car: Car;
@@ -28,6 +29,11 @@ export default function CarCard({ car, matchScore, matchReasons, hideCompare, is
   const isSelected = !!selectedCars.find((c) => c.id === car.id);
   const showSelection = !hideCompare && isSelected;
   const avgMileage = (car.mileageCity + car.mileageHighway) / 2;
+  const variants = getVariantsBySlug(car.slug);
+  const supportedFuels = ["Petrol", "Diesel", "CNG", "Hybrid", "Electric"].filter(
+    (f) => f === car.fuelType || car.tags?.includes(f)
+  );
+  const fuelDisplay = supportedFuels.length > 1 ? supportedFuels.join(" · ") : car.fuelType;
 
   const handleCompareClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -112,9 +118,16 @@ export default function CarCard({ car, matchScore, matchReasons, hideCompare, is
           <div className="flex items-start justify-between gap-2">
             <div>
               <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">{car.name}</h3>
-              <span className="mt-1 inline-flex rounded-full bg-slate-100 px-2 py-0.5 text-xs font-semibold text-slate-600 uppercase tracking-tighter">
-                {car.type}
-              </span>
+              <div className="mt-1 flex flex-wrap items-center gap-1.5">
+                <span className="inline-flex rounded-full bg-slate-100 px-2 py-0.5 text-xs font-semibold text-slate-600 uppercase tracking-tighter">
+                  {car.type}
+                </span>
+                {variants.length > 0 && (
+                  <span className="inline-flex rounded-full bg-blue-50 px-2 py-0.5 text-xs font-bold text-blue-700 tracking-tight">
+                    {variants.length} Variants
+                  </span>
+                )}
+              </div>
             </div>
           </div>
 
@@ -139,7 +152,7 @@ export default function CarCard({ car, matchScore, matchReasons, hideCompare, is
             </div>
             <div className="rounded-xl border border-slate-50 bg-slate-50/50 p-2 text-center">
               <p className="mb-1">Fuel</p>
-              <p className="text-slate-900 text-xs line-clamp-1">{car.fuelType}</p>
+              <p className="text-slate-900 text-xs line-clamp-1" title={fuelDisplay}>{fuelDisplay}</p>
             </div>
           </div>
 

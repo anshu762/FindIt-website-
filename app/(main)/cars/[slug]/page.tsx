@@ -4,6 +4,7 @@ import CarHero from "@/components/cars/CarHero";
 import RunningCostCalculator from "@/components/cars/RunningCostCalculator";
 import DepreciationChart from "@/components/cars/DepreciationChart";
 import SpecSection from "@/components/cars/SpecSection";
+import CarVariantsSection from "@/components/cars/CarVariantsSection";
 import BackButton from "@/components/shared/BackButton";
 
 interface CarPageProps {
@@ -23,6 +24,8 @@ export default async function CarDetailsPage({ params }: CarPageProps) {
       <BackButton label="Back to Cars" />
 
       <CarHero car={car} />
+
+      <CarVariantsSection slug={car.slug} carName={car.name} />
       
       <div className="grid gap-8 lg:grid-cols-2">
         <RunningCostCalculator car={car} />
