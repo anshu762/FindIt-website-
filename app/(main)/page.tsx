@@ -9,6 +9,8 @@ import { ArrowRight, Calculator, Car, User, CheckCircle2 } from "lucide-react";
 
 import LandingClient from "@/components/landing/LandingClient";
 
+export const dynamic = "force-dynamic";
+
 export default async function LandingPage() {
   // Fetch featured cars
   const featuredCarNames = ["Tata Nexon", "Hyundai Creta", "Maruti Swift"];

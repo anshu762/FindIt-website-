@@ -63,6 +63,11 @@ function buildWhere(filters: CarFilters): Prisma.CarWhereInput {
       ? [filters.fuelType]
       : [];
   const brands = Array.isArray(filters.brand) ? filters.brand : filters.brand ? [filters.brand] : [];
+  const brandAliases: Record<string, string[]> = {
+    maruti: ["Maruti", "Maruti Suzuki"],
+    tata: ["Tata", "Tata Motors"]
+  };
+  const expandedBrands = brands.flatMap((b) => brandAliases[b.toLowerCase()] || [b]);
   const seats = Array.isArray(filters.seatingCapacity)
     ? filters.seatingCapacity
     : filters.seatingCapacity
@@ -77,7 +82,7 @@ function buildWhere(filters: CarFilters): Prisma.CarWhereInput {
   return {
     ...(types.length > 0 ? { type: { in: types as Car["type"][] } } : {}),
     ...(fuelTypes.length > 0 ? { fuelType: { in: fuelTypes as Car["fuelType"][] } } : {}),
-    ...(brands.length > 0 ? { brand: { in: brands, mode: "insensitive" } } : {}),
+    ...(expandedBrands.length > 0 ? { brand: { in: expandedBrands, mode: "insensitive" } } : {}),
     ...(seats.length > 0 ? { seatingCapacity: { in: seats } } : {}),
     ...(transmissions.length > 0
       ? { transmission: { in: transmissions as Car["transmission"][] } }
@@ -115,7 +120,13 @@ export async function getCarBySlug(slug: string): Promise<Car | null> {
 
 export async function getCarByName(name: string): Promise<Car | null> {
   const car = await prisma.car.findFirst({
-    where: { name },
+    where: {
+      OR: [
+        { name: { equals: name, mode: "insensitive" } },
+        { name: { contains: name, mode: "insensitive" } },
+        { model: { equals: name, mode: "insensitive" } }
+      ]
+    },
     select: carSelect
   });
 
