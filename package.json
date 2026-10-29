@@ -43,7 +43,7 @@
     "@types/react-dom": "latest",
     "autoprefixer": "latest",
     "postcss": "latest",
-    "prisma": "^5.22.0",
+    "prisma": "^6.19.3",
     "tailwindcss": "latest",
     "ts-node": "latest",
     "typescript": "latest"
