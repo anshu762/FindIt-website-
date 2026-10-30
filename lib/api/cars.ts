@@ -65,7 +65,11 @@ function buildWhere(filters: CarFilters): Prisma.CarWhereInput {
   const brands = Array.isArray(filters.brand) ? filters.brand : filters.brand ? [filters.brand] : [];
   const brandAliases: Record<string, string[]> = {
     maruti: ["Maruti", "Maruti Suzuki"],
-    tata: ["Tata", "Tata Motors"]
+    tata: ["Tata", "Tata Motors"],
+    hyundai: ["Hyundai", "Hyundai Motor", "Hyundai Motor India"],
+    mahindra: ["Mahindra", "Mahindra & Mahindra"],
+    kia: ["Kia", "Kia India", "Kia Motors"],
+    honda: ["Honda", "Honda Cars", "Honda Cars India"]
   };
   const expandedBrands = brands.flatMap((b) => brandAliases[b.toLowerCase()] || [b]);
   const seats = Array.isArray(filters.seatingCapacity)
