@@ -30,10 +30,13 @@ export default function CompareMatrix({ cars }: CompareMatrixProps) {
     { label: "5Y Resale Value", key: "resale", icon: <TrendingDown className="h-4 w-4" /> },
     { label: "Safety Rating", key: "safety", icon: <Shield className="h-4 w-4" /> },
     { label: "Fuel Type", key: "fuel" },
+    { label: "Transmission", key: "transmission" },
     { label: "Engine", key: "engine" },
     { label: "Power", key: "power" },
-    { label: "Mileage", key: "mileage" },
+    { label: "Torque", key: "torque" },
+    { label: "Mileage / Range", key: "mileage" },
     { label: "Seating", key: "seats" },
+    { label: "Boot Space", key: "boot" },
     { label: "Ground Clearance", key: "gc" },
   ];
 
@@ -42,17 +45,22 @@ export default function CompareMatrix({ cars }: CompareMatrixProps) {
       case "price": return `${formatPrice(car.priceMin)} - ${formatPrice(car.priceMax)}`;
       case "runningCost": {
         const monthlyKm = dailyKm * 30;
-        const fuelCost = (monthlyKm / car.mileageCity) * fuelPrice;
-        const total = fuelCost + car.monthlyService + (car.insuranceYear1 / 12);
+        const isEV = car.fuelType === "Electric";
+        const efficiency = Math.max(car.mileageCity || (isEV ? 5 : 12), 1);
+        const costPerKm = isEV ? (1 / efficiency) * 9 : (1 / efficiency) * fuelPrice;
+        const total = (monthlyKm * costPerKm) + car.monthlyService + (car.insuranceYear1 / 12);
         return formatPrice(total);
       }
       case "resale": return formatPrice(car.priceMin * car.depRate5Yr);
       case "safety": return `${car.safetyRating} Star`;
       case "fuel": return car.fuelType;
-      case "engine": return `${car.engineCC}cc`;
+      case "transmission": return car.transmission;
+      case "engine": return car.fuelType === "Electric" ? "Electric Motor" : `${car.engineCC}cc`;
       case "power": return `${car.powerBhp} bhp`;
-      case "mileage": return `${car.mileageHighway} kmpl`;
+      case "torque": return `${car.torqueNm} Nm`;
+      case "mileage": return car.fuelType === "Electric" ? `${car.mileageHighway} km/kWh` : `${car.mileageHighway} kmpl`;
       case "seats": return `${car.seatingCapacity} Seater`;
+      case "boot": return `${car.bootLitres} L`;
       case "gc": return `${car.groundClearance} mm`;
       default: return "-";
     }

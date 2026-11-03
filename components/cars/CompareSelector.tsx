@@ -29,10 +29,11 @@ export default function CompareSelector({ allCars }: CompareSelectorProps) {
     const filtered = allCars.filter(
       (car) =>
         (car.name.toLowerCase().includes(query.toLowerCase()) ||
-          car.brand.toLowerCase().includes(query.toLowerCase())) &&
+          car.brand.toLowerCase().includes(query.toLowerCase()) ||
+          car.model.toLowerCase().includes(query.toLowerCase())) &&
         !selectedIds.includes(car.id)
     );
-    setResults(filtered.slice(0, 5));
+    setResults(filtered.slice(0, 10));
   }, [query, allCars, selectedIds]);
 
   const addCar = (id: string) => {
@@ -79,12 +80,12 @@ export default function CompareSelector({ allCars }: CompareSelectorProps) {
         </div>
 
         {results.length > 0 && (
-          <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl border border-slate-200 shadow-xl z-50 overflow-hidden">
+          <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl border border-slate-200 shadow-xl z-50 overflow-hidden max-h-80 overflow-y-auto divide-y divide-slate-100">
             {results.map((car) => (
               <button
                 key={car.id}
                 onClick={() => addCar(car.id)}
-                className="w-full flex items-center gap-4 p-4 hover:bg-slate-50 transition-colors border-b border-slate-100 last:border-0"
+                className="w-full flex items-center gap-4 p-4 hover:bg-slate-50 transition-colors"
               >
                 <div className="relative h-12 w-20 rounded-md overflow-hidden bg-slate-100">
                   <Image src={car.imageUrl} alt={car.name} fill className="object-cover" referrerPolicy="no-referrer" />
