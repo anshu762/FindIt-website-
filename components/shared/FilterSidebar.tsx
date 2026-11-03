@@ -2,7 +2,7 @@
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-const CAR_TYPES = ["SUV", "Sedan", "Hatchback", "MUV", "Crossover"] as const;
+const CAR_TYPES = ["SUV", "Sedan", "Hatchback", "MUV", "Crossover", "Coupe"] as const;
 const FUEL_TYPES = ["Petrol", "Diesel", "CNG", "Electric", "Hybrid"] as const;
 const TRANSMISSIONS = ["Manual", "Automatic"] as const;
 const BRANDS = [
@@ -28,7 +28,17 @@ const BRANDS = [
   "BYD",
   "Jaguar",
   "Land Rover",
-  "Lamborghini"
+  "Lamborghini",
+  "Ferrari",
+  "Rolls-Royce",
+  "Bentley",
+  "Aston Martin",
+  "Maserati",
+  "Lotus",
+  "Bugatti",
+  "Pagani",
+  "Rimac",
+  "Koenigsegg"
 ] as const;
 
 function parseList(value: string | null): string[] {
@@ -51,10 +61,13 @@ const BUDGET_OPTIONS = [
   { label: "50 Lakh", value: "5000000" },
   { label: "75 Lakh", value: "7500000" },
   { label: "1 Crore", value: "10000000" },
-  { label: "2 Crore", value: "20000000" }
+  { label: "2 Crore", value: "20000000" },
+  { label: "5 Crore", value: "50000000" },
+  { label: "10 Crore", value: "100000000" },
+  { label: "25 Crore", value: "250000000" }
 ];
 
-const SEATING_CAPACITIES = [5, 6, 7, 8];
+const SEATING_CAPACITIES = [2, 4, 5, 6, 7, 8];
 const MILEAGE_OPTIONS = [
   { label: "10+ kmpl", value: "10" },
   { label: "15+ kmpl", value: "15" },
@@ -100,7 +113,7 @@ export default function FilterSidebar() {
   };
 
   return (
-    <aside className="space-y-5 rounded-xl border border-slate-200 bg-white p-4">
+    <aside className="sticky top-20 max-h-[calc(100vh-5.5rem)] overflow-y-auto space-y-5 rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm">
       <div className="flex items-center justify-between">
         <h2 className="font-semibold text-slate-900 uppercase text-xs tracking-wider">Price</h2>
         <button
@@ -123,7 +136,7 @@ export default function FilterSidebar() {
               <option value="">Min</option>
               {BUDGET_OPTIONS.map((opt) => (
                 <option key={`min-${opt.value}`} value={opt.value}>
-                  ₹{(parseInt(opt.value)/100000).toFixed(0)} Lakh
+                  ₹{opt.label}
                 </option>
               ))}
             </select>
@@ -138,7 +151,7 @@ export default function FilterSidebar() {
               <option value="">Max</option>
               {BUDGET_OPTIONS.map((opt) => (
                 <option key={`max-${opt.value}`} value={opt.value}>
-                  ₹{(parseInt(opt.value)/100000).toFixed(0)} Lakh
+                  ₹{opt.label}
                 </option>
               ))}
             </select>
@@ -233,14 +246,18 @@ export default function FilterSidebar() {
       </section>
 
       <section>
-        <h3 className="mb-2 text-sm font-medium text-slate-700">Brand</h3>
-        <div className="space-y-2">
+        <div className="flex items-center justify-between mb-2">
+          <h3 className="text-sm font-medium text-slate-700">Brand</h3>
+          <span className="text-[11px] text-slate-400 font-medium">{BRANDS.length} brands</span>
+        </div>
+        <div className="max-h-48 overflow-y-auto pr-1 space-y-2 border border-slate-100 rounded-xl p-2.5 bg-slate-50/50">
           {BRANDS.map((brand) => (
-            <label key={brand} className="flex items-center gap-2 text-sm text-slate-700">
+            <label key={brand} className="flex items-center gap-2 text-sm text-slate-700 hover:text-slate-900 cursor-pointer">
               <input
                 type="checkbox"
                 checked={selectedBrand.includes(brand)}
                 onChange={() => toggleSelection("brand", selectedBrand, brand)}
+                className="rounded border-slate-300 text-blue-600 focus:ring-blue-500"
               />
               {brand}
             </label>

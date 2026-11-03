@@ -87,7 +87,17 @@ function buildWhere(filters: CarFilters): Prisma.CarWhereInput {
     byd: ["BYD", "BYD India"],
     jaguar: ["Jaguar", "Jaguar Land Rover", "JLR"],
     "land-rover": ["Land Rover", "Range Rover", "Jaguar Land Rover", "JLR"],
-    lamborghini: ["Lamborghini", "Lamborghini India"]
+    lamborghini: ["Lamborghini", "Lamborghini India"],
+    ferrari: ["Ferrari", "Ferrari India"],
+    "rolls-royce": ["Rolls-Royce", "Rolls Royce", "Rolls", "Rolls-Royce Motor Cars"],
+    bentley: ["Bentley", "Bentley Motors"],
+    "aston-martin": ["Aston Martin", "Aston"],
+    maserati: ["Maserati", "Maserati India"],
+    lotus: ["Lotus", "Lotus Cars"],
+    bugatti: ["Bugatti", "Bugatti Automobiles"],
+    pagani: ["Pagani", "Pagani Automobili"],
+    rimac: ["Rimac", "Rimac Automobili"],
+    koenigsegg: ["Koenigsegg"]
   };
   const expandedBrands = brands.flatMap((b) => brandAliases[b.toLowerCase()] || [b]);
   const seats = Array.isArray(filters.seatingCapacity)
@@ -104,7 +114,15 @@ function buildWhere(filters: CarFilters): Prisma.CarWhereInput {
   const andClauses: Prisma.CarWhereInput[] = [];
 
   if (types.length > 0) {
-    andClauses.push({ type: { in: types as Car["type"][] } });
+    const validCarTypes = types.filter((t) =>
+      ["SUV", "Sedan", "Hatchback", "MUV", "Crossover"].includes(t)
+    );
+    andClauses.push({
+      OR: [
+        ...(validCarTypes.length > 0 ? [{ type: { in: validCarTypes as Car["type"][] } }] : []),
+        { tags: { hasSome: types } }
+      ]
+    });
   }
 
   if (fuelTypes.length > 0) {
@@ -139,10 +157,10 @@ function buildWhere(filters: CarFilters): Prisma.CarWhereInput {
 
   if (filters.budgetMin || filters.budgetMax) {
     andClauses.push({
-      priceMin: {
-        ...(filters.budgetMin ? { gte: filters.budgetMin } : {}),
-        ...(filters.budgetMax ? { lte: filters.budgetMax } : {})
-      }
+      AND: [
+        ...(filters.budgetMax ? [{ priceMin: { lte: filters.budgetMax } }] : []),
+        ...(filters.budgetMin ? [{ priceMax: { gte: filters.budgetMin } }] : [])
+      ]
     });
   }
 
@@ -169,12 +187,22 @@ export async function getCarBySlug(slug: string): Promise<Car | null> {
 }
 
 export async function getCarByName(name: string): Promise<Car | null> {
+  const tokens = name.trim().split(/\s+/).filter(Boolean);
   const car = await prisma.car.findFirst({
     where: {
       OR: [
         { name: { equals: name, mode: "insensitive" } },
         { name: { contains: name, mode: "insensitive" } },
-        { model: { equals: name, mode: "insensitive" } }
+        { model: { equals: name, mode: "insensitive" } },
+        ...(tokens.length > 1
+          ? [
+              {
+                AND: tokens.map((token) => ({
+                  name: { contains: token, mode: "insensitive" as const }
+                }))
+              }
+            ]
+          : [])
       ]
     },
     select: carSelect
