@@ -127,16 +127,17 @@ export default function LandingClient({ featuredCars }: LandingClientProps) {
                  
                  <div className="rounded-[40px] overflow-hidden shadow-2xl relative border-8 border-white group">
                     <img 
-                      src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=1200" 
-                      alt="Modern SUV"
+                      src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&q=80&w=1600" 
+                      alt="BMW M-Performance Sports Coupe"
+                      referrerPolicy="no-referrer"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute bottom-6 left-6 right-6 p-6 rounded-3xl bg-white/90 backdrop-blur-md border border-white shadow-lg space-y-2">
                        <div className="flex justify-between items-center">
-                          <span className="text-xs font-bold text-blue-600 uppercase tracking-widest">Recommended SUV</span>
-                          <div className="flex gap-1 text-amber-400"><Star className="h-3 w-3 fill-current" /><Star className="h-3 w-3 fill-current" /><Star className="h-3 w-3 fill-current" /></div>
+                          <span className="text-xs font-bold text-blue-600 uppercase tracking-widest">M-Performance & Luxury Fleet</span>
+                          <div className="flex gap-1 text-amber-400"><Star className="h-3 w-3 fill-current" /><Star className="h-3 w-3 fill-current" /><Star className="h-3 w-3 fill-current" /><Star className="h-3 w-3 fill-current" /><Star className="h-3 w-3 fill-current" /></div>
                        </div>
-                       <p className="text-lg font-black text-slate-900">Fits your Family & Budget</p>
+                       <p className="text-lg font-black text-slate-900">Fits your Ambition & Lifestyle</p>
                     </div>
                  </div>
               </div>
@@ -156,10 +157,10 @@ export default function LandingClient({ featuredCars }: LandingClientProps) {
         <div className="max-w-7xl mx-auto px-4">
            <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
               {[
-                { label: "Cars Analyzed", value: "100+", icon: <Car className="h-5 w-5" /> },
-                { label: "Recommendation Match", value: "97%", icon: <CheckCircle2 className="h-5 w-5" /> },
-                { label: "Happy Buyers", value: "50k+", icon: <User className="h-5 w-5" /> },
-                { label: "Resale Insight", value: "5 Years", icon: <TrendingDown className="h-5 w-5" /> },
+                { label: "Cars Analyzed", value: "220+", icon: <Car className="h-5 w-5" /> },
+                { label: "Recommendation Match", value: "98%", icon: <CheckCircle2 className="h-5 w-5" /> },
+                { label: "Brands Covered", value: "34", icon: <ShieldCheck className="h-5 w-5" /> },
+                { label: "Variants Available", value: "1,000+", icon: <TrendingDown className="h-5 w-5" /> },
               ].map((stat, i) => (
                 <div key={i} className="flex flex-col items-center lg:items-start space-y-3 p-6 rounded-3xl hover:bg-slate-50 transition-colors">
                   <div className="h-10 w-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
