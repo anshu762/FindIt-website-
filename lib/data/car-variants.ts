@@ -8,6 +8,14 @@ export interface CarVariant {
 }
 
 export const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
+  "honda-jazz": [
+    { name: "V", fuel: "Petrol", transmission: "Manual", transmissionDetail: "5-speed MT", price: "₹8.21 Lakh", priceNumeric: 821000 },
+    { name: "VX", fuel: "Petrol", transmission: "Manual", transmissionDetail: "5-speed MT", price: "₹8.80 Lakh", priceNumeric: 880000 },
+    { name: "ZX", fuel: "Petrol", transmission: "Manual", transmissionDetail: "5-speed MT", price: "₹9.89 Lakh", priceNumeric: 989000 }
+  ],
+  "force-gurkha-2-6-diesel-3-door": [
+    { name: "3-Door 4x4", fuel: "Diesel", transmission: "Manual", transmissionDetail: "5-speed MT", price: "₹16.75 Lakh", priceNumeric: 1675000 }
+  ],
   "maruti-alto-k10": [
     { name: "LXI", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹4.25 Lakh", priceNumeric: 425000 },
     { name: "VXI", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹5.00 Lakh", priceNumeric: 500000 },
@@ -1362,8 +1370,537 @@ export const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
     { name: "S", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed AT", price: "₹4.18 Crore", priceNumeric: 41800000 },
     { name: "Performante", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed AT", price: "₹4.60 Crore", priceNumeric: 46000000 },
     { name: "SE Hybrid", fuel: "Hybrid", transmission: "Automatic", transmissionDetail: "8-speed AT", price: "₹4.80 Crore", priceNumeric: 48000000 }
-  ]};
+  ],
+  "ferrari-roma": [
+      {
+          "name": "Roma Coupe",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹3.80 Crore",
+          "priceNumeric": 38000000
+      }
+  ],
+  "ferrari-296-gtb": [
+      {
+          "name": "296 GTB",
+          "fuel": "Hybrid",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹5.40 Crore",
+          "priceNumeric": 54000000
+      },
+      {
+          "name": "296 GTS",
+          "fuel": "Hybrid",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹5.90 Crore",
+          "priceNumeric": 59000000
+      },
+      {
+          "name": "Assetto Fiorano",
+          "fuel": "Hybrid",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹6.20 Crore",
+          "priceNumeric": 62000000
+      }
+  ],
+  "ferrari-sf90-stradale": [
+      {
+          "name": "SF90 Stradale",
+          "fuel": "Hybrid",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹7.50 Crore",
+          "priceNumeric": 75000000
+      },
+      {
+          "name": "SF90 Track Pack",
+          "fuel": "Hybrid",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹8.20 Crore",
+          "priceNumeric": 82000000
+      }
+  ],
+  "ferrari-purosangue": [
+      {
+          "name": "V12",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹10.50 Crore",
+          "priceNumeric": 105000000
+      }
+  ],
+  "ferrari-812-competizione": [
+      {
+          "name": "812 Competizione",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹9.50 Crore",
+          "priceNumeric": 95000000
+      }
+  ],
+  "rolls-royce-ghost": [
+      {
+          "name": "Ghost Standard",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹8.50 Crore",
+          "priceNumeric": 85000000
+      },
+      {
+          "name": "Ghost Black Badge",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹10.00 Crore",
+          "priceNumeric": 100000000
+      }
+  ],
+  "rolls-royce-phantom": [
+      {
+          "name": "Phantom Extended Wheelbase",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹12.50 Crore",
+          "priceNumeric": 125000000
+      },
+      {
+          "name": "Phantom Black Badge",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹14.00 Crore",
+          "priceNumeric": 140000000
+      }
+  ],
+  "rolls-royce-cullinan": [
+      {
+          "name": "Cullinan",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹7.50 Crore",
+          "priceNumeric": 75000000
+      },
+      {
+          "name": "Black Badge",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹8.50 Crore",
+          "priceNumeric": 85000000
+      }
+  ],
+  "rolls-royce-spectre": [
+      {
+          "name": "Spectre",
+          "fuel": "Electric",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹7.80 Crore",
+          "priceNumeric": 78000000
+      },
+      {
+          "name": "Spectre Black Badge",
+          "fuel": "Electric",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹9.00 Crore",
+          "priceNumeric": 90000000
+      }
+  ],
+  "bentley-continental-gt": [
+      {
+          "name": "V8",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹5.50 Crore",
+          "priceNumeric": 55000000
+      },
+      {
+          "name": "Speed",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹6.50 Crore",
+          "priceNumeric": 65000000
+      }
+  ],
+  "bentley-flying-spur": [
+      {
+          "name": "Hybrid V6",
+          "fuel": "Hybrid",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹5.20 Crore",
+          "priceNumeric": 52000000
+      },
+      {
+          "name": "Speed",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹6.00 Crore",
+          "priceNumeric": 60000000
+      }
+  ],
+  "bentley-bentayga": [
+      {
+          "name": "V8",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹5.10 Crore",
+          "priceNumeric": 51000000
+      },
+      {
+          "name": "Hybrid",
+          "fuel": "Hybrid",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹5.40 Crore",
+          "priceNumeric": 54000000
+      },
+      {
+          "name": "EWB",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹6.20 Crore",
+          "priceNumeric": 62000000
+      }
+  ],
+  "aston-martin-vantage": [
+      {
+          "name": "Base",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹3.00 Crore",
+          "priceNumeric": 30000000
+      },
+      {
+          "name": "F1 Edition",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹3.40 Crore",
+          "priceNumeric": 34000000
+      }
+  ],
+  "aston-martin-db12": [
+      {
+          "name": "Coupe",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹4.20 Crore",
+          "priceNumeric": 42000000
+      },
+      {
+          "name": "Volante",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹4.50 Crore",
+          "priceNumeric": 45000000
+      }
+  ],
+  "aston-martin-dbx": [
+      {
+          "name": "Base",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹3.80 Crore",
+          "priceNumeric": 38000000
+      },
+      {
+          "name": "707",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹4.30 Crore",
+          "priceNumeric": 43000000
+      }
+  ],
+  "maserati-ghibli": [
+      {
+          "name": "Base",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹1.15 Crore",
+          "priceNumeric": 11500000
+      },
+      {
+          "name": "Trofeo",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹1.50 Crore",
+          "priceNumeric": 15000000
+      }
+  ],
+  "maserati-levante": [
+      {
+          "name": "Modena",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹1.25 Crore",
+          "priceNumeric": 12500000
+      },
+      {
+          "name": "Trofeo",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹1.65 Crore",
+          "priceNumeric": 16500000
+      }
+  ],
+  "maserati-grecale": [
+      {
+          "name": "GT",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹1.05 Crore",
+          "priceNumeric": 10500000
+      },
+      {
+          "name": "Trofeo",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹1.35 Crore",
+          "priceNumeric": 13500000
+      }
+  ],
+  "maserati-mc20": [
+      {
+          "name": "Coupe",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹3.20 Crore",
+          "priceNumeric": 32000000
+      },
+      {
+          "name": "Cielo",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹3.50 Crore",
+          "priceNumeric": 35000000
+      }
+  ],
+  "maserati-granturismo-folgore": [
+      {
+          "name": "Modena",
+          "fuel": "Electric",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹2.75 Crore",
+          "priceNumeric": 27500000
+      },
+      {
+          "name": "Folgore",
+          "fuel": "Electric",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹3.00 Crore",
+          "priceNumeric": 30000000
+      }
+  ],
+  "lotus-emira": [
+      {
+          "name": "Base",
+          "fuel": "Petrol",
+          "transmission": "Manual",
+          "transmissionDetail": "Manual",
+          "price": "₹1.80 Crore",
+          "priceNumeric": 18000000
+      },
+      {
+          "name": "First Edition",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹2.00 Crore",
+          "priceNumeric": 20000000
+      }
+  ],
+  "lotus-eletre": [
+      {
+          "name": "S",
+          "fuel": "Electric",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹2.25 Crore",
+          "priceNumeric": 22500000
+      },
+      {
+          "name": "R",
+          "fuel": "Electric",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹2.75 Crore",
+          "priceNumeric": 27500000
+      }
+  ],
+  "lotus-emeya": [
+      {
+          "name": "S",
+          "fuel": "Electric",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹2.30 Crore",
+          "priceNumeric": 23000000
+      },
+      {
+          "name": "R",
+          "fuel": "Electric",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹2.85 Crore",
+          "priceNumeric": 28500000
+      }
+  ],
+  "bugatti-chiron": [
+      {
+          "name": "Super Sport",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹22.00 Crore",
+          "priceNumeric": 220000000
+      }
+  ],
+  "bugatti-mistral": [
+      {
+          "name": "Roadster",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹28.00 Crore",
+          "priceNumeric": 280000000
+      }
+  ],
+  "bugatti-tourbillon": [
+      {
+          "name": "Base",
+          "fuel": "Hybrid",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹30.00 Crore",
+          "priceNumeric": 300000000
+      }
+  ],
+  "pagani-huayra": [
+      {
+          "name": "Coupe",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹20.00 Crore",
+          "priceNumeric": 200000000
+      },
+      {
+          "name": "BC",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹25.00 Crore",
+          "priceNumeric": 250000000
+      }
+  ],
+  "pagani-utopia": [
+      {
+          "name": "Coupe",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹22.00 Crore",
+          "priceNumeric": 220000000
+      },
+      {
+          "name": "Roadster",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹24.00 Crore",
+          "priceNumeric": 240000000
+      }
+  ],
+  "rimac-nevera": [
+      {
+          "name": "Base",
+          "fuel": "Electric",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹18.00 Crore",
+          "priceNumeric": 180000000
+      },
+      {
+          "name": "R Track Pack",
+          "fuel": "Electric",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹21.00 Crore",
+          "priceNumeric": 210000000
+      }
+  ],
+  "koenigsegg-jesko": [
+      {
+          "name": "Jesko Attack",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹25.00 Crore",
+          "priceNumeric": 250000000
+      },
+      {
+          "name": "Jesko Absolut",
+          "fuel": "Petrol",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹32.00 Crore",
+          "priceNumeric": 320000000
+      }
+  ],
+  "koenigsegg-regera": [
+      {
+          "name": "Regera",
+          "fuel": "Hybrid",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹35.00 Crore",
+          "priceNumeric": 350000000
+      }
+  ],
+  "koenigsegg-gemera": [
+      {
+          "name": "Gemera",
+          "fuel": "Hybrid",
+          "transmission": "Automatic",
+          "transmissionDetail": "Automatic",
+          "price": "₹18.00 Crore",
+          "priceNumeric": 180000000
+      }
+  ]
+};
 
 export function getVariantsBySlug(slug: string): CarVariant[] {
-  return CAR_VARIANTS_MAP[slug] || [];
+  return CAR_VARIANTS_MAP[slug] || CAR_VARIANTS_MAP[slug.replace(/-\d{4}$/, "")] || [];
 }
