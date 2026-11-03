@@ -21,6 +21,33 @@ interface LandingClientProps {
   featuredCars: any[];
 }
 
+const heroBuyers = [
+  {
+    name: "Priya Sharma",
+    city: "Mumbai",
+    car: "Tata Nexon Fearless",
+    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=160&h=160",
+  },
+  {
+    name: "Rahul Verma",
+    city: "Delhi NCR",
+    car: "Hyundai Creta SX (O)",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=160&h=160",
+  },
+  {
+    name: "Ananya Roy",
+    city: "Bengaluru",
+    car: "Mahindra Thar Earth Edition",
+    avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=160&h=160",
+  },
+  {
+    name: "Vikram Patel",
+    city: "Ahmedabad",
+    car: "BMW 330Li M Sport",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=160&h=160",
+  },
+];
+
 export default function LandingClient({ featuredCars }: LandingClientProps) {
   const fadeInUp: any = {
     initial: { opacity: 0, y: 30 },
@@ -94,21 +121,75 @@ export default function LandingClient({ featuredCars }: LandingClientProps) {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.6 }}
-                className="flex items-center gap-6 pt-8 lg:justify-start justify-center"
+                className="flex flex-col sm:flex-row items-center gap-5 pt-8 lg:justify-start justify-center"
               >
-                <div className="flex -space-x-3">
-                  {[1,2,3,4].map(i => (
-                    <div key={i} className="h-10 w-10 rounded-full border-2 border-white bg-slate-100 overflow-hidden">
-                      <img src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${i + 10}`} alt="User" />
+                {/* Premium Avatar Stack with Fan-out & Lift Hover Effect */}
+                <div className="flex items-center -space-x-3.5 hover:-space-x-1 transition-all duration-300 ease-out py-2 px-1">
+                  {heroBuyers.map((buyer) => (
+                    <div
+                      key={buyer.name}
+                      className="relative group/avatar cursor-pointer transition-all duration-300 ease-out hover:z-30 hover:-translate-y-2 hover:scale-125"
+                    >
+                      {/* Avatar Image Circle */}
+                      <div className="h-11 w-11 rounded-full border-2 border-white shadow-md bg-slate-100 overflow-hidden ring-1 ring-slate-900/10 group-hover/avatar:ring-4 group-hover/avatar:ring-blue-500/30 group-hover/avatar:shadow-xl group-hover/avatar:shadow-blue-500/25 transition-all duration-300">
+                        <img 
+                          src={buyer.avatar} 
+                          alt={buyer.name} 
+                          className="h-full w-full object-cover transition-transform duration-500 group-hover/avatar:scale-115"
+                        />
+                      </div>
+
+                      {/* Verified Badge Dot */}
+                      <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-emerald-500 border-2 border-white shadow-sm ring-1 ring-emerald-500/30" />
+
+                      {/* Floating Micro-Tooltip on Hover */}
+                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2.5 opacity-0 pointer-events-none group-hover/avatar:opacity-100 group-hover/avatar:pointer-events-auto transition-all duration-200 ease-out translate-y-1 group-hover/avatar:translate-y-0 z-40 whitespace-nowrap">
+                        <div className="bg-slate-900/95 backdrop-blur-md text-white px-3 py-1.5 rounded-xl shadow-2xl border border-white/10 flex flex-col items-center">
+                          <div className="flex items-center gap-1.5 text-xs font-bold text-white">
+                            <span>{buyer.name}</span>
+                            <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
+                          </div>
+                          <span className="text-[10px] text-blue-300 font-medium">{buyer.car}</span>
+                          <span className="text-[9px] text-slate-400">{buyer.city} • Verified Buyer</span>
+                          {/* Triangle indicator */}
+                          <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-slate-900/95" />
+                        </div>
+                      </div>
                     </div>
                   ))}
-                  <div className="h-10 w-10 rounded-full border-2 border-white bg-blue-600 flex items-center justify-center text-[10px] font-bold text-white">
-                    50k+
+
+                  {/* 50k+ Counter Pill with Glossy Ring & Tooltip */}
+                  <div className="relative group/pill cursor-pointer transition-all duration-300 ease-out hover:z-30 hover:-translate-y-2 hover:scale-120">
+                    <div className="h-11 w-11 rounded-full border-2 border-white bg-gradient-to-tr from-blue-600 via-indigo-600 to-violet-600 flex items-center justify-center text-xs font-black text-white shadow-md shadow-blue-500/25 group-hover/pill:shadow-xl group-hover/pill:shadow-indigo-500/40 group-hover/pill:ring-4 group-hover/pill:ring-indigo-500/30 transition-all duration-300">
+                      50k+
+                    </div>
+
+                    {/* 50k+ Tooltip */}
+                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2.5 opacity-0 pointer-events-none group-hover/pill:opacity-100 group-hover/pill:pointer-events-auto transition-all duration-200 ease-out translate-y-1 group-hover/pill:translate-y-0 z-40 whitespace-nowrap">
+                      <div className="bg-slate-900/95 backdrop-blur-md text-white px-3 py-1.5 rounded-xl shadow-2xl border border-white/10 flex flex-col items-center">
+                        <div className="flex items-center gap-1 text-xs font-bold text-white">
+                          <span>50,000+ Happy Buyers</span>
+                          <span className="text-amber-400">★ 4.9</span>
+                        </div>
+                        <span className="text-[10px] text-slate-300">Across 120+ Indian Cities</span>
+                        <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-slate-900/95" />
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div className="text-sm">
-                  <p className="font-bold text-slate-900">Trusted by Indian Buyers</p>
-                  <p className="text-slate-500 font-medium whitespace-nowrap">Join our community of smart owners</p>
+
+                {/* Rating & Trust Text Beside Avatars */}
+                <div className="text-sm text-left">
+                  <div className="flex items-center gap-1.5">
+                    <div className="flex text-amber-400">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="h-3.5 w-3.5 fill-current" />
+                      ))}
+                    </div>
+                    <span className="font-extrabold text-slate-900 text-xs">4.9 / 5.0</span>
+                  </div>
+                  <p className="font-bold text-slate-900 leading-snug">Trusted by Indian Car Buyers</p>
+                  <p className="text-slate-500 text-xs font-medium whitespace-nowrap">Join 50,000+ smart car owners</p>
                 </div>
               </motion.div>
             </div>
