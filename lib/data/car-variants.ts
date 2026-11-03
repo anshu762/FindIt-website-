@@ -701,10 +701,669 @@ export const CAR_VARIANTS_MAP: Record<string, CarVariant[]> = {
     { name: "VX", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "CVT", price: "₹15.80 Lakh", priceNumeric: 1580000 },
     { name: "ZX", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹15.90 Lakh", priceNumeric: 1590000 },
     { name: "ZX", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "CVT", price: "₹17.20 Lakh", priceNumeric: 1720000 }
+  ],
+  "toyota-glanza": [
+    { name: "E", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹6.60 Lakh", priceNumeric: 660000 },
+    { name: "S", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹7.45 Lakh", priceNumeric: 745000 },
+    { name: "S", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AMT", price: "₹8.00 Lakh", priceNumeric: 800000 },
+    { name: "G", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹8.35 Lakh", priceNumeric: 835000 },
+    { name: "G", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AMT", price: "₹8.90 Lakh", priceNumeric: 890000 },
+    { name: "V", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹9.10 Lakh", priceNumeric: 910000 },
+    { name: "V", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AMT", price: "₹9.65 Lakh", priceNumeric: 965000 },
+    { name: "S CNG", fuel: "CNG", transmission: "Manual", transmissionDetail: "MT", price: "₹8.45 Lakh", priceNumeric: 845000 },
+    { name: "G CNG", fuel: "CNG", transmission: "Manual", transmissionDetail: "MT", price: "₹9.35 Lakh", priceNumeric: 935000 }
+  ],
+  "toyota-urban-cruiser-taisor": [
+    { name: "E", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹7.80 Lakh", priceNumeric: 780000 },
+    { name: "S", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹8.70 Lakh", priceNumeric: 870000 },
+    { name: "S", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AMT", price: "₹9.25 Lakh", priceNumeric: 925000 },
+    { name: "G", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹10.10 Lakh", priceNumeric: 1010000 },
+    { name: "G", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AMT", price: "₹10.85 Lakh", priceNumeric: 1085000 },
+    { name: "V", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹11.10 Lakh", priceNumeric: 1110000 },
+    { name: "V", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AMT", price: "₹11.90 Lakh", priceNumeric: 1190000 },
+    { name: "Turbo G", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹11.40 Lakh", priceNumeric: 1140000 },
+    { name: "Turbo V", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AT", price: "₹12.60 Lakh", priceNumeric: 1260000 },
+    { name: "S CNG", fuel: "CNG", transmission: "Manual", transmissionDetail: "MT", price: "₹9.60 Lakh", priceNumeric: 960000 },
+    { name: "G CNG", fuel: "CNG", transmission: "Manual", transmissionDetail: "MT", price: "₹10.50 Lakh", priceNumeric: 1050000 }
+  ],
+  "toyota-rumion": [
+    { name: "S", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹10.60 Lakh", priceNumeric: 1060000 },
+    { name: "G", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹11.80 Lakh", priceNumeric: 1180000 },
+    { name: "G", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AT", price: "₹13.10 Lakh", priceNumeric: 1310000 },
+    { name: "V", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹12.60 Lakh", priceNumeric: 1260000 },
+    { name: "V", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AT", price: "₹13.90 Lakh", priceNumeric: 1390000 },
+    { name: "S CNG", fuel: "CNG", transmission: "Manual", transmissionDetail: "MT", price: "₹11.70 Lakh", priceNumeric: 1170000 },
+    { name: "G CNG", fuel: "CNG", transmission: "Manual", transmissionDetail: "MT", price: "₹12.60 Lakh", priceNumeric: 1260000 }
+  ],
+  "toyota-urban-cruiser-hyryder": [
+    { name: "E", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹10.99 Lakh", priceNumeric: 1099000 },
+    { name: "S", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹12.55 Lakh", priceNumeric: 1255000 },
+    { name: "S", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AT", price: "₹13.80 Lakh", priceNumeric: 1380000 },
+    { name: "S CNG", fuel: "CNG", transmission: "Manual", transmissionDetail: "MT", price: "₹13.40 Lakh", priceNumeric: 1340000 },
+    { name: "G", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹14.30 Lakh", priceNumeric: 1430000 },
+    { name: "G", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AT", price: "₹15.40 Lakh", priceNumeric: 1540000 },
+    { name: "G Hybrid", fuel: "Hybrid", transmission: "Automatic", transmissionDetail: "e-CVT", price: "₹18.70 Lakh", priceNumeric: 1870000 },
+    { name: "V", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹16.00 Lakh", priceNumeric: 1600000 },
+    { name: "V", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AT", price: "₹17.20 Lakh", priceNumeric: 1720000 },
+    { name: "V AWD", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹17.60 Lakh", priceNumeric: 1760000 },
+    { name: "V Hybrid", fuel: "Hybrid", transmission: "Automatic", transmissionDetail: "e-CVT", price: "₹20.00 Lakh", priceNumeric: 2000000 }
+  ],
+  "toyota-fortuner": [
+    { name: "4x2 MT", fuel: "Diesel", transmission: "Manual", transmissionDetail: "MT", price: "₹35.00 Lakh", priceNumeric: 3500000 },
+    { name: "4x2 AT", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "AT", price: "₹37.60 Lakh", priceNumeric: 3760000 },
+    { name: "4x4 MT", fuel: "Diesel", transmission: "Manual", transmissionDetail: "MT", price: "₹40.20 Lakh", priceNumeric: 4020000 },
+    { name: "4x4 AT", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "AT", price: "₹42.80 Lakh", priceNumeric: 4280000 },
+    { name: "Petrol MT*", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹34.50 Lakh", priceNumeric: 3450000 },
+    { name: "Petrol AT*", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AT", price: "₹36.90 Lakh", priceNumeric: 3690000 }
+  ],
+  "toyota-fortuner-legender": [
+    { name: "4x2 AT", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "AT", price: "₹44.20 Lakh", priceNumeric: 4420000 },
+    { name: "4x4 AT", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "AT", price: "₹48.20 Lakh", priceNumeric: 4820000 }
+  ],
+  "toyota-hilux": [
+    { name: "STD", fuel: "Diesel", transmission: "Manual", transmissionDetail: "MT", price: "₹30.40 Lakh", priceNumeric: 3040000 },
+    { name: "High", fuel: "Diesel", transmission: "Manual", transmissionDetail: "MT", price: "₹35.20 Lakh", priceNumeric: 3520000 },
+    { name: "High", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "AT", price: "₹37.80 Lakh", priceNumeric: 3780000 }
+  ],
+  "toyota-innova-crysta": [
+    { name: "GX", fuel: "Diesel", transmission: "Manual", transmissionDetail: "MT", price: "₹19.20 Lakh", priceNumeric: 1920000 },
+    { name: "GX+", fuel: "Diesel", transmission: "Manual", transmissionDetail: "MT", price: "₹20.30 Lakh", priceNumeric: 2030000 },
+    { name: "VX", fuel: "Diesel", transmission: "Manual", transmissionDetail: "MT", price: "₹24.20 Lakh", priceNumeric: 2420000 },
+    { name: "VX", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "AT", price: "₹25.20 Lakh", priceNumeric: 2520000 },
+    { name: "ZX", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "AT", price: "₹26.10 Lakh", priceNumeric: 2610000 }
+  ],
+  "toyota-innova-hycross": [
+    { name: "GX", fuel: "Hybrid", transmission: "Automatic", transmissionDetail: "CVT", price: "₹19.40 Lakh", priceNumeric: 1940000 },
+    { name: "GX (O)", fuel: "Hybrid", transmission: "Automatic", transmissionDetail: "CVT", price: "₹20.50 Lakh", priceNumeric: 2050000 },
+    { name: "VX", fuel: "Hybrid", transmission: "Automatic", transmissionDetail: "CVT", price: "₹24.80 Lakh", priceNumeric: 2480000 },
+    { name: "VX (O)", fuel: "Hybrid", transmission: "Automatic", transmissionDetail: "CVT", price: "₹26.20 Lakh", priceNumeric: 2620000 },
+    { name: "ZX", fuel: "Hybrid", transmission: "Automatic", transmissionDetail: "e-CVT", price: "₹30.20 Lakh", priceNumeric: 3020000 },
+    { name: "ZX (O)", fuel: "Hybrid", transmission: "Automatic", transmissionDetail: "e-CVT", price: "₹31.80 Lakh", priceNumeric: 3180000 }
+  ],
+  "toyota-camry": [
+    { name: "Hybrid", fuel: "Hybrid", transmission: "Automatic", transmissionDetail: "e-CVT", price: "₹48.50 Lakh", priceNumeric: 4850000 }
+  ],
+  "toyota-vellfire": [
+    { name: "Hi Grade", fuel: "Hybrid", transmission: "Automatic", transmissionDetail: "e-CVT", price: "₹1.22 Cr", priceNumeric: 12200000 },
+    { name: "VIP Grade", fuel: "Hybrid", transmission: "Automatic", transmissionDetail: "e-CVT", price: "₹1.35 Cr", priceNumeric: 13500000 }
+  ],
+  "toyota-land-cruiser-300": [
+    { name: "ZX", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "AT", price: "₹2.16 Cr", priceNumeric: 21600000 },
+    { name: "ZX GR-S", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "AT", price: "₹2.32 Cr", priceNumeric: 23200000 }
+  ],
+  "renault-kwid": [
+    { name: "RXE", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹4.90 Lakh", priceNumeric: 490000 },
+    { name: "RXL", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹5.45 Lakh", priceNumeric: 545000 },
+    { name: "RXL", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AMT", price: "₹5.95 Lakh", priceNumeric: 595000 },
+    { name: "RXT", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹6.10 Lakh", priceNumeric: 610000 },
+    { name: "RXT", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AMT", price: "₹6.60 Lakh", priceNumeric: 660000 },
+    { name: "Climber Edition", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹6.70 Lakh", priceNumeric: 670000 },
+    { name: "Climber Edition", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AMT", price: "₹7.15 Lakh", priceNumeric: 715000 }
+  ],
+  "renault-triber": [
+    { name: "RXE", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹6.80 Lakh", priceNumeric: 680000 },
+    { name: "RXL", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹7.50 Lakh", priceNumeric: 750000 },
+    { name: "RXT", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹8.20 Lakh", priceNumeric: 820000 },
+    { name: "RXT", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AMT", price: "₹8.85 Lakh", priceNumeric: 885000 },
+    { name: "RXZ", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹9.10 Lakh", priceNumeric: 910000 },
+    { name: "RXZ", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AMT", price: "₹9.75 Lakh", priceNumeric: 975000 }
+  ],
+  "renault-kiger": [
+    { name: "RXE", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹6.70 Lakh", priceNumeric: 670000 },
+    { name: "RXL", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹7.60 Lakh", priceNumeric: 760000 },
+    { name: "RXL", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AMT", price: "₹8.30 Lakh", priceNumeric: 830000 },
+    { name: "RXT", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹8.50 Lakh", priceNumeric: 850000 },
+    { name: "RXT Turbo", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹9.40 Lakh", priceNumeric: 940000 },
+    { name: "RXT Turbo", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "CVT", price: "₹10.50 Lakh", priceNumeric: 1050000 },
+    { name: "RXZ", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹9.70 Lakh", priceNumeric: 970000 },
+    { name: "RXZ Turbo", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹10.60 Lakh", priceNumeric: 1060000 },
+    { name: "RXZ Turbo", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "CVT", price: "₹11.70 Lakh", priceNumeric: 1170000 }
+  ],
+  "renault-duster": [
+    { name: "RXE", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹10.50 Lakh", priceNumeric: 1050000 },
+    { name: "RXL", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹11.90 Lakh", priceNumeric: 1190000 },
+    { name: "RXL", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "CVT", price: "₹13.20 Lakh", priceNumeric: 1320000 },
+    { name: "RXL Hybrid", fuel: "Hybrid", transmission: "Automatic", transmissionDetail: "CVT", price: "₹14.80 Lakh", priceNumeric: 1480000 },
+    { name: "RXT", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹13.40 Lakh", priceNumeric: 1340000 },
+    { name: "RXT", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "CVT", price: "₹14.70 Lakh", priceNumeric: 1470000 },
+    { name: "RXT Hybrid", fuel: "Hybrid", transmission: "Automatic", transmissionDetail: "CVT", price: "₹16.20 Lakh", priceNumeric: 1620000 },
+    { name: "RXZ", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "CVT", price: "₹16.40 Lakh", priceNumeric: 1640000 },
+    { name: "RXZ Hybrid", fuel: "Hybrid", transmission: "Automatic", transmissionDetail: "CVT", price: "₹18.20 Lakh", priceNumeric: 1820000 },
+    { name: "RXZ AWD", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "CVT", price: "₹19.40 Lakh", priceNumeric: 1940000 }
+  ],
+  "nissan-magnite": [
+    { name: "XE", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹6.20 Lakh", priceNumeric: 620000 },
+    { name: "XL", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹7.10 Lakh", priceNumeric: 710000 },
+    { name: "XL", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AMT", price: "₹7.75 Lakh", priceNumeric: 775000 },
+    { name: "XV", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹8.10 Lakh", priceNumeric: 810000 },
+    { name: "XV", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AMT", price: "₹8.80 Lakh", priceNumeric: 880000 },
+    { name: "XV Premium", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹9.20 Lakh", priceNumeric: 920000 },
+    { name: "XV Premium", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AMT", price: "₹9.90 Lakh", priceNumeric: 990000 },
+    { name: "XV Turbo", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹9.70 Lakh", priceNumeric: 970000 },
+    { name: "XV Turbo", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "CVT", price: "₹10.80 Lakh", priceNumeric: 1080000 },
+    { name: "XV Premium Turbo", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹10.50 Lakh", priceNumeric: 1050000 },
+    { name: "XV Premium Turbo", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "CVT", price: "₹11.70 Lakh", priceNumeric: 1170000 },
+    { name: "Kuro Edition Turbo", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "CVT", price: "₹12.20 Lakh", priceNumeric: 1220000 },
+    { name: "XL Turbo", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹8.70 Lakh", priceNumeric: 870000 }
+  ],
+  "nissan-x-trail": [
+    { name: "Visia", fuel: "Hybrid", transmission: "Automatic", transmissionDetail: "CVT", price: "₹38.00 Lakh", priceNumeric: 3800000 },
+    { name: "Acenta", fuel: "Hybrid", transmission: "Automatic", transmissionDetail: "CVT", price: "₹42.50 Lakh", priceNumeric: 4250000 },
+    { name: "N-Connecta", fuel: "Hybrid", transmission: "Automatic", transmissionDetail: "CVT", price: "₹47.20 Lakh", priceNumeric: 4720000 },
+    { name: "Tekna", fuel: "Hybrid", transmission: "Automatic", transmissionDetail: "CVT", price: "₹52.80 Lakh", priceNumeric: 5280000 }
+  ],
+  "nissan-gravite": [
+    { name: "Base", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹11.20 Lakh", priceNumeric: 1120000 },
+    { name: "Mid", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹12.80 Lakh", priceNumeric: 1280000 },
+    { name: "Mid", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "CVT", price: "₹14.10 Lakh", priceNumeric: 1410000 },
+    { name: "Top", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "CVT", price: "₹15.80 Lakh", priceNumeric: 1580000 },
+    { name: "Turbo Top", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "CVT", price: "₹17.20 Lakh", priceNumeric: 1720000 }
+  ],
+  "volkswagen-virtus": [
+    { name: "Comfortline", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹11.70 Lakh", priceNumeric: 1170000 },
+    { name: "Highline", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹13.10 Lakh", priceNumeric: 1310000 },
+    { name: "Highline", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AT", price: "₹14.40 Lakh", priceNumeric: 1440000 },
+    { name: "Topline", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹14.30 Lakh", priceNumeric: 1430000 },
+    { name: "Topline", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AT", price: "₹15.50 Lakh", priceNumeric: 1550000 },
+    { name: "GT Line", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹15.20 Lakh", priceNumeric: 1520000 },
+    { name: "GT Line", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "DSG", price: "₹16.80 Lakh", priceNumeric: 1680000 },
+    { name: "GT Plus Sport", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "DSG", price: "₹18.20 Lakh", priceNumeric: 1820000 }
+  ],
+  "volkswagen-taigun": [
+    { name: "Comfortline", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹11.90 Lakh", priceNumeric: 1190000 },
+    { name: "Highline", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹13.40 Lakh", priceNumeric: 1340000 },
+    { name: "Highline", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AT", price: "₹14.70 Lakh", priceNumeric: 1470000 },
+    { name: "Topline", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹14.60 Lakh", priceNumeric: 1460000 },
+    { name: "Topline", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AT", price: "₹15.90 Lakh", priceNumeric: 1590000 },
+    { name: "GT Line", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹15.40 Lakh", priceNumeric: 1540000 },
+    { name: "GT Line", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "DSG", price: "₹17.20 Lakh", priceNumeric: 1720000 },
+    { name: "GT Plus Sport", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "DSG", price: "₹18.80 Lakh", priceNumeric: 1880000 }
+  ],
+  "volkswagen-tiguan-r-line": [
+    { name: "R-Line", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "DSG AWD", price: "₹48.50 Lakh", priceNumeric: 4850000 }
+  ],
+  "volkswagen-golf-gti": [
+    { name: "GTI", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "DSG", price: "₹52.00 Lakh", priceNumeric: 5200000 }
+  ],
+  "volkswagen-tayron": [
+    { name: "Base", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "DSG", price: "₹38.00 Lakh", priceNumeric: 3800000 },
+    { name: "Mid", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "DSG", price: "₹42.50 Lakh", priceNumeric: 4250000 },
+    { name: "Top", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "DSG AWD", price: "₹47.80 Lakh", priceNumeric: 4780000 }
+  ],
+  "skoda-kylaq": [
+    { name: "Classic", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹8.90 Lakh", priceNumeric: 890000 },
+    { name: "Signature", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹10.20 Lakh", priceNumeric: 1020000 },
+    { name: "Signature", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AT", price: "₹11.50 Lakh", priceNumeric: 1150000 },
+    { name: "Signature+", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹12.20 Lakh", priceNumeric: 1220000 },
+    { name: "Signature+", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AT", price: "₹13.40 Lakh", priceNumeric: 1340000 },
+    { name: "Prestige", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹14.10 Lakh", priceNumeric: 1410000 },
+    { name: "Prestige", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AT", price: "₹15.40 Lakh", priceNumeric: 1540000 }
+  ],
+  "skoda-kushaq": [
+    { name: "Active", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹11.50 Lakh", priceNumeric: 1150000 },
+    { name: "Ambition", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹13.20 Lakh", priceNumeric: 1320000 },
+    { name: "Ambition", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AT", price: "₹14.50 Lakh", priceNumeric: 1450000 },
+    { name: "Style", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹15.10 Lakh", priceNumeric: 1510000 },
+    { name: "Style", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AT", price: "₹16.40 Lakh", priceNumeric: 1640000 },
+    { name: "Monte Carlo", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "DSG", price: "₹18.20 Lakh", priceNumeric: 1820000 },
+    { name: "Sportline", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "DSG", price: "₹18.80 Lakh", priceNumeric: 1880000 }
+  ],
+  "skoda-slavia": [
+    { name: "Active", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹11.20 Lakh", priceNumeric: 1120000 },
+    { name: "Ambition", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹12.80 Lakh", priceNumeric: 1280000 },
+    { name: "Ambition", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AT", price: "₹14.10 Lakh", priceNumeric: 1410000 },
+    { name: "Style", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹14.60 Lakh", priceNumeric: 1460000 },
+    { name: "Style", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AT", price: "₹15.90 Lakh", priceNumeric: 1590000 },
+    { name: "Monte Carlo", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "DSG", price: "₹17.80 Lakh", priceNumeric: 1780000 }
+  ],
+  "skoda-superb": [
+    { name: "Sportline", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "DSG", price: "₹55.00 Lakh", priceNumeric: 5500000 },
+    { name: "Laurin & Klement (L&K)", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "DSG", price: "₹60.50 Lakh", priceNumeric: 6050000 }
+  ],
+  "skoda-kodiaq": [
+    { name: "Sportline", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "DSG AWD", price: "₹44.90 Lakh", priceNumeric: 4490000 },
+    { name: "Laurin & Klement (L&K)", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "DSG AWD", price: "₹49.80 Lakh", priceNumeric: 4980000 }
+  ],
+  "mg-comet-ev": [
+    { name: "Executive", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Auto", price: "₹7.50 Lakh", priceNumeric: 750000 },
+    { name: "Excite", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Auto", price: "₹8.20 Lakh", priceNumeric: 820000 },
+    { name: "Excite FC", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Auto", price: "₹8.70 Lakh", priceNumeric: 870000 },
+    { name: "Exclusive", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Auto", price: "₹9.20 Lakh", priceNumeric: 920000 },
+    { name: "Exclusive FC", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Auto", price: "₹9.56 Lakh", priceNumeric: 956000 }
+  ],
+  "mg-astor": [
+    { name: "Style", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹9.79 Lakh", priceNumeric: 979000 },
+    { name: "Super", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹10.80 Lakh", priceNumeric: 1080000 },
+    { name: "Super", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "CVT", price: "₹11.90 Lakh", priceNumeric: 1190000 },
+    { name: "Smart", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹12.30 Lakh", priceNumeric: 1230000 },
+    { name: "Smart", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "CVT", price: "₹13.50 Lakh", priceNumeric: 1350000 },
+    { name: "Sharp", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "CVT", price: "₹14.60 Lakh", priceNumeric: 1460000 },
+    { name: "Savvy", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "CVT", price: "₹15.50 Lakh", priceNumeric: 1550000 }
+  ],
+  "mg-windsor-ev": [
+    { name: "Base", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Auto", price: "₹13.99 Lakh", priceNumeric: 1399000 },
+    { name: "Exclusive", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Auto", price: "₹15.52 Lakh", priceNumeric: 1552000 },
+    { name: "Essence", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Auto", price: "₹16.52 Lakh", priceNumeric: 1652000 }
+  ],
+  "mg-hector": [
+    { name: "Style", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹11.99 Lakh", priceNumeric: 1199000 },
+    { name: "Smart", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹13.20 Lakh", priceNumeric: 1320000 },
+    { name: "Smart", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "CVT", price: "₹14.50 Lakh", priceNumeric: 1450000 },
+    { name: "Smart Pro", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "CVT", price: "₹15.20 Lakh", priceNumeric: 1520000 },
+    { name: "Sharp", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "CVT", price: "₹16.50 Lakh", priceNumeric: 1650000 },
+    { name: "Sharp Pro", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "CVT", price: "₹17.80 Lakh", priceNumeric: 1780000 },
+    { name: "Savvy", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "CVT", price: "₹18.99 Lakh", priceNumeric: 1899000 }
+  ],
+  "mg-hector-plus": [
+    { name: "Style", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹17.29 Lakh", priceNumeric: 1729000 },
+    { name: "Smart", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹18.10 Lakh", priceNumeric: 1810000 },
+    { name: "Smart", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "CVT", price: "₹18.90 Lakh", priceNumeric: 1890000 },
+    { name: "Sharp", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "CVT", price: "₹19.69 Lakh", priceNumeric: 1969000 }
+  ],
+  "mg-gloster": [
+    { name: "Super", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "AT", price: "₹38.33 Lakh", priceNumeric: 3833000 },
+    { name: "Smart", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "AT", price: "₹40.50 Lakh", priceNumeric: 4050000 },
+    { name: "Sharp", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "AT", price: "₹41.80 Lakh", priceNumeric: 4180000 },
+    { name: "Savvy", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "AT", price: "₹43.16 Lakh", priceNumeric: 4316000 },
+    { name: "Savvy 6/7", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "AT", price: "₹44.20 Lakh", priceNumeric: 4420000 }
+  ],
+  "mg-zs-ev": [
+    { name: "Executive", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Auto", price: "₹17.99 Lakh", priceNumeric: 1799000 },
+    { name: "Excite", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Auto", price: "₹18.80 Lakh", priceNumeric: 1880000 },
+    { name: "Exclusive", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Auto", price: "₹19.60 Lakh", priceNumeric: 1960000 },
+    { name: "Essence", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Auto", price: "₹20.50 Lakh", priceNumeric: 2050000 }
+  ],
+  "mg-cyberster": [
+    { name: "GT Performance", fuel: "Electric", transmission: "Automatic", transmissionDetail: "AWD", price: "₹75.00 Lakh", priceNumeric: 7500000 }
+  ],
+  "mg-m9": [
+    { name: "Executive Lounge", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Auto", price: "₹70.90 Lakh", priceNumeric: 7090000 }
+  ],
+  "mg-majestor": [
+    { name: "Base", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "AT", price: "₹39.00 Lakh", priceNumeric: 3900000 },
+    { name: "Mid", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "AT", price: "₹42.00 Lakh", priceNumeric: 4200000 },
+    { name: "Top", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "AT", price: "₹45.00 Lakh", priceNumeric: 4500000 }
+  ],
+  "citroen-c3": [
+    { name: "Live", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹4.95 Lakh", priceNumeric: 495000 },
+    { name: "Live (O)", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹5.49 Lakh", priceNumeric: 549000 },
+    { name: "Feel", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹6.20 Lakh", priceNumeric: 620000 },
+    { name: "Feel (O)", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹6.80 Lakh", priceNumeric: 680000 },
+    { name: "Shine", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹7.90 Lakh", priceNumeric: 790000 }
+  ],
+  "citroen-e-c3": [
+    { name: "Live", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Auto", price: "₹11.50 Lakh", priceNumeric: 1150000 },
+    { name: "Feel", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Auto", price: "₹12.20 Lakh", priceNumeric: 1220000 },
+    { name: "Feel Pack", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Auto", price: "₹12.80 Lakh", priceNumeric: 1280000 },
+    { name: "Shine", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Auto", price: "₹12.90 Lakh", priceNumeric: 1290000 }
+  ],
+  "citroen-c3-aircross": [
+    { name: "Live", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹8.49 Lakh", priceNumeric: 849000 },
+    { name: "Feel", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹9.80 Lakh", priceNumeric: 980000 },
+    { name: "Feel (O)", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹10.50 Lakh", priceNumeric: 1050000 },
+    { name: "Shine", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹11.50 Lakh", priceNumeric: 1150000 },
+    { name: "Turbo Max 5S", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹12.41 Lakh", priceNumeric: 1241000 },
+    { name: "Turbo Max 5S AT", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AT", price: "₹13.99 Lakh", priceNumeric: 1399000 },
+    { name: "7S Max Turbo AT", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AT", price: "₹14.14 Lakh", priceNumeric: 1414000 }
+  ],
+  "citroen-basalt": [
+    { name: "You", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹8.55 Lakh", priceNumeric: 855000 },
+    { name: "Plus", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹9.90 Lakh", priceNumeric: 990000 },
+    { name: "Turbo Plus", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹11.20 Lakh", priceNumeric: 1120000 },
+    { name: "Turbo Max", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹12.50 Lakh", priceNumeric: 1250000 },
+    { name: "Turbo AT Plus", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AT", price: "₹13.40 Lakh", priceNumeric: 1340000 },
+    { name: "Turbo AT Max", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AT", price: "₹13.74 Lakh", priceNumeric: 1374000 }
+  ],
+  "citroen-c5-aircross": [
+    { name: "Shine", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "AT", price: "₹37.32 Lakh", priceNumeric: 3732000 }
+  ],
+  "jeep-compass": [
+    { name: "Sport", fuel: "Diesel", transmission: "Manual", transmissionDetail: "MT", price: "₹17.99 Lakh", priceNumeric: 1799000 },
+    { name: "Longitude", fuel: "Diesel", transmission: "Manual", transmissionDetail: "MT", price: "₹20.49 Lakh", priceNumeric: 2049000 },
+    { name: "Longitude Plus", fuel: "Diesel", transmission: "Manual", transmissionDetail: "MT", price: "₹21.90 Lakh", priceNumeric: 2190000 },
+    { name: "Limited", fuel: "Diesel", transmission: "Manual", transmissionDetail: "MT", price: "₹23.40 Lakh", priceNumeric: 2340000 },
+    { name: "Limited (O)", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "AT", price: "₹25.10 Lakh", priceNumeric: 2510000 },
+    { name: "Model S", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "AT", price: "₹28.50 Lakh", priceNumeric: 2850000 },
+    { name: "Track Edition", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "AT", price: "₹26.78 Lakh", priceNumeric: 2678000 },
+    { name: "Track Edition 4x4", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "AT", price: "₹30.58 Lakh", priceNumeric: 3058000 }
+  ],
+  "jeep-meridian": [
+    { name: "Longitude (Base)", fuel: "Diesel", transmission: "Manual", transmissionDetail: "MT", price: "₹23.33 Lakh", priceNumeric: 2333000 },
+    { name: "Longitude Plus", fuel: "Diesel", transmission: "Manual", transmissionDetail: "MT", price: "₹25.80 Lakh", priceNumeric: 2580000 },
+    { name: "Limited", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "MT/AT", price: "₹27.50 Lakh", priceNumeric: 2750000 },
+    { name: "Limited (O)", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "AT", price: "₹30.01 Lakh", priceNumeric: 3001000 },
+    { name: "Overland", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "AT", price: "₹32.50 Lakh", priceNumeric: 3250000 },
+    { name: "Overland 4x4", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "AT", price: "₹33.80 Lakh", priceNumeric: 3380000 },
+    { name: "Track Edition AT", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "AT", price: "₹35.95 Lakh", priceNumeric: 3595000 },
+    { name: "Track Edition AT 4x4", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "AT", price: "₹37.82 Lakh", priceNumeric: 3782000 }
+  ],
+  "jeep-avenger": [
+    { name: "Base", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹12.00 Lakh", priceNumeric: 1200000 },
+    { name: "Mid", fuel: "Petrol", transmission: "Manual", transmissionDetail: "MT", price: "₹14.50 Lakh", priceNumeric: 1450000 },
+    { name: "Top", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AT", price: "₹17.00 Lakh", priceNumeric: 1700000 },
+    { name: "EV Version (if launched)", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Auto", price: "₹22.00 Lakh", priceNumeric: 2200000 }
+  ],
+  "jeep-wagoneer-s": [
+    { name: "Base", fuel: "Electric", transmission: "Automatic", transmissionDetail: "AWD", price: "₹85.00 Lakh", priceNumeric: 8500000 },
+    { name: "Dual Motor Performance", fuel: "Electric", transmission: "Automatic", transmissionDetail: "AWD", price: "₹90.00 Lakh", priceNumeric: 9000000 }
   ]
-};
+,
+  "bmw-2-series-gran-coupe": [
+    { name: "218i Sport", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7-speed DCT", price: "₹45.80 Lakh", priceNumeric: 4580000 },
+    { name: "220i M Sport", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7-speed DCT", price: "₹47.20 Lakh", priceNumeric: 4720000 }
+  ],
+  "bmw-3-series-lwb": [
+    { name: "320Ld Luxury Line", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "8-speed Steptronic AT", price: "₹60.50 Lakh", priceNumeric: 6050000 },
+    { name: "320Ld M Sport Pro", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "8-speed Steptronic AT", price: "₹65.00 Lakh", priceNumeric: 6500000 },
+    { name: "330Li M Sport", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed Steptronic AT", price: "₹75.80 Lakh", priceNumeric: 7580000 }
+  ],
+  "bmw-4-series-gran-coupe": [
+    { name: "420i", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed Steptronic AT", price: "₹75.00 Lakh", priceNumeric: 7500000 },
+    { name: "430i M Sport", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed Steptronic AT", price: "₹85.00 Lakh", priceNumeric: 8500000 },
+    { name: "M440i xDrive", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed Steptronic AT", price: "₹1.09 Crore", priceNumeric: 10900000 }
+  ],
+  "bmw-5-series-lwb": [
+    { name: "520d Luxury Line", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "8-speed Steptronic AT", price: "₹73.30 Lakh", priceNumeric: 7330000 },
+    { name: "530Li M Sport", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed Steptronic AT", price: "₹75.80 Lakh", priceNumeric: 7580000 }
+  ],
+  "bmw-7-series": [
+    { name: "740i M Sport", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed Steptronic AT", price: "₹1.79 Crore", priceNumeric: 17900000 },
+    { name: "740d M Sport", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "8-speed Steptronic AT", price: "₹1.82 Crore", priceNumeric: 18200000 },
+    { name: "750e M Sport", fuel: "Hybrid", transmission: "Automatic", transmissionDetail: "8-speed Steptronic AT", price: "₹2.05 Crore", priceNumeric: 20500000 },
+    { name: "760i xDrive", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed Steptronic AT", price: "₹2.58 Crore", priceNumeric: 25800000 }
+  ],
+  "bmw-x1": [
+    { name: "sDrive18i SportX", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7-speed DCT", price: "₹50.90 Lakh", priceNumeric: 5090000 },
+    { name: "sDrive18d M Sport", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "7-speed DCT", price: "₹52.10 Lakh", priceNumeric: 5210000 },
+    { name: "xDrive20i M Sport", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7-speed DCT", price: "₹55.00 Lakh", priceNumeric: 5500000 }
+  ],
+  "bmw-x3": [
+    { name: "xDrive20i", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed Steptronic AT", price: "₹72.50 Lakh", priceNumeric: 7250000 },
+    { name: "xDrive20d", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "8-speed Steptronic AT", price: "₹73.10 Lakh", priceNumeric: 7310000 },
+    { name: "xDrive30 M Sport Pro", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed Steptronic AT", price: "₹74.50 Lakh", priceNumeric: 7450000 },
+    { name: "M40i", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed Steptronic AT", price: "₹95.20 Lakh", priceNumeric: 9520000 }
+  ],
+  "bmw-x5": [
+    { name: "xDrive30d", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "8-speed Steptronic AT", price: "₹95.40 Lakh", priceNumeric: 9540000 },
+    { name: "xDrive40i", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed Steptronic AT", price: "₹1.10 Crore", priceNumeric: 11000000 },
+    { name: "xDrive50e", fuel: "Hybrid", transmission: "Automatic", transmissionDetail: "8-speed Steptronic AT", price: "₹1.10 Crore", priceNumeric: 11000000 }
+  ],
+  "bmw-x7": [
+    { name: "xDrive40i", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed Steptronic AT", price: "₹1.28 Crore", priceNumeric: 12800000 },
+    { name: "xDrive40d", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "8-speed Steptronic AT", price: "₹1.30 Crore", priceNumeric: 13000000 },
+    { name: "M60i", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed Steptronic AT", price: "₹1.32 Crore", priceNumeric: 13200000 }
+  ],
+  "bmw-m2": [
+    { name: "Standard", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed M Steptronic AT", price: "₹1.02 Crore", priceNumeric: 10200000 },
+    { name: "Carbon Edition", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed M Steptronic AT", price: "₹1.66 Crore", priceNumeric: 16600000 }
+  ],
+  "bmw-m3": [
+    { name: "Standard", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed M Steptronic AT", price: "₹1.52 Crore", priceNumeric: 15200000 },
+    { name: "Competition M xDrive", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed M Steptronic AT", price: "₹1.80 Crore", priceNumeric: 18000000 }
+  ],
+  "bmw-m4": [
+    { name: "Standard", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed M Steptronic AT", price: "₹1.55 Crore", priceNumeric: 15500000 },
+    { name: "Competition M xDrive", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed M Steptronic AT", price: "₹1.89 Crore", priceNumeric: 18900000 }
+  ],
+  "bmw-m5": [
+    { name: "M5 Sedan", fuel: "Hybrid", transmission: "Automatic", transmissionDetail: "8-speed M Steptronic AT", price: "₹2.05 Crore", priceNumeric: 20500000 }
+  ],
+  "bmw-m8": [
+    { name: "M8 Competition Coupe", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed M Steptronic AT", price: "₹2.38 Crore", priceNumeric: 23800000 }
+  ],
+  "bmw-i4": [
+    { name: "eDrive35", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹72.50 Lakh", priceNumeric: 7250000 },
+    { name: "eDrive40", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹75.00 Lakh", priceNumeric: 7500000 },
+    { name: "M50", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹85.00 Lakh", priceNumeric: 8500000 }
+  ],
+  "bmw-ix1": [
+    { name: "eDrive20", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹49.90 Lakh", priceNumeric: 4990000 },
+    { name: "xDrive30", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹55.00 Lakh", priceNumeric: 5500000 }
+  ],
+  "bmw-ix": [
+    { name: "xDrive40", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹1.40 Crore", priceNumeric: 14000000 },
+    { name: "xDrive50", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹1.45 Crore", priceNumeric: 14500000 },
+    { name: "M60", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹1.70 Crore", priceNumeric: 17000000 }
+  ],
+  "bmw-i7": [
+    { name: "eDrive50", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹1.82 Crore", priceNumeric: 18200000 },
+    { name: "xDrive60", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹2.05 Crore", priceNumeric: 20500000 },
+    { name: "M70 xDrive", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹2.58 Crore", priceNumeric: 25800000 }
+  ],
+  "mercedes-benz-a-class": [
+    { name: "A 200", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7G-DCT", price: "₹45.90 Lakh", priceNumeric: 4590000 },
+    { name: "A 200d", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "7G-DCT", price: "₹46.90 Lakh", priceNumeric: 4690000 },
+    { name: "AMG Line A 200", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7G-DCT", price: "₹48.50 Lakh", priceNumeric: 4850000 }
+  ],
+  "mercedes-benz-c-class": [
+    { name: "C 200", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "9G-TRONIC AT", price: "₹59.90 Lakh", priceNumeric: 5990000 },
+    { name: "C 220d", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "9G-TRONIC AT", price: "₹61.50 Lakh", priceNumeric: 6150000 },
+    { name: "C 300", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "9G-TRONIC AT", price: "₹64.30 Lakh", priceNumeric: 6430000 }
+  ],
+  "mercedes-benz-e-class": [
+    { name: "E 200", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "9G-TRONIC AT", price: "₹78.50 Lakh", priceNumeric: 7850000 },
+    { name: "E 220d", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "9G-TRONIC AT", price: "₹82.00 Lakh", priceNumeric: 8200000 },
+    { name: "E 350d", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "9G-TRONIC AT", price: "₹91.60 Lakh", priceNumeric: 9160000 }
+  ],
+  "mercedes-benz-s-class": [
+    { name: "S 350d", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "9G-TRONIC AT", price: "₹1.78 Crore", priceNumeric: 17800000 },
+    { name: "S 450", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "9G-TRONIC AT", price: "₹1.85 Crore", priceNumeric: 18500000 },
+    { name: "S 580", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "9G-TRONIC AT", price: "₹1.95 Crore", priceNumeric: 19500000 },
+    { name: "AMG S 63 E Performance", fuel: "Hybrid", transmission: "Automatic", transmissionDetail: "AMG SPEEDSHIFT MCT", price: "₹3.80 Crore", priceNumeric: 38000000 }
+  ],
+  "mercedes-benz-gla": [
+    { name: "GLA 200", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7G-DCT", price: "₹51.80 Lakh", priceNumeric: 5180000 },
+    { name: "GLA 220d", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "7G-DCT", price: "₹55.00 Lakh", priceNumeric: 5500000 },
+    { name: "AMG 35 4MATIC", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AMG SPEEDSHIFT", price: "₹75.00 Lakh", priceNumeric: 7500000 }
+  ],
+  "mercedes-benz-glc": [
+    { name: "GLC 300", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "9G-TRONIC AT", price: "₹73.90 Lakh", priceNumeric: 7390000 },
+    { name: "GLC 220d", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "9G-TRONIC AT", price: "₹75.00 Lakh", priceNumeric: 7500000 },
+    { name: "AMG 43", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AMG SPEEDSHIFT", price: "₹99.80 Lakh", priceNumeric: 9980000 }
+  ],
+  "mercedes-benz-gle": [
+    { name: "GLE 300d", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "9G-TRONIC AT", price: "₹1.11 Crore", priceNumeric: 11100000 },
+    { name: "GLE 450", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "9G-TRONIC AT", price: "₹1.17 Crore", priceNumeric: 11700000 },
+    { name: "AMG 53", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AMG SPEEDSHIFT", price: "₹1.88 Crore", priceNumeric: 18800000 },
+    { name: "AMG 63 S", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AMG SPEEDSHIFT", price: "₹2.20 Crore", priceNumeric: 22000000 }
+  ],
+  "mercedes-benz-gls": [
+    { name: "GLS 450", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "9G-TRONIC AT", price: "₹1.32 Crore", priceNumeric: 13200000 },
+    { name: "GLS 450d", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "9G-TRONIC AT", price: "₹1.34 Crore", priceNumeric: 13400000 },
+    { name: "GLS 580", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "9G-TRONIC AT", price: "₹1.60 Crore", priceNumeric: 16000000 }
+  ],
+  "mercedes-benz-g-class": [
+    { name: "G 400d", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "9G-TRONIC AT", price: "₹2.55 Crore", priceNumeric: 25500000 },
+    { name: "G 63 AMG", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "AMG SPEEDSHIFT MCT", price: "₹4.30 Crore", priceNumeric: 43000000 }
+  ],
+  "mercedes-benz-eqb": [
+    { name: "EQB 250+", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹72.00 Lakh", priceNumeric: 7200000 },
+    { name: "EQB 350 4MATIC", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹78.00 Lakh", priceNumeric: 7800000 }
+  ],
+  "mercedes-benz-eqe": [
+    { name: "EQE 350+", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹1.40 Crore", priceNumeric: 14000000 },
+    { name: "EQE 500 4MATIC", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹2.45 Crore", priceNumeric: 24500000 }
+  ],
+  "mercedes-benz-eqs": [
+    { name: "EQS 450+", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹1.30 Crore", priceNumeric: 13000000 },
+    { name: "EQS 580 4MATIC", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹2.45 Crore", priceNumeric: 24500000 }
+  ],
+  "mercedes-benz-eqs-suv": [
+    { name: "EQS 450 4MATIC", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹1.33 Crore", priceNumeric: 13300000 },
+    { name: "EQS 580 4MATIC", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹1.70 Crore", priceNumeric: 17000000 }
+  ],
+  "audi-a3": [
+    { name: "Premium 35 TFSI", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7-speed S tronic", price: "₹45.00 Lakh", priceNumeric: 4500000 },
+    { name: "Technology 35 TFSI", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7-speed S tronic", price: "₹48.00 Lakh", priceNumeric: 4800000 }
+  ],
+  "audi-q2": [
+    { name: "Premium 35 TFSI", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7-speed S tronic", price: "₹45.90 Lakh", priceNumeric: 4590000 },
+    { name: "Technology 35 TFSI", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7-speed S tronic", price: "₹50.00 Lakh", priceNumeric: 5000000 }
+  ],
+  "audi-a4": [
+    { name: "Premium 40 TFSI", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7-speed S tronic", price: "₹58.00 Lakh", priceNumeric: 5800000 },
+    { name: "Technology 40 TFSI", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7-speed S tronic", price: "₹62.00 Lakh", priceNumeric: 6200000 },
+    { name: "35 TDI Premium", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "7-speed S tronic", price: "₹60.50 Lakh", priceNumeric: 6050000 }
+  ],
+  "audi-a6": [
+    { name: "Premium 45 TFSI", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7-speed S tronic", price: "₹65.00 Lakh", priceNumeric: 6500000 },
+    { name: "Technology 45 TFSI", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7-speed S tronic", price: "₹69.00 Lakh", priceNumeric: 6900000 },
+    { name: "45 TDI Technology", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "7-speed S tronic", price: "₹71.00 Lakh", priceNumeric: 7100000 }
+  ],
+  "audi-a8-l": [
+    { name: "55 TFSI", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed Tiptronic", price: "₹1.55 Crore", priceNumeric: 15500000 },
+    { name: "60 TFSI e", fuel: "Hybrid", transmission: "Automatic", transmissionDetail: "8-speed Tiptronic", price: "₹1.75 Crore", priceNumeric: 17500000 }
+  ],
+  "audi-q3": [
+    { name: "Premium 40 TFSI", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7-speed S tronic", price: "₹55.00 Lakh", priceNumeric: 5500000 },
+    { name: "Technology 40 TFSI", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7-speed S tronic", price: "₹59.00 Lakh", priceNumeric: 5900000 },
+    { name: "2.0 TDI Premium", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "7-speed S tronic", price: "₹58.50 Lakh", priceNumeric: 5850000 },
+    { name: "Sportback 40 TFSI", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7-speed S tronic", price: "₹61.00 Lakh", priceNumeric: 6100000 }
+  ],
+  "audi-q5": [
+    { name: "Premium Plus 45 TFSI", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7-speed S tronic", price: "₹72.00 Lakh", priceNumeric: 7200000 },
+    { name: "Technology 45 TFSI", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7-speed S tronic", price: "₹76.00 Lakh", priceNumeric: 7600000 },
+    { name: "45 TDI", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "7-speed S tronic", price: "₹78.00 Lakh", priceNumeric: 7800000 }
+  ],
+  "audi-q7": [
+    { name: "Premium Plus 45 TDI", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "8-speed Tiptronic", price: "₹92.00 Lakh", priceNumeric: 9200000 },
+    { name: "Technology 55 TFSI", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed Tiptronic", price: "₹1.05 Crore", priceNumeric: 10500000 }
+  ],
+  "audi-q8": [
+    { name: "55 TFSI Technology", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed Tiptronic", price: "₹1.12 Crore", priceNumeric: 11200000 }
+  ],
+  "audi-q8-e-tron": [
+    { name: "50 Quattro", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹1.15 Crore", priceNumeric: 11500000 },
+    { name: "55 Quattro", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹1.25 Crore", priceNumeric: 12500000 },
+    { name: "Sportback 55", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹1.30 Crore", priceNumeric: 13000000 }
+  ],
+  "audi-q6-e-tron": [
+    { name: "Standard Range", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹1.05 Crore", priceNumeric: 10500000 },
+    { name: "Performance Quattro", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹1.20 Crore", priceNumeric: 12000000 }
+  ],
+  "audi-e-tron-gt": [
+    { name: "e-tron GT Quattro", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹1.70 Crore", priceNumeric: 17000000 },
+    { name: "RS e-tron GT", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹2.05 Crore", priceNumeric: 20500000 }
+  ],
+  "audi-rs3": [
+    { name: "Standard", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7-speed S tronic", price: "₹1.05 Crore", priceNumeric: 10500000 }
+  ],
+  "audi-rs5-sportback": [
+    { name: "Standard", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed Tiptronic", price: "₹1.10 Crore", priceNumeric: 11000000 }
+  ],
+  "audi-rs6-avant": [
+    { name: "Standard", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed Tiptronic", price: "₹1.75 Crore", priceNumeric: 17500000 }
+  ],
+  "audi-rs-q8": [
+    { name: "Standard", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed Tiptronic", price: "₹2.25 Crore", priceNumeric: 22500000 }
+  ],
+  "volvo-xc40-recharge": [
+    { name: "Single Motor RWD", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹55.00 Lakh", priceNumeric: 5500000 },
+    { name: "Twin Motor AWD", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹65.00 Lakh", priceNumeric: 6500000 },
+    { name: "Ultimate Pack", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹67.00 Lakh", priceNumeric: 6700000 }
+  ],
+  "volvo-c40-recharge": [
+    { name: "Single Motor RWD", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹61.00 Lakh", priceNumeric: 6100000 },
+    { name: "Twin Motor AWD", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹70.00 Lakh", priceNumeric: 7000000 },
+    { name: "Ultimate Pack", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹72.00 Lakh", priceNumeric: 7200000 }
+  ],
+  "volvo-xc60": [
+    { name: "B5 Mild Hybrid", fuel: "Hybrid", transmission: "Automatic", transmissionDetail: "8-speed AT", price: "₹69.00 Lakh", priceNumeric: 6900000 },
+    { name: "B6 Mild Hybrid", fuel: "Hybrid", transmission: "Automatic", transmissionDetail: "8-speed AT", price: "₹71.50 Lakh", priceNumeric: 7150000 }
+  ],
+  "volvo-xc90": [
+    { name: "B5 Mild Hybrid", fuel: "Hybrid", transmission: "Automatic", transmissionDetail: "8-speed AT", price: "₹1.01 Crore", priceNumeric: 10100000 },
+    { name: "B6 Mild Hybrid", fuel: "Hybrid", transmission: "Automatic", transmissionDetail: "8-speed AT", price: "₹1.05 Crore", priceNumeric: 10500000 }
+  ],
+  "volvo-s90": [
+    { name: "B5 Mild Hybrid", fuel: "Hybrid", transmission: "Automatic", transmissionDetail: "8-speed AT", price: "₹68.00 Lakh", priceNumeric: 6800000 }
+  ],
+  "porsche-718": [
+    { name: "Cayman Base", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7-speed PDK", price: "₹1.40 Crore", priceNumeric: 14000000 },
+    { name: "Cayman S", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7-speed PDK", price: "₹1.60 Crore", priceNumeric: 16000000 },
+    { name: "Cayman GTS", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7-speed PDK", price: "₹1.85 Crore", priceNumeric: 18500000 },
+    { name: "GT4 / Spyder", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7-speed PDK", price: "₹2.10 Crore", priceNumeric: 21000000 }
+  ],
+  "porsche-911": [
+    { name: "Carrera", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed PDK", price: "₹1.85 Crore", priceNumeric: 18500000 },
+    { name: "Carrera S", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed PDK", price: "₹2.10 Crore", priceNumeric: 21000000 },
+    { name: "Turbo", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed PDK", price: "₹3.10 Crore", priceNumeric: 31000000 },
+    { name: "Turbo S", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed PDK", price: "₹4.00 Crore", priceNumeric: 40000000 },
+    { name: "GT3", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7-speed PDK", price: "₹3.50 Crore", priceNumeric: 35000000 },
+    { name: "GT3 RS", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7-speed PDK", price: "₹4.20 Crore", priceNumeric: 42000000 }
+  ],
+  "porsche-macan": [
+    { name: "Base", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7-speed PDK", price: "₹95.00 Lakh", priceNumeric: 9500000 },
+    { name: "S", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7-speed PDK", price: "₹1.10 Crore", priceNumeric: 11000000 },
+    { name: "GTS", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7-speed PDK", price: "₹1.25 Crore", priceNumeric: 12500000 },
+    { name: "Electric Macan", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹1.22 Crore", priceNumeric: 12200000 },
+    { name: "Electric Macan Turbo", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹1.45 Crore", priceNumeric: 14500000 }
+  ],
+  "porsche-cayenne": [
+    { name: "Base", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed Tiptronic", price: "₹1.40 Crore", priceNumeric: 14000000 },
+    { name: "E-Hybrid", fuel: "Hybrid", transmission: "Automatic", transmissionDetail: "8-speed Tiptronic", price: "₹1.55 Crore", priceNumeric: 15500000 },
+    { name: "Turbo GT", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed Tiptronic", price: "₹2.60 Crore", priceNumeric: 26000000 }
+  ],
+  "porsche-taycan": [
+    { name: "4S", fuel: "Electric", transmission: "Automatic", transmissionDetail: "2-speed auto", price: "₹1.70 Crore", priceNumeric: 17000000 },
+    { name: "Turbo", fuel: "Electric", transmission: "Automatic", transmissionDetail: "2-speed auto", price: "₹2.10 Crore", priceNumeric: 21000000 },
+    { name: "Turbo S", fuel: "Electric", transmission: "Automatic", transmissionDetail: "2-speed auto", price: "₹2.60 Crore", priceNumeric: 26000000 }
+  ],
+  "byd-atto-3": [
+    { name: "Dynamic", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹34.50 Lakh", priceNumeric: 3450000 },
+    { name: "Premium", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹37.50 Lakh", priceNumeric: 3750000 },
+    { name: "Superior", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹39.50 Lakh", priceNumeric: 3950000 }
+  ],
+  "byd-seal": [
+    { name: "Dynamic RWD", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹45.00 Lakh", priceNumeric: 4500000 },
+    { name: "Performance AWD", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹53.00 Lakh", priceNumeric: 5300000 }
+  ],
+  "byd-sealion-7": [
+    { name: "Standard Range", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹48.00 Lakh", priceNumeric: 4800000 },
+    { name: "Long Range", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹55.00 Lakh", priceNumeric: 5500000 }
+  ],
+  "byd-e6": [
+    { name: "Extended Range", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹30.00 Lakh", priceNumeric: 3000000 }
+  ],
+  "jaguar-f-pace": [
+    { name: "Base", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed AT", price: "₹72.00 Lakh", priceNumeric: 7200000 },
+    { name: "R-Dynamic Diesel", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "8-speed AT", price: "₹78.00 Lakh", priceNumeric: 7800000 },
+    { name: "SVR", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed AT", price: "₹1.20 Crore", priceNumeric: 12000000 }
+  ],
+  "jaguar-i-pace": [
+    { name: "SE", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹1.05 Crore", priceNumeric: 10500000 },
+    { name: "HSE", fuel: "Electric", transmission: "Automatic", transmissionDetail: "Single-speed", price: "₹1.15 Crore", priceNumeric: 11500000 }
+  ],
+  "land-rover-defender": [
+    { name: "90", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "8-speed AT", price: "₹1.05 Crore", priceNumeric: 10500000 },
+    { name: "110", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "8-speed AT", price: "₹1.25 Crore", priceNumeric: 12500000 },
+    { name: "130", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "8-speed AT", price: "₹1.45 Crore", priceNumeric: 14500000 },
+    { name: "Terrain Pack", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "8-speed AT", price: "₹1.50 Crore", priceNumeric: 15000000 }
+  ],
+  "land-rover-range-rover": [
+    { name: "SE", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed AT", price: "₹2.40 Crore", priceNumeric: 24000000 },
+    { name: "Autobiography", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "8-speed AT", price: "₹2.80 Crore", priceNumeric: 28000000 },
+    { name: "SV", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed AT", price: "₹4.00 Crore", priceNumeric: 40000000 }
+  ],
+  "land-rover-range-rover-sport": [
+    { name: "SE", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed AT", price: "₹1.80 Crore", priceNumeric: 18000000 },
+    { name: "HSE", fuel: "Diesel", transmission: "Automatic", transmissionDetail: "8-speed AT", price: "₹2.10 Crore", priceNumeric: 21000000 },
+    { name: "SVR", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed AT", price: "₹2.60 Crore", priceNumeric: 26000000 }
+  ],
+  "lamborghini-huracan": [
+    { name: "EVO", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7-speed DCT", price: "₹3.50 Crore", priceNumeric: 35000000 },
+    { name: "Tecnica", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7-speed DCT", price: "₹4.00 Crore", priceNumeric: 40000000 },
+    { name: "STO", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "7-speed DCT", price: "₹4.50 Crore", priceNumeric: 45000000 }
+  ],
+  "lamborghini-revuelto": [
+    { name: "Base V12 Hybrid", fuel: "Hybrid", transmission: "Automatic", transmissionDetail: "8-speed DCT", price: "₹8.00 Crore", priceNumeric: 80000000 }
+  ],
+  "lamborghini-urus": [
+    { name: "S", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed AT", price: "₹4.18 Crore", priceNumeric: 41800000 },
+    { name: "Performante", fuel: "Petrol", transmission: "Automatic", transmissionDetail: "8-speed AT", price: "₹4.60 Crore", priceNumeric: 46000000 },
+    { name: "SE Hybrid", fuel: "Hybrid", transmission: "Automatic", transmissionDetail: "8-speed AT", price: "₹4.80 Crore", priceNumeric: 48000000 }
+  ]};
 
 export function getVariantsBySlug(slug: string): CarVariant[] {
   return CAR_VARIANTS_MAP[slug] || [];
 }
-
