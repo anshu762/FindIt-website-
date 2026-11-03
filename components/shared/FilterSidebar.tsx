@@ -13,10 +13,22 @@ const BRANDS = [
   "Kia",
   "Mahindra",
   "Toyota",
-  "Skoda",
+  "Renault",
+  "Nissan",
   "Volkswagen",
+  "Skoda",
   "MG",
-  "Jeep"
+  "Jeep",
+  "Citroen",
+  "BMW",
+  "Mercedes-Benz",
+  "Audi",
+  "Volvo",
+  "Porsche",
+  "BYD",
+  "Jaguar",
+  "Land Rover",
+  "Lamborghini"
 ] as const;
 
 function parseList(value: string | null): string[] {

@@ -69,7 +69,25 @@ function buildWhere(filters: CarFilters): Prisma.CarWhereInput {
     hyundai: ["Hyundai", "Hyundai Motor", "Hyundai Motor India"],
     mahindra: ["Mahindra", "Mahindra & Mahindra"],
     kia: ["Kia", "Kia India", "Kia Motors"],
-    honda: ["Honda", "Honda Cars", "Honda Cars India"]
+    honda: ["Honda", "Honda Cars", "Honda Cars India"],
+    toyota: ["Toyota", "Toyota Kirloskar", "Toyota Kirloskar Motor"],
+    renault: ["Renault", "Renault India"],
+    nissan: ["Nissan", "Nissan Motor", "Nissan Motor India"],
+    volkswagen: ["Volkswagen", "Volkswagen India", "VW"],
+    skoda: ["Skoda", "Škoda", "Škoda Auto", "Škoda Auto India"],
+    mg: ["MG", "MG Motor", "MG Motor India", "Morris Garages"],
+    citroen: ["Citroen", "Citroën", "Citroën India"],
+    jeep: ["Jeep", "Jeep India"],
+    bmw: ["BMW", "BMW India"],
+    "mercedes-benz": ["Mercedes-Benz", "Mercedes", "Mercedes-Benz India"],
+    mercedes: ["Mercedes-Benz", "Mercedes", "Mercedes-Benz India"],
+    audi: ["Audi", "Audi India"],
+    volvo: ["Volvo", "Volvo India", "Volvo Auto India"],
+    porsche: ["Porsche", "Porsche India"],
+    byd: ["BYD", "BYD India"],
+    jaguar: ["Jaguar", "Jaguar Land Rover", "JLR"],
+    "land-rover": ["Land Rover", "Range Rover", "Jaguar Land Rover", "JLR"],
+    lamborghini: ["Lamborghini", "Lamborghini India"]
   };
   const expandedBrands = brands.flatMap((b) => brandAliases[b.toLowerCase()] || [b]);
   const seats = Array.isArray(filters.seatingCapacity)
