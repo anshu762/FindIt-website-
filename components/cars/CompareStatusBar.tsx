@@ -30,6 +30,7 @@ export default function CompareStatusBar() {
                   alt={car.name}
                   fill
                   className="object-cover"
+                  referrerPolicy="no-referrer"
                 />
                 <button
                   onClick={() => removeFromCompare(car.id)}

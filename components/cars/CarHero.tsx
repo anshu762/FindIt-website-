@@ -18,6 +18,7 @@ export default function CarHero({ car }: CarHeroProps) {
           fill
           className="object-cover"
           priority
+          referrerPolicy="no-referrer"
         />
       </div>
 

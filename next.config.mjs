@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
+    unoptimized: true,
     remotePatterns: [
       { protocol: 'https', hostname: 'images.unsplash.com' },
       { protocol: 'https', hostname: 'encrypted-tbn0.gstatic.com' },
@@ -14,8 +15,9 @@ const nextConfig = {
       { protocol: 'https', hostname: 'cdn.skoda-auto.com' },
       { protocol: 'https', hostname: 'hips.hearstapps.com' },
       { protocol: 'https', hostname: 'images.timesdrive.in' },
-      { protocol: 'https', hostname: 'stimg.cardekho.com' },
-      { protocol: 'https', hostname: 'www.carandbike.com' }
+      { protocol: 'https', hostname: 'www.carandbike.com' },
+      { protocol: 'https', hostname: 'upload.wikimedia.org' },
+      { protocol: 'https', hostname: 'commons.wikimedia.org' }
     ],
   },
 };

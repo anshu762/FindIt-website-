@@ -87,7 +87,7 @@ export default function CompareSelector({ allCars }: CompareSelectorProps) {
                 className="w-full flex items-center gap-4 p-4 hover:bg-slate-50 transition-colors border-b border-slate-100 last:border-0"
               >
                 <div className="relative h-12 w-20 rounded-md overflow-hidden bg-slate-100">
-                  <Image src={car.imageUrl} alt={car.name} fill className="object-cover" />
+                  <Image src={car.imageUrl} alt={car.name} fill className="object-cover" referrerPolicy="no-referrer" />
                 </div>
                 <div className="text-left">
                   <p className="font-bold text-slate-900">{car.name}</p>
@@ -107,7 +107,7 @@ export default function CompareSelector({ allCars }: CompareSelectorProps) {
             className="flex items-center gap-3 bg-blue-50 border border-blue-100 p-2 pr-4 rounded-xl group"
           >
             <div className="relative h-10 w-16 rounded-lg overflow-hidden border border-blue-200">
-              <Image src={car.imageUrl} alt={car.name} fill className="object-cover" />
+              <Image src={car.imageUrl} alt={car.name} fill className="object-cover" referrerPolicy="no-referrer" />
             </div>
             <div>
               <p className="text-sm font-bold text-blue-900 leading-none">{car.name}</p>

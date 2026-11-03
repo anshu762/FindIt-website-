@@ -25,6 +25,7 @@ export default function CarCard({ car, matchScore, matchReasons, hideCompare, is
   const { selectedCars, addToCompare, removeFromCompare, isCompareFull } = useCompare();
   const [isSaved, setIsSaved] = useState(isInitialSaved);
   const [saving, setSaving] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   const isSelected = !!selectedCars.find((c) => c.id === car.id);
   const showSelection = !hideCompare && isSelected;
@@ -33,7 +34,7 @@ export default function CarCard({ car, matchScore, matchReasons, hideCompare, is
   const supportedFuels = ["Petrol", "Diesel", "CNG", "Hybrid", "Electric"].filter(
     (f) => f === car.fuelType || car.tags?.includes(f)
   );
-  const fuelDisplay = supportedFuels.length > 1 ? supportedFuels.join(" · ") : car.fuelType;
+  const fuelDisplay = supportedFuels.length > 1 ? supportedFuels.join(" • ") : car.fuelType;
 
   const handleCompareClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -63,12 +64,22 @@ export default function CarCard({ car, matchScore, matchReasons, hideCompare, is
       <Card className={`overflow-hidden transition-all duration-300 border-2 ${
         showSelection ? "border-blue-500 shadow-lg ring-1 ring-blue-500" : "border-transparent hover:-translate-y-1 hover:shadow-md"
       }`}>
-        <div className="relative h-44 w-full overflow-hidden">
-          <img
-            src={car.imageUrl}
-            alt={`${car.brand} ${car.model}`}
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-          />
+        <div className="relative h-44 w-full overflow-hidden bg-slate-100 flex items-center justify-center">
+          {!imageError ? (
+            <img
+              src={car.imageUrl}
+              alt={`${car.brand} ${car.model}`}
+              referrerPolicy="no-referrer"
+              loading="lazy"
+              onError={() => setImageError(true)}
+              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+          ) : (
+            <div className="flex flex-col items-center justify-center p-4 text-center text-slate-400">
+              <Gauge className="h-10 w-10 mb-1 text-slate-300" />
+              <span className="text-xs font-semibold text-slate-600">{car.name}</span>
+            </div>
+          )}
           <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity" />
           
           <div className="absolute top-3 left-3 flex flex-col gap-2">

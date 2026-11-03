@@ -117,7 +117,7 @@ export default function CompareMatrix({ cars }: CompareMatrixProps) {
               {cars.map((car) => (
                 <th key={car.id} className="p-6 text-center min-w-[280px]">
                   <div className="relative mx-auto h-24 w-40 rounded-xl overflow-hidden mb-4 border border-slate-100">
-                    <Image src={car.imageUrl} alt={car.name} fill className="object-cover" />
+                    <Image src={car.imageUrl} alt={car.name} fill className="object-cover" referrerPolicy="no-referrer" />
                   </div>
                   <h3 className="text-lg font-bold text-slate-900">{car.name}</h3>
                   <p className="text-xs text-slate-500 font-medium">{car.brand}</p>
